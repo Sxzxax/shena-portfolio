@@ -9,11 +9,12 @@ from html import escape
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # General site text, hero photo and contact details.
-# In hero_title, the word between *asterisks* is shown in the accent colour.
+# In hero_title, the words between *asterisks* are shown in the accent colour,
+# and \n starts a new line.
 # Leave a contact field empty ("") to hide it.
 SITE = {
     "hero_greeting": "Hoi, ik ben Shena",
-    "hero_title": "Bouwkundige die ontwerp, data en *techniek* verbindt.",
+    "hero_title": "Minor Portfolio\n*Digital skills in de gebouwde omgeving*",
     "hero_text": "Ik studeer bouwkunde en werk op het snijvlak van architectuur en techniek: van parametrisch ontwerpen en ruimtelijke analyses tot digitale fabricage en programmeren.",
     "hero_image": None,  # e.g. "shena.jpg" in images/; None shows a stand-in photo
     "hero_image_alt": "Voorbeeldfoto (placeholder)",
@@ -189,10 +190,17 @@ CONTENT_DEFAULTS = {
 # Lookups and validation
 
 COMP_BY_NUMBER = {c["number"]: c for c in COMPETENTIES}
-LEERDOELEN = {  # "1.2" -> (competentie, text)
-    f"{c['number']}.{i}": (c, text)
+def leerdoel_parts(entry):
+    """A leerdoel is plain text, or {"text": ..., "toelichting": ...} with an explanation."""
+    if isinstance(entry, dict):
+        return entry["text"], entry.get("toelichting", "")
+    return entry, ""
+
+
+LEERDOELEN = {  # "1.2" -> (competentie, text, toelichting)
+    f"{c['number']}.{i}": (c, *leerdoel_parts(entry))
     for c in COMPETENTIES
-    for i, text in enumerate(c["leerdoelen"], start=1)
+    for i, entry in enumerate(c["leerdoelen"], start=1)
 }
 
 for _p in PROJECTS:
@@ -409,12 +417,13 @@ def write(rel, content):
 
 
 def hero_title():
-    """Escapes the title and turns *word* into the accent-coloured span."""
+    """Escapes the title, turns *words* into the accent-coloured span and \\n into a line break."""
     parts = escape(SITE["hero_title"]).split("*")
-    return "".join(
+    html = "".join(
         f'<span class="hero__title-accent">{part}</span>' if i % 2 else part
         for i, part in enumerate(parts)
     )
+    return html.replace("\n", "<br>")
 
 
 def hero_image_src():
@@ -467,7 +476,7 @@ def build_index():
           </p>
           <div class="hero__actions">
             <a class="button button--primary" href="#competenties">Bekijk mijn werk</a>
-            <a class="button button--outline" href="#contact">Neem contact op</a>
+            <a class="button button--outline" href="reflectie.html">Reflectie</a>
           </div>
         </div>
         <figure class="hero__image">
@@ -517,30 +526,53 @@ def build_index():
 
 def diagram_figure(c):
     d = c.get("diagram")
-    if not d:
+    # No placeholder: the diagram only appears once a real image is set
+    if not d or not d.get("image"):
         return ""
-    if d.get("image"):
-        media = f'<img src="../images/{escape(d["image"])}" alt="{escape(d["alt"])}">'
-    else:
-        media = (
-            '<!-- Zet "image" bij het diagram van deze competentie in build.py om het diagram te tonen -->\n'
-            '          <div class="project-detail__image-placeholder" role="img" aria-label="Placeholder voor diagram"></div>'
-        )
     return f"""
         <figure class="project-detail__image competentie-diagram">
-          {media}
+          <img src="../images/{escape(d["image"])}" alt="{escape(d["alt"])}">
           <figcaption>{escape(d['caption'])}</figcaption>
         </figure>"""
+
+
+TOELICHTING_PLACEHOLDER = "Licht toe hoe je dit leerdoel hebt aangetoond en wat je ervan hebt geleerd."
+
+
+def leerdoel_accordion_item(code):
+    """One leerdoel as a <details> accordion: explanation plus the projects that demonstrate it."""
+    _, text, toelichting = LEERDOELEN[code]
+    projects = [p for p in PROJECTS if code in p["leerdoelen"]]
+    if projects:
+        links = "\n".join(
+            f'                <li><a href="../projects/{p["slug"]}.html">{escape(p["title"])}</a></li>'
+            for p in projects
+        )
+        projects_html = f"""              <p class="leerdoel-accordion__label">Aangetoond in</p>
+              <ul class="leerdoel-accordion__projects">
+{links}
+              </ul>"""
+    else:
+        projects_html = '              <p class="leerdoel-accordion__empty">Nog geen projecten gekoppeld aan dit leerdoel.</p>'
+    return f"""          <li>
+            <details class="leerdoel leerdoel-accordion">
+              <summary class="leerdoel-accordion__summary">
+                <span class="leerdoel__code">{code}</span>
+                <span class="leerdoel__text">{escape(text)}</span>
+                <span class="leerdoel-accordion__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="leerdoel-accordion__body">
+              <p>{escape(toelichting or TOELICHTING_PLACEHOLDER)}</p>
+{projects_html}
+              </div>
+            </details>
+          </li>"""
 
 
 def build_competentie(c):
     prefix = "../"
     leerdoelen = "\n".join(
-        f"""          <li class="leerdoel">
-            <span class="leerdoel__code">{c['number']}.{i}</span>
-            <p class="leerdoel__text">{escape(text)}</p>
-          </li>"""
-        for i, text in enumerate(c["leerdoelen"], start=1)
+        leerdoel_accordion_item(f"{c['number']}.{i}") for i in range(1, len(c["leerdoelen"]) + 1)
     )
     projects = projects_for(c)
     if projects:

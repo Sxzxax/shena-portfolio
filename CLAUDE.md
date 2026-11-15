@@ -12,7 +12,9 @@ python3 build.py
 
 **All HTML pages are generated:** `index.html`, `reflectie.html`, `competenties/*.html` and `projects/*.html`. Never edit them directly, because the next build overwrites them. To change content or markup, edit `build.py` and run it again, then commit the script and the regenerated pages together.
 
-`EDITING-HTML.md` lets the content editor change the HTML pages by hand. **Before running `build.py`, check `git status` and `git diff` for hand edits in the HTML pages.** If there are any, copy them into `build.py` first, or ask the user, because the build would overwrite them.
+`EDITING-HTML.md` lets the content editor change the HTML pages by hand. **Before running `build.py`, check for hand edits in the HTML pages.** If there are any, copy them into `build.py` first, or ask the user, because the build would overwrite them.
+
+Hand edits can be **committed** as well as uncommitted, so `git status` alone isn't enough. Run the build, then check `git diff -- '*.html'` against the last commit. Any difference you didn't intend is a hand edit you're about to overwrite: copy it into `build.py` and rebuild until the diff contains only your intended changes. This happened once with a committed hero change.
 
 ## Language
 
@@ -44,7 +46,7 @@ projects/<project-slug>.html       Project page: case study + the leerdoelen it 
 
 All content lives in data structures at the top of `build.py`. The order in each one is the order shown on the site. `README.md` is a step-by-step guide to editing this content, written for a non-coder. Keep it in sync when labels, fields or error messages change.
 
-**`SITE`:** hero greeting, title and text, plus the hero photo and its alt text, and the contact details. In `hero_title`, the word between `*asterisks*` gets the accent colour. An empty contact field hides that contact item.
+**`SITE`:** hero greeting, title and text, plus the hero photo and its alt text, and the contact details. In `hero_title`, the words between `*asterisks*` get the accent colour, and `\n` becomes a `<br>`. The hero's second button links to `reflectie.html`; Shena chose this in a hand edit, which has since been copied into `build.py`. An empty contact field hides that contact item.
 
 **`REFLECTIE`:** the reflectie page is a **STAR-reflectie**: Situatie, Taak, Actie, Resultaat. Its fields are `title`, `lead` and `sections`. Each section has a `letter` (shown as a badge before the heading), a `heading` and `paragraphs`, a list of plain-text strings with one string per paragraph. Keep the STAR order.
 
@@ -56,7 +58,7 @@ All content lives in data structures at the top of `build.py`. The order in each
 
 The nav menu, in the `page()` function, has these items: Home, Competenties, Reflectie, Contact.
 
-**`COMPETENTIES`:** `number`, `slug`, `name` and `leerdoelen`, a list of texts. Their codes (`"1.1"`, `"1.2"`, …) come from their position in the list, so **reordering or inserting leerdoelen changes the codes** that projects refer to. Optionally, a competentie can have a `diagram` (`image` in `images/`, `alt`, `caption`) shown below its leerdoelen. Competentie 4 uses this for the "professioneel handelen HBO" diagram. Until `image` is set, a placeholder is shown.
+**`COMPETENTIES`:** `number`, `slug`, `name` and `leerdoelen`. Each leerdoel is either a plain string or `{"text": …, "toelichting": …}` (`leerdoel_parts()` handles both). On competentie pages, leerdoelen are a native `<details>` **accordion** (`leerdoel_accordion_item()`, `.leerdoel-accordion*` CSS). Each item's body shows the `toelichting` (or `TOELICHTING_PLACEHOLDER`) and links to every project that lists that leerdoel. On project pages, "Aangetoonde leerdoelen" stays a plain list. Their codes (`"1.1"`, `"1.2"`, …) come from their position in the list, so **reordering or inserting leerdoelen changes the codes** that projects refer to. Optionally, a competentie can have a `diagram` (`image` in `images/`, `alt`, `caption`) shown below its leerdoelen. Competentie 4 uses this for the "professioneel handelen HBO" diagram. Until `image` is set, nothing is shown. Shena removed the placeholder by hand, and `build.py` now matches that.
 
 **`TAGS`:** key → display name.
 

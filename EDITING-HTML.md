@@ -168,12 +168,19 @@ Open `reflectie.html`. Each part looks like this:
 
 Replace the text in the `<p>…</p>` under each letter. Copy a `<p>…</p>` line for more paragraphs.
 
+### Explain a leerdoel
+
+On a competentie page, each leerdoel is a fold-out item. Search for the leerdoel number, e.g. `1.2`. Inside its `<div class="leerdoel-accordion__body">`, replace the text of the first `<p>…</p>` with your explanation. The links under **Aangetoond in** are ordinary links (`<li><a href="…">…</a></li>`). If you link a project to a leerdoel by hand, add or remove one there as well.
+
 ### Add the competentie 4 diagram
 
-Open `competenties/professioneel-handelen.html` and search for `project-detail__image-placeholder`. Replace that whole `<div …></div>` line with:
+Open `competenties/professioneel-handelen.html` and search for `</ol>`, which is the end of the leerdoelen list. Paste this right below that line:
 
 ```html
-<img src="../images/professioneel-handelen-hbo.png" alt="Diagram professioneel handelen HBO">
+<figure class="project-detail__image competentie-diagram">
+  <img src="../images/professioneel-handelen-hbo.png" alt="Diagram professioneel handelen HBO">
+  <figcaption>Professioneel handelen HBO.</figcaption>
+</figure>
 ```
 
 ---

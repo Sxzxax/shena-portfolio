@@ -69,16 +69,24 @@
       <section class="leerdoelen" aria-labelledby="leerdoelen-title">
         <h2 id="leerdoelen-title">Leerdoelen</h2>
         <ol class="leerdoel-list">
-          <li class="leerdoel">
-            <span class="leerdoel__code">4.1</span>
-            <p class="leerdoel__text">De student handelt professioneel. Zie onderstaand diagram, professioneel handelen HBO.</p>
+          <li>
+            <details class="leerdoel leerdoel-accordion">
+              <summary class="leerdoel-accordion__summary">
+                <span class="leerdoel__code">4.1</span>
+                <span class="leerdoel__text">De student handelt professioneel. Zie onderstaand diagram, professioneel handelen HBO.</span>
+                <span class="leerdoel-accordion__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="leerdoel-accordion__body">
+              <p>Licht toe hoe je dit leerdoel hebt aangetoond en wat je ervan hebt geleerd.</p>
+              <p class="leerdoel-accordion__label">Aangetoond in</p>
+              <ul class="leerdoel-accordion__projects">
+                <li><a href="../projects/locatieanalyse-woningbouw.html">Locatieanalyse woningbouw</a></li>
+                <li><a href="../projects/bim-automatisering.html">BIM-automatisering</a></li>
+              </ul>
+              </div>
+            </details>
           </li>
         </ol>
-        <figure class="project-detail__image competentie-diagram">
-          <!-- Zet "image" bij het diagram van deze competentie in build.py om het diagram te tonen -->
-          <div class="project-detail__image-placeholder" role="img" aria-label="Placeholder voor diagram"></div>
-          <figcaption>Professioneel handelen HBO.</figcaption>
-        </figure>
       </section>
 
       <section class="competentie-projects" aria-labelledby="projects-title">

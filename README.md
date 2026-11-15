@@ -95,7 +95,7 @@ SITE = {
 }
 ```
 
-- In `hero_title`, the word between `*asterisks*` is shown in the pink accent colour.
+- In `hero_title`, the words between `*asterisks*` are shown in the accent colour, and `\n` starts a new line. For example, `"Minor Portfolio\n*Digital skills in de gebouwde omgeving*"`.
 - For your own photo, see **Adding pictures** below. Then replace `None` with the file name in quotes, e.g. `"hero_image": "shena.jpg",`. Also change `hero_image_alt` to describe the photo, e.g. `"Portret van Shena"`.
 - Don't want to show something, such as your phone number? Make it empty: `"phone": "",`
 
@@ -154,6 +154,20 @@ Labels you leave out get example text, so the page never looks empty. Remember t
 ### 3. Competenties and leerdoelen: **`COMPETENTIES =`**
 
 The four competenties and their leerdoelen are already filled in. The leerdoelen are numbered automatically by their position: the first leerdoel of competentie 1 is `1.1`, the second is `1.2`, and so on.
+
+On the competentie pages, each leerdoel is a fold-out item (an accordion). Opening it shows an explanation, plus links to the projects that demonstrate that leerdoel; the project links are added automatically. **To write the explanation**, turn the leerdoel into a small block with `text` and `toelichting`:
+
+```python
+        "leerdoelen": [
+            {
+                "text": "Formuleert relevante digitale onderzoek- of ontwerpvragen ...",
+                "toelichting": "In het hittestress-project heb ik mijn onderzoeksvraag ...",
+            },
+            "Verzamelt, analyseert en interpreteert data kritisch ...",
+        ],
+```
+
+A leerdoel without a `toelichting` (just the text in quotes, like the second one above) shows an example sentence until you fill it in.
 
 > ⚠️ If you change the **order** of leerdoelen, or add one in the middle, their numbers change. Check that your projects still point to the right leerdoelen.
 
@@ -234,6 +248,7 @@ The project is a git repository, so you can save versions and put the site on Gi
 
 - [ ] All six example projects replaced with your real projects
 - [ ] Each project linked to the right leerdoelen
+- [ ] A `toelichting` written for every leerdoel
 - [ ] A real picture, with an `image_alt` description, for every project
 - [ ] Your own photo on the home page (`hero_image`)
 - [ ] The diagram for competentie 4 added
