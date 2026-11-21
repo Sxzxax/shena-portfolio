@@ -91,6 +91,7 @@ SITE = {
     "email": "hello@example.com",
     "phone": "+31 6 00 00 00 00",
     "linkedin": "https://www.linkedin.com/in/shena",
+    "linkedin_label": "linkedin.com/in/shena",
     "github": "https://github.com/shena",
 }
 ```
@@ -98,6 +99,7 @@ SITE = {
 - In `hero_title`, the words between `*asterisks*` are shown in the accent colour, and `\n` starts a new line. For example, `"Minor Portfolio\n*Digital skills in de gebouwde omgeving*"`.
 - For your own photo, see **Adding pictures** below. Then replace `None` with the file name in quotes, e.g. `"hero_image": "shena.jpg",`. Also change `hero_image_alt` to describe the photo, e.g. `"Portret van Shena"`.
 - Don't want to show something, such as your phone number? Make it empty: `"phone": "",`
+- `linkedin_label` is the text shown for your LinkedIn link. Leave it out to show the link itself.
 
 ### 2. Projects: **`PROJECTS =`**
 
@@ -192,6 +194,29 @@ The reflectie page has four parts: **S**ituatie, **T**aak, **A**ctie and **R**es
             ],
 ```
 
+### 5b. A STARR-reflectie per competentie: **`STARR =`**
+
+Each competentie page shows its own STARR-reflectie, between the leerdoelen and the projects. It has five parts: **S**ituatie, **T**aak, **A**ctie, **R**esultaat and **R**eflectie. The reflecties are grouped by competentie number (`"1"` to `"4"`):
+
+```python
+STARR = {
+    "1": {
+        "leerdoelen": "Leerdoelen gebruikt: 1.1, 1.2, 1.3 en 1.4 (persoonlijk leerdoel PD1)",
+        "situatie": [
+            "Mijn eerste alinea.",
+            "Mijn tweede alinea.",
+        ],
+        "taak": ["..."],
+        "actie": ["..."],
+        "resultaat": ["..."],
+        "reflectie": ["..."],
+    },
+```
+
+- `leerdoelen` is the small grey line under the heading.
+- Each part is a list of paragraphs, just like on the reflectie page.
+- To hide the reflectie on one competentie page, delete that competentie's whole block.
+
 ### 6. Tags: **`TAGS =`**
 
 To add a new tag, e.g. Revit, add a line like `"revit": "Revit",`. You can then use `"revit"` in a project's `tags`.
@@ -222,6 +247,7 @@ After `python3 build.py`, look at the last lines in the terminal.
 | `error: project '…' refers to unknown leerdoel 5.1` | The leerdoel number doesn't exist. | Use an existing number, such as `1.1` to `4.1`. |
 | `error: project '…' refers to unknown tag '…'` | That tag isn't in `TAGS`. | Check the spelling, or add the tag to `TAGS`. |
 | `error: … has date '…'` | The date is written wrong. | Write it as `"2026-10"`: year, hyphen, two-digit month. |
+| `error: STARR has a reflectie for competentie '…'` | That competentie number doesn't exist. | Use `"1"`, `"2"`, `"3"` or `"4"`. |
 | `warning: projects/… is not in build.py anymore` | You renamed or removed a project, and its old page is still there. | Delete that file from the `projects/` folder. |
 | `command not found: python3` | Python isn't installed. | Install it from [python.org](https://www.python.org/downloads/). |
 
@@ -253,5 +279,6 @@ The project is a git repository, so you can save versions and put the site on Gi
 - [ ] Your own photo on the home page (`hero_image`)
 - [ ] The diagram for competentie 4 added
 - [ ] Your STAR-reflectie written
+- [ ] A STARR-reflectie for every competentie
 - [ ] Your real e-mail, phone, LinkedIn and GitHub in `SITE`
 - [ ] Ran `python3 build.py` one last time, and checked every page in the browser

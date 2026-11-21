@@ -804,6 +804,35 @@ a.leerdoel__code:hover {
   font-size: 0.8em;
 }
 
+/* STARR-reflectie on a competentie page, kept to a readable line length */
+
+.starr {
+  max-width: var(--container-narrow);
+  margin-top: var(--space-2xl);
+}
+
+.starr h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.starr__leerdoelen {
+  margin: 0 0 var(--space-lg);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.starr__step {
+  margin-top: var(--space-xl);
+}
+
+.starr__step h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.starr__step p + p {
+  margin-top: var(--space-md);
+}
+
 .project-card__leerdoelen {
   margin: var(--space-md) 0 0;
   color: var(--color-text-muted);

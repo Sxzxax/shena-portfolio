@@ -18,10 +18,11 @@ SITE = {
     "hero_text": "Ik studeer bouwkunde en werk op het snijvlak van architectuur en techniek: van parametrisch ontwerpen en ruimtelijke analyses tot digitale fabricage en programmeren.",
     "hero_image": None,  # e.g. "shena.jpg" in images/; None shows a stand-in photo
     "hero_image_alt": "Voorbeeldfoto (placeholder)",
-    "email": "hello@example.com",
-    "phone": "+31 6 00 00 00 00",
-    "linkedin": "https://www.linkedin.com/in/shena",
-    "github": "https://github.com/shena",
+    "email": "shenaalexander2005@gmail.com",
+    "phone": "+31 6 87473973",
+    "linkedin": "https://www.linkedin.com/in/shena-alexander-077860359/",
+    "linkedin_label": "linkedin.com/in/shena",  # shown text; leave out to show the full link
+    "github": "https://github.com/Sxzxax",
 }
 
 # Each competentie has numbered leerdoelen. Their codes ("1.1", "1.2", ...) are what projects refer to.
@@ -177,6 +178,103 @@ REFLECTIE = {
     ],
 }
 
+# STARR-reflectie per competentie, shown on its competentie page between the leerdoelen and the projects.
+# Keyed by competentie number. "leerdoelen" is the line above the reflectie.
+# Each part (situatie, taak, actie, resultaat, reflectie) is a list of paragraphs (plain text, one string per paragraph).
+# A competentie without an entry here shows no reflectie.
+STARR = {
+    "1": {
+        "leerdoelen": "Leerdoelen gebruikt: 1.1, 1.2, 1.3 en 1.4 (persoonlijk leerdoel PD1)",
+        "situatie": [
+            "Mijn persoonlijke leerdoel was om zelfstandig een parametrisch model op te zetten in Rhino/Grasshopper voor een draagconstructie. Ik begon klein: ik had één keer met een template van Arjen gewerkt en alleen parameters aangepast. In de eerste weken lukte het me niet om de pergola af te maken, en bij de workshop over item, list en tree maakte ik alleen de boog van de brug. Daarna begon ik bij ABT, in het Oosterhoff Digital team.",
+        ],
+        "taak": [
+            "Ik wilde zonder template een vakwerk bouwen dat meebeweegt met parameters en dat ik kan doorrekenen. Mijn vraag was of ik dat zelf kon, en mijn methode was: eerst de basis leren, dan zelf bouwen en daarna koppelen aan Karamba3D om varianten te vergelijken.",
+        ],
+        "actie": [
+            "Een video en de workshop legden bijna dezelfde dingen uit en ik snapte het nog niet. Daarom volgde ik via mijn leerplek de ThinkParametric-cursus, om Grasshopper beter te begrijpen. Daar viel het ineens op zijn plek. Waarschijnlijk doordat ik het een aantal keer had gehoord, al weet ik dat niet zeker.",
+            "Daarna bouwde ik helemaal zelfstandig een Pratt-vakwerk. Ik koppelde het aan Karamba en voerde berekeningen uit. Ik maakte drie andere vakwerktypes, koppelde elk aan een Karamba-component en bouwde een keuzecomponent, zodat je de varianten één voor één kunt doorlopen. Daarna exporteerde ik een vakwerk als XML-bestand vanuit Grasshopper en importeerde ik het in Technosoft Raamwerken.",
+        ],
+        "resultaat": [
+            "Ik heb een script met meerdere invoerparameters en diagonale patronen, gekoppeld aan Karamba3D en Technosoft Raamwerken. Door de varianten naast elkaar door te rekenen kan ik een ontwerpkeuze onderbouwen met data. Mijn begeleider noemt dit een belangrijke stap vooruit en zag dat ik de basis snel onder de knie heb gekregen.",
+        ],
+        "reflectie": [
+            "In het begin kon ik alleen de parameters van een ander aanpassen en nu bouw ik zelf scripts. Mijn begeleider gaf ook een verbeterpunt: parametrisch denken. Ik moet niet alleen kijken wat werkt met de huidige parameters, maar ook hoe het script reageert als ze wijzigen. De geometrie moet als één geheel meebewegen, invoerwaarden moeten hergebruikt worden in plaats van gedupliceerd en het script moet makkelijk uitbreidbaar zijn. Dat herken ik: bij project 2 merkte een groepsgenoot al op dat mijn parameters niet helemaal correct waren. Dat ik dit van twee kanten hoor, laat zien dat ik hier echt mee moet oefenen. Daarom bepaal ik bij elk nieuw script eerst welke parameters ik wil kunnen wijzigen, test ik het door ze aan te passen en kijk ik bij uitbreidingen of dat kan zonder opnieuw te beginnen.",
+            "Het lastigst vond ik in het begin dat ik de componenten niet kende en niet wist wat ik kon gebruiken. Daardoor duurde het even voordat mijn script werkte, maar na een aantal scripts ging het sneller. Het leukst vind ik het moment waarop het script werkt en ik mijn doel bereik. Als vervolgstap ga ik op mijn leerplek een echte draagconstructie maken, zoals een gebouw of brug, met Karamba, Python en Technosoft.",
+        ],
+    },
+    "2": {
+        "leerdoelen": "Leerdoelen gebruikt: 2.1, 2.2 en 2.3 (persoonlijk leerdoel PD3)",
+        "situatie": [
+            "Bij project 1 (Parkhaven) onderzochten we met een groep welke klimaatadaptatiemaatregelen bij de gebouwen van het masterplan konden. Mijn taak was de hittestressanalyse in ArcGIS Pro. Mijn persoonlijke leerdoel was goed samenwerken met digitale tools, zodat we tot één samenhangende oplossing komen. Mijn startsituatie was dat iedereen aan zijn eigen onderdeel werkt en we pas op het laatst samenvoegen.",
+        ],
+        "taak": [
+            "Voor de analyse hadden we de gebouwen van het masterplan nodig. Daarom ontwierpen Natasha en ik die in Forma. Als groep spraken we meteen af om steeds af te stemmen.",
+        ],
+        "actie": [
+            "Eerst maakte ik in ArcGIS Pro kaarten van het studiegebied, waaronder hittestress. Later paste ik de analysetools zelf toe, tekende ik maatregelen met groen en berekende ik de heat index. Zo zette ik de effecten van bomen, groene daken, een groene kade en alle maatregelen naast elkaar. Met legenda's en een duidelijke afkadering maakte ik de kaarten begrijpelijk voor anderen.",
+            "Voor de gebouwen gebruikten Natasha en ik Forma, dat nieuw voor mij was. Omdat ik mijn deel eerst klaar had, legde ik haar uit hoe ik het had gedaan, zodat de gebouwen op elkaar aansloten. Ik gebruikte de overzichtstekening van het masterplan op schaal als onderlegger. Omdat Forma het terrein meeneemt in de IFC, haalde ik dat eerst in Revit weg.",
+        ],
+        "resultaat": [
+            "Het Forma-model lukte: alle gebouwen in één model, klaar voor de analyse. De belangrijkste uitkomst was dat de omgeving met alle maatregelen samen 2 graden koeler wordt.",
+            "Bij de eindpresentatie aan de bedrijven presenteerde ik de analyse ten opzichte van groen, maar de presentatie verliep minder goed. De gastbezoeker vroeg waar we naartoe wilden met al deze informatie. De docenten vroegen wat een deel over soorten bomen met digitale tools te maken had; een groepslid had dat zelf besloten, zonder afspraak met de groep. Een ander groepslid wilde haar Grasshopper-script laten zien, maar had het niet in de PowerPoint gezet. Haar laptop aansluiten lukte niet. We hadden dit vooraf moeten testen, maar dat was niet afgesproken.",
+        ],
+        "reflectie": [
+            "Samenwerken met één persoon, met een concrete afspraak en uitleg, ging goed. In de hele groep lukte dat niet: afspraken helpen alleen als iedereen zich eraan houdt. We spraken de personen aan die niet werkten, maar dat hielp niet. Voortaan meld ik het direct bij de docent als iemand niets doet of zelf dingen besluit zonder afspraak. Ik had mijn eigen onderdeel ook kunnen afsluiten met een conclusie en een vervolgstap, zodat de vraag waar we naartoe willen beantwoord was.",
+            "Los hiervan bouwde ik mijn netwerk op (2.3). Tijdens de speeddatesessie sprak ik met vier professionals en op de Prefab Beurs met meer dan 15 mensen en bedrijven. Ik liet mijn QR-code scannen en vertelde dat ik de minor Digitaliseren volg. Zo leerde ik wat anderen in de praktijk met digitaliseren doen en dat het een hot topic bij bedrijven is.",
+        ],
+    },
+    "3": {
+        "leerdoelen": "Leerdoelen gebruikt: 3.1, 3.2 en 3.3 (persoonlijke leerdoelen PD2, PD4 en PD5)",
+        "situatie": [
+            "Ik moest in korte tijd nieuwe tools leren: ArcGIS Pro en Tygron voor de hittestressanalyse in het project, en Python op mijn leerplek. Mijn persoonlijke leerdoelen waren tijdig bijsturen als ik vastloop, in mijn eigen tijd nieuwe tools leren en een basis Python-script schrijven. Mijn startsituatie was dat ik vaak afwachtend was en dat ik nog geen programmeerervaring had.",
+        ],
+        "taak": [
+            "Ik moest deze tools zelf onder de knie krijgen om bij te dragen aan het project en aan mijn werk op de leerplek.",
+        ],
+        "actie": [
+            "In ArcGIS Pro liep ik vast op een foutmelding bij het clippen van een laag. Ik zocht met AI uit wat de oorzaak was en maakte aantekeningen met wat ik leerde en shortcuts. Daarna probeerde ik Tygron voor de hittestressanalyse, maar dat kreeg ik niet onder de knie. Ik stapte over op ArcGIS Pro en experimenteerde later opnieuw met Tygron, wat een beetje lukte. Ook maakte ik via een Esri-cursus mijn eigen 3D-scene in ArcGIS Online.",
+            "Op mijn eerste dag bij mijn leerplek zag ik projecten met Grasshopper en Python en begon ik aan een Python-cursus. Na een tijdje merkte ik dat ik er verder niets mee had gedaan. Ik besprak dat met mijn begeleider. Hij stuurde video's en gaf mij de opdracht om hetzelfde vakwerk dat ik in Grasshopper had gemaakt opnieuw te bouwen met de ingebouwde Python in Grasshopper. Lastig was hoe de componenten als code werken, dus hoe je die in een script zet. Ik loste dat zelf op door verschillende manieren te testen en Copilot om uitleg te vragen, maar niet om het script zelf te schrijven. Daarna ging het best makkelijk.",
+        ],
+        "resultaat": [
+            "In ArcGIS Pro maakte ik vier kaarten waarin bomen, groene daken, een groene kade en alle maatregelen naast elkaar staan. Tygron lukte deels. Het vakwerk in Python heb ik gebouwd en mijn begeleider merkte op dat ik dat heel snel deed. Hij noemt mijn ontwikkeling veelbelovend.",
+        ],
+        "reflectie": [
+            "Vroeger stopte ik als ik vastliep. Nu stuur ik bij: bij Tygron veranderde ik van aanpak in plaats van op te geven en bij Python bracht ik het zelf ter sprake. AI hielp me uitzoeken, maar ik leerde pas echt door aantekeningen te maken en het zelf opnieuw toe te passen.",
+            "Mijn Python-scripts zijn nog niet netjes gecodeerd, maar ze werken wel. Mijn begeleider adviseert te letten op structuur en overzichtelijkheid, vooral variabelenamen en opmerkingen, zodat ik later makkelijk kan terugkijken. Hij ziet ook een positieve houding en dat ik zelfstandig werk, maar adviseert meer vragen te stellen en aan te geven wat ik nog wil zien of proberen. Daarom schrijf ik mijn vragen op en stel ik ze gewoon, in plaats van ze direct zelf op te zoeken.",
+            "Mijn Python-leerdoel is nog niet helemaal behaald: ik heb een vakwerk gebouwd, maar nog geen tool die mij efficiënter laat werken. Mijn volgende stap is een klein script dat een terugkerende handeling automatiseert. Verder maak ik voor januari een kleine Rhino-opdracht om mijn Rhino-skills aan te scherpen.",
+        ],
+    },
+    "4": {
+        "leerdoelen": "Leerdoelen gebruikt: 4.1 (persoonlijk leerdoel PD4)",
+        "situatie": [
+            "Volgens het model van professioneel handelen werk je aan een complex vraagstuk, is de oplossing nog onbekend en is samenwerken noodzakelijk. Dat herken ik in mijn projecten en op mijn leerplek. Mijn persoonlijke leerdoel was mijn leerproces kritisch te monitoren en tijdig bij te sturen. Mijn startsituatie was dat ik bij vastlopen neig te stoppen en af te wachten.",
+        ],
+        "taak": [
+            "Ik wilde actief feedback vragen, die verwerken en kennis delen met mijn team.",
+        ],
+        "actie": [
+            "Vroeg in de minor kreeg ik handgeschreven feedback van een medestudent op mijn leerdoelen. Een paar weken later leverde ik een reflectie in over de speeddatesessie en kreeg ik feedback van de docent: ik ben goed op weg met reflecteren, maar moet meer nadenken over waar ik wil eindigen en hoe ik kan groeien. Op mijn leerplek kreeg ik feedback van mijn begeleider. Toen Python bleef liggen, bracht ik dat zelf ter sprake. Bij Parkhaven legde ik Natasha uit hoe ik in Forma werkte, zodat onze gebouwen op elkaar aansloten.",
+        ],
+        "resultaat": [
+            "Mijn begeleider noemt mij een prettige collega die goed in het team past, in een goed tempo ontwikkelt, een positieve houding heeft ten opzichte van leren en adviezen opvolgt.",
+        ],
+        "reflectie": [
+            "Binnen het model past dit bij interactief leervermogen (leerdoelen stellen, reflecteren, open staan voor feedback en die verwerken) en bij effectief samenwerken (kennis delen). Ik zie een verschil met mijn begin: ik wacht minder af, dat bleek bij Tygron en bij Python.",
+            "Er komen ook twee verbeterpunten terug. Mijn begeleider adviseert meer vragen te stellen en mijn docent wil dat ik meer nadenk over de toekomst. Ik schrijf mijn vragen op en stel ze gewoon. Waar ik nu sta: ik heb veel meer kennis over digitale tools, ik begrijp veel meer begrippen uit de digitale wereld en ik heb een nieuwe interesse gevonden.",
+        ],
+    },
+}
+
+# The five STARR parts, in the order shown: key in STARR, letter on the badge, heading.
+STARR_PARTS = [
+    ("situatie", "S", "Situatie"),
+    ("taak", "T", "Taak"),
+    ("actie", "A", "Actie"),
+    ("resultaat", "R", "Resultaat"),
+    ("reflectie", "R", "Reflectie"),
+]
+
 # Placeholder case-study text, used for any of these fields a project leaves out.
 CONTENT_DEFAULTS = {
     "challenge": "Beschrijf de ontwerp- of onderzoeksvraag. Wat moest er worden opgelost, voor wie en binnen welke randvoorwaarden?",
@@ -210,6 +308,9 @@ for _p in PROJECTS:
     for _tag in _p["tags"]:
         if _tag not in TAGS:
             raise SystemExit(f"error: project '{_p['slug']}' refers to unknown tag '{_tag}'")
+for _number in STARR:
+    if _number not in COMP_BY_NUMBER:
+        raise SystemExit(f"error: STARR has a reflectie for competentie '{_number}', which does not exist")
 
 MONTHS = ["januari", "februari", "maart", "april", "mei", "juni",
           "juli", "augustus", "september", "oktober", "november", "december"]
@@ -455,7 +556,7 @@ def contact_items():
     if SITE.get("phone"):
         items.append(item("Telefoon", "tel:" + SITE["phone"].replace(" ", ""), SITE["phone"]))
     if SITE.get("linkedin"):
-        items.append(item("LinkedIn", SITE["linkedin"], short(SITE["linkedin"]), external=True))
+        items.append(item("LinkedIn", SITE["linkedin"], SITE.get("linkedin_label") or short(SITE["linkedin"]), external=True))
     if SITE.get("github"):
         items.append(item("GitHub", SITE["github"], short(SITE["github"]), external=True))
     return "\n".join(items)
@@ -569,6 +670,29 @@ def leerdoel_accordion_item(code):
           </li>"""
 
 
+def starr_section(c):
+    """The competentie's STARR-reflectie (from STARR), or nothing if it has none."""
+    starr = STARR.get(c["number"])
+    if not starr:
+        return ""
+    steps = []
+    for key, letter, heading in STARR_PARTS:
+        paragraphs = "\n".join(f"          <p>{escape(par)}</p>" for par in starr.get(key, []))
+        steps.append(f"""        <section class="star-step starr__step" aria-labelledby="starr-{key}-title">
+          <h3 class="star-step__title" id="starr-{key}-title"><span class="star-step__letter" aria-hidden="true">{letter}</span> {heading}</h3>
+{paragraphs}
+        </section>""")
+    intro = f'\n        <p class="starr__leerdoelen">{escape(starr["leerdoelen"])}</p>' if starr.get("leerdoelen") else ""
+    steps_html = "\n\n".join(steps)
+    return f"""
+      <section class="starr" aria-labelledby="starr-title">
+        <h2 id="starr-title">STARR-reflectie</h2>{intro}
+
+{steps_html}
+      </section>
+"""
+
+
 def build_competentie(c):
     prefix = "../"
     leerdoelen = "\n".join(
@@ -606,7 +730,7 @@ def build_competentie(c):
 {leerdoelen}
         </ol>{diagram_figure(c)}
       </section>
-
+{starr_section(c)}
       <section class="competentie-projects" aria-labelledby="projects-title">
         <h2 id="projects-title">Projecten</h2>
 {project_html}
