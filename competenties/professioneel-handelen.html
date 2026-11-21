@@ -66,11 +66,35 @@
         <h1>Professioneel handelen HBO</h1>
       </header>
 
-      <section class="leerdoelen" aria-labelledby="leerdoelen-title">
+      <div class="competentie-layout">
+      <nav class="toc" aria-labelledby="toc-title" data-toc>
+        <h2 class="toc__title" id="toc-title">Op deze pagina</h2>
+        <ol class="toc__list">
+          <li class="toc__item"><a class="toc__link" href="#leerdoelen">Leerdoelen</a>
+            <ol class="toc__sublist">
+              <li><a class="toc__link toc__link--sub" href="#leerdoel-4-1">4.1 Professioneel handelen</a></li>
+            </ol>
+          </li>
+          <li class="toc__item"><a class="toc__link" href="#starr">STARR-reflectie</a>
+            <ol class="toc__sublist">
+              <li><a class="toc__link toc__link--sub" href="#starr-situatie-title">Situatie</a></li>
+              <li><a class="toc__link toc__link--sub" href="#starr-taak-title">Taak</a></li>
+              <li><a class="toc__link toc__link--sub" href="#starr-actie-title">Actie</a></li>
+              <li><a class="toc__link toc__link--sub" href="#starr-resultaat-title">Resultaat</a></li>
+              <li><a class="toc__link toc__link--sub" href="#starr-reflectie-title">Reflectie</a></li>
+            </ol>
+          </li>
+          <li class="toc__item"><a class="toc__link" href="#projecten">Projecten</a></li>
+          <li class="toc__item"><a class="toc__link" href="#andere-competenties">Andere competenties</a></li>
+        </ol>
+      </nav>
+
+      <div class="competentie-layout__content">
+      <section class="leerdoelen" id="leerdoelen" aria-labelledby="leerdoelen-title">
         <h2 id="leerdoelen-title">Leerdoelen</h2>
         <ol class="leerdoel-list">
           <li>
-            <details class="leerdoel leerdoel-accordion">
+            <details class="leerdoel leerdoel-accordion" id="leerdoel-4-1">
               <summary class="leerdoel-accordion__summary">
                 <span class="leerdoel__code">4.1</span>
                 <span class="leerdoel__text">De student handelt professioneel. Zie onderstaand diagram, professioneel handelen HBO.</span>
@@ -118,7 +142,7 @@
         </ol>
       </section>
 
-      <section class="starr" aria-labelledby="starr-title">
+      <section class="starr" id="starr" aria-labelledby="starr-title">
         <h2 id="starr-title">STARR-reflectie</h2>
         <p class="starr__leerdoelen">Leerdoelen gebruikt: 4.1 (persoonlijk leerdoel PD4)</p>
 
@@ -149,7 +173,7 @@
         </section>
       </section>
 
-      <section class="competentie-projects" aria-labelledby="projects-title">
+      <section class="competentie-projects" id="projecten" aria-labelledby="projects-title">
         <h2 id="projects-title">Projecten</h2>
         <ul class="project-grid">
           <li class="reveal">
@@ -192,7 +216,7 @@
         </ul>
       </section>
 
-      <nav class="theme-nav" aria-labelledby="other-title">
+      <nav class="theme-nav" id="andere-competenties" aria-labelledby="other-title">
         <h2 class="theme-nav__title" id="other-title">Andere competenties</h2>
         <ul class="theme-nav__list">
           <li><a class="button button--outline" href="digitale-expert.html">Competentie 1</a></li>
@@ -200,6 +224,8 @@
           <li><a class="button button--outline" href="zelfsturende-professional.html">Competentie 3</a></li>
         </ul>
       </nav>
+      </div>
+      </div>
     </div>
   </main>
 

@@ -157,6 +157,8 @@ Labels you leave out get example text, so the page never looks empty. Remember t
 
 The four competenties and their leerdoelen are already filled in. The leerdoelen are numbered automatically by their position: the first leerdoel of competentie 1 is `1.1`, the second is `1.2`, and so on.
 
+Each competentie page has an **"Op deze pagina"** menu: on a wide screen it stays on the left while you scroll, and on a phone it is a small box under the title. You don't edit it: it is made automatically from the leerdoelen, the STARR-reflectie and the projects. A leerdoel's link in that menu shows the short title (`titel`) of its STARR-reflectie, so changing that title changes the menu too.
+
 On the competentie pages, each leerdoel is a fold-out item (an accordion). Opening it shows an explanation, plus links to the projects that demonstrate that leerdoel; the project links are added automatically. **To write the explanation**, turn the leerdoel into a small block with `text` and `toelichting`:
 
 ```python

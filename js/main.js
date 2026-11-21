@@ -104,6 +104,53 @@ document.querySelectorAll("[data-slider]").forEach((slider) => {
   update();
 });
 
+/* ---- "Op deze pagina" menu (competentie pages) ----
+   A link to a leerdoel opens its accordion; the section in view is highlighted.
+   Without JS the links still jump to each section. */
+const toc = document.querySelector("[data-toc]");
+
+function openTarget(hash) {
+  const target = hash && document.getElementById(decodeURIComponent(hash.slice(1)));
+  if (target && target.tagName === "DETAILS") target.open = true;
+}
+
+if (toc) {
+  openTarget(location.hash);
+  window.addEventListener("hashchange", () => openTarget(location.hash));
+  toc.addEventListener("click", (event) => {
+    const link = event.target.closest("a[href^='#']");
+    if (link) openTarget(link.getAttribute("href"));
+  });
+
+  const links = [...toc.querySelectorAll(".toc__item > .toc__link")];
+  const sections = links.map((link) => document.getElementById(link.getAttribute("href").slice(1))).filter(Boolean);
+
+  // The current section is the last one whose top has passed a line a third down the screen
+  let ticking = false;
+  function highlight() {
+    ticking = false;
+    const line = window.innerHeight / 3;
+    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    const current = atBottom
+      ? sections[sections.length - 1]
+      : sections.filter((section) => section.getBoundingClientRect().top <= line).pop() || sections[0];
+    links.forEach((link) => {
+      const active = link.getAttribute("href") === `#${current.id}`;
+      link.classList.toggle("is-active", active);
+      if (active) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    });
+  }
+
+  if (sections.length) {
+    window.addEventListener("scroll", () => {
+      if (!ticking) requestAnimationFrame(highlight);
+      ticking = true;
+    }, { passive: true });
+    highlight();
+  }
+}
+
 /* ---- Reveal elements on scroll ---- */
 const revealItems = document.querySelectorAll(".reveal");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

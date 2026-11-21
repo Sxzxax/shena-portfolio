@@ -856,6 +856,110 @@ a.leerdoel__code:hover {
   margin-top: var(--space-md);
 }
 
+/* Competentie page: "Op deze pagina" menu. A box above the content on small screens;
+   from 64em a sticky column on the left, so it stays in view while scrolling. */
+
+.competentie-layout__content {
+  min-width: 0; /* lets the project grid shrink inside the grid column */
+}
+
+.toc {
+  margin-top: var(--space-xl);
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-bg-elevated);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.toc__title {
+  margin-bottom: var(--space-xs);
+  color: var(--color-text-muted);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.toc__list,
+.toc__sublist {
+  padding: 0;
+  list-style: none;
+}
+
+.toc__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs) var(--space-md);
+}
+
+.toc__sublist {
+  display: none; /* only shown in the sticky column */
+}
+
+.toc__link {
+  display: block;
+  padding-block: var(--space-2xs);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.toc__link:hover,
+.toc__link.is-active {
+  color: var(--color-accent);
+}
+
+.toc__link.is-active {
+  font-weight: var(--font-weight-bold);
+}
+
+@media (min-width: 64em) {
+  .competentie-layout {
+    display: grid;
+    grid-template-columns: 24rem minmax(0, 1fr);
+    gap: var(--space-2xl);
+    align-items: start;
+  }
+
+  .toc {
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-lg));
+    max-height: calc(100vh - var(--header-height) - var(--space-2xl));
+    overflow-y: auto;
+    margin-top: var(--space-2xl);
+    padding: 0 var(--space-md) 0 0;
+    background-color: transparent;
+    border: 0;
+    border-right: var(--border-width) solid var(--color-border);
+    border-radius: 0;
+  }
+
+  .toc__list {
+    display: grid;
+    gap: var(--space-xs);
+  }
+
+  .toc__link {
+    font-weight: var(--font-weight-medium);
+  }
+
+  .toc__sublist {
+    display: grid;
+    margin: var(--space-2xs) 0 var(--space-xs);
+    padding-left: var(--space-sm);
+    border-left: var(--border-width) solid var(--color-border);
+  }
+
+  .toc__link--sub {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.4;
+  }
+}
+
 .project-card__leerdoelen {
   margin: var(--space-md) 0 0;
   color: var(--color-text-muted);
