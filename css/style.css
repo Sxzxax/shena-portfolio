@@ -613,6 +613,29 @@ a.leerdoel__code:hover {
   margin-bottom: var(--space-xs);
 }
 
+/* STARR-reflectie inside a leerdoel accordion */
+
+.leerdoel-starr {
+  max-width: var(--container-narrow);
+  margin-bottom: var(--space-xl);
+  color: var(--color-text);
+}
+
+.leerdoel-accordion__body .leerdoel-starr__titel {
+  margin-bottom: var(--space-lg);
+  color: var(--color-heading);
+  font-weight: 600;
+}
+
+.leerdoel-starr__step + .leerdoel-starr__step {
+  margin-top: var(--space-lg);
+}
+
+.leerdoel-starr__step h3 {
+  margin-bottom: var(--space-xs);
+  font-size: var(--font-size-md);
+}
+
 .leerdoel-accordion__projects {
   display: flex;
   flex-wrap: wrap;
@@ -802,6 +825,35 @@ a.leerdoel__code:hover {
   border-radius: var(--radius-md);
   color: var(--color-on-accent);
   font-size: 0.8em;
+}
+
+/* STARR-reflectie on a competentie page, kept to a readable line length */
+
+.starr {
+  max-width: var(--container-narrow);
+  margin-top: var(--space-2xl);
+}
+
+.starr h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.starr__leerdoelen {
+  margin: 0 0 var(--space-lg);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.starr__step {
+  margin-top: var(--space-xl);
+}
+
+.starr__step h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.starr__step p + p {
+  margin-top: var(--space-md);
 }
 
 .project-card__leerdoelen {
