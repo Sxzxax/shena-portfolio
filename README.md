@@ -217,6 +217,27 @@ STARR = {
 - Each part is a list of paragraphs, just like on the reflectie page.
 - To hide the reflectie on one competentie page, delete that competentie's whole block.
 
+### 5c. A STARR-reflectie per leerdoel: **`LEERDOEL_STARR =`**
+
+Each leerdoel's fold-out item (accordion) on the competentie page shows its own STARR-reflectie, above the "Aangetoond in" project links. The reflecties are grouped by leerdoel code:
+
+```python
+LEERDOEL_STARR = {
+    "1.1": {
+        "titel": "Digitale onderzoeks- of ontwerpvraag formuleren",
+        "situatie": ["Mijn eerste alinea.", "Mijn tweede alinea."],
+        "taak": ["..."],
+        "actie": ["..."],
+        "resultaat": ["..."],
+        "reflectie": ["..."],
+    },
+```
+
+- `titel` is the short bold name at the top of the reflectie.
+- Each part is a list of paragraphs. Leave a part out to hide it.
+- A leerdoel without a block here shows its `toelichting` instead (see section 3).
+- ⚠️ The codes follow the order of the leerdoelen. If you reorder them, update these codes too.
+
 ### 6. Tags: **`TAGS =`**
 
 To add a new tag, e.g. Revit, add a line like `"revit": "Revit",`. You can then use `"revit"` in a project's `tags`.
@@ -248,6 +269,7 @@ After `python3 build.py`, look at the last lines in the terminal.
 | `error: project '…' refers to unknown tag '…'` | That tag isn't in `TAGS`. | Check the spelling, or add the tag to `TAGS`. |
 | `error: … has date '…'` | The date is written wrong. | Write it as `"2026-10"`: year, hyphen, two-digit month. |
 | `error: STARR has a reflectie for competentie '…'` | That competentie number doesn't exist. | Use `"1"`, `"2"`, `"3"` or `"4"`. |
+| `error: LEERDOEL_STARR has a reflectie for leerdoel '…'` | That leerdoel code doesn't exist. | Use an existing code, such as `"1.1"` to `"4.1"`. |
 | `warning: projects/… is not in build.py anymore` | You renamed or removed a project, and its old page is still there. | Delete that file from the `projects/` folder. |
 | `command not found: python3` | Python isn't installed. | Install it from [python.org](https://www.python.org/downloads/). |
 
@@ -280,5 +302,6 @@ The project is a git repository, so you can save versions and put the site on Gi
 - [ ] The diagram for competentie 4 added
 - [ ] Your STAR-reflectie written
 - [ ] A STARR-reflectie for every competentie
+- [ ] A STARR-reflectie for every leerdoel
 - [ ] Your real e-mail, phone, LinkedIn and GitHub in `SITE`
 - [ ] Ran `python3 build.py` one last time, and checked every page in the browser

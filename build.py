@@ -266,6 +266,219 @@ STARR = {
     },
 }
 
+# STARR-reflectie per leerdoel, shown inside that leerdoel's accordion on the competentie page.
+# Keyed by leerdoel code ("1.1", "1.2", ...). "titel" is a short name shown at the top of the reflectie.
+# The parts work like in STARR above: lists of paragraphs; leave a part out to hide it.
+# A leerdoel without an entry here shows its "toelichting" (or a placeholder) instead.
+LEERDOEL_STARR = {
+    "1.1": {
+        "titel": "Digitale onderzoeks- of ontwerpvraag formuleren",
+        "situatie": [
+            "Voor project 1 (Parkhaven) moesten we onderzoeken welke klimaatadaptatiemaatregelen bij de gebouwen van het masterplan konden.",
+        ],
+        "taak": [
+            "Ik moest een onderzoeksvraag formuleren en een passende methode kiezen.",
+        ],
+        "actie": [
+            "Ik koos voor een hittestressanalyse in ArcGIS Pro. Hiervoor hadden we eerst de gebouwen nodig. Natasha en ik modelleerden ze in Forma, ik haalde het terrein weg in Revit en exporteerde het opnieuw als IFC. Daarna vergeleek ik de effecten van bomen, groene daken, een groene kade en alle maatregelen samen.",
+        ],
+        "resultaat": [
+            "De omgeving wordt met alle maatregelen samen 2 graden koeler.",
+        ],
+        "reflectie": [
+            "Ik heb geleerd dat je vraag bepaalt welke data en tool je nodig hebt.",
+        ],
+    },
+    "1.2": {
+        "titel": "Data verzamelen en interpreteren",
+        "situatie": [
+            "Voor project 2 (digitale fabricage) moest ik met twee groepsgenoten onderzoeken hoe de kleiprinter werkt. Dat was uitdagend. De informatie was beperkt en je weet vooraf niet precies wat je moet weten. Dat leer je pas tijdens het proces, en dat kost veel tijd.",
+        ],
+        "taak": [
+            "Ik moest informatie verzamelen zodat onze groep kon gaan printen.",
+        ],
+        "actie": [
+            "Ik vroeg eerst aan AI wat belangrijk is om te weten voordat je gaat printen en welke websites handig zijn. Die informatie heb ik kritisch gecontroleerd door de video's van het bedrijf achter de WASP 2040 te bekijken en door testprints te maken.",
+            "Na kennisuitwisseling stelde een groepslid voor om Termite te gebruiken, een Grasshopper-plug-in waarmee je de printer kunt aansturen. Ik dook in de informatie over Termite, vond de template, keek een video en paste toe wat ik leerde. De eerste print ging niet goed door de instellingen. Jurien van de andere groep gaf mij hier feedback op. Ik keek de video opnieuw en de tweede print ging beter. Zo bestond het proces uit testen, bespreken wat er misging, oplossingen bedenken, toepassen en opnieuw testen.",
+        ],
+        "resultaat": [
+            "In het begin hadden we geen idee hoe de printer werkte. Nu hebben we genoeg basiskennis om het aan een ander uit te kunnen leggen.",
+        ],
+        "reflectie": [
+            "Ik heb geleerd dat je geduld nodig hebt en dat je door met anderen te overleggen meer ziet dan alleen. Zonder de kennisuitwisseling had ik Termite waarschijnlijk niet gevonden.",
+        ],
+    },
+    "1.3": {
+        "titel": "Digitale tools integreren en prototypen",
+        "situatie": [
+            "Sinds 1 oktober loop ik leerplek bij ABT, in het Oosterhoff Digital team. Mijn doel was mijn digitale skills te ontwikkelen, vooral Grasshopper en Python voor constructief ontwerp. Ik begon bijna vanuit het niets.",
+        ],
+        "taak": [
+            "Ik moest parametrische vakwerken ontwerpen en deze koppelen aan Karamba3D en Technosoft Raamwerken.",
+        ],
+        "actie": [
+            "Ik keek eerst een video over Grasshopper, maar die legde bijna dezelfde dingen uit als Arjen over lists, items en trees. Ik snapte er nog niks van. Daarom volgde ik de cursus op ThinkParametric. Die vertelde ook dezelfde dingen, maar opeens kon ik wel begrijpen wat er bedoeld werd. Daarna maakte ik een vakwerk en koppelde dat aan Karamba3D. Vervolgens maakte ik meerdere vakwerken en koppelde die aan Revit.",
+        ],
+        "resultaat": [
+            "Ik heb een vakwerk-script gebouwd met meerdere invoerparameters en diagonale patronen, gekoppeld aan Karamba3D en Technosoft Raamwerken. Mijn begeleider noemt dit een belangrijke stap vooruit en ziet dat ik de basis vrij snel onder de knie heb gekregen.",
+        ],
+        "reflectie": [
+            "Waar ik nu sta met Grasshopper is een groot verschil met mijn beginpunt. Ik heb veel geleerd over de verschillende componenten. Mijn begeleider adviseert om het parametrisch denken meer in gedachten te houden. Ik moet dus niet alleen nadenken over wat werkt met de huidige parameters, maar ook over hoe het script zich gedraagt als parameters wijzigen. De geometrie moet als één geheel meebewegen, invoerwaarden moeten hergebruikt worden in plaats van gedupliceerd, en het script moet makkelijk uitbreidbaar zijn.",
+            "Dat wil ik verder ontwikkelen. Ik ga dat doen door bij elk nieuw script eerst te bepalen welke parameters ik wil kunnen wijzigen, het script te testen door die parameters aan te passen en bij uitbreidingen te kijken of ik het kan aanpassen zonder opnieuw te beginnen.",
+        ],
+    },
+    "1.4": {
+        "titel": "Reflecteren en valideren met stakeholders",
+        "situatie": [
+            "Bij het project digitale fabricage twijfelden we in de groep tussen twee ontwerpen, dat van mij en dat van Renier. Beide waren gebogen en de printer kan niet schuin printen.",
+        ],
+        "taak": [
+            "We moesten een ontwerp kiezen dat we daadwerkelijk konden printen.",
+        ],
+        "actie": [
+            "We kozen voor het ontwerp van Renier. Mijn ontwerp was ingewikkelder om te printen en voor de cobot. Daarnaast merkte een groepslid op dat mijn parameters niet helemaal correct waren.",
+            "Toch hadden we nog steeds het probleem hoe we het gingen printen. Iemand kwam met het idee om de blokken hol te laten, zodat je de vorm van boven kunt printen. Daarna kwam iemand met het idee om pennen als verbinding te gebruiken. Ik vroeg hoe dat zou werken als de klei krimpt, want de blokken moeten precies in elkaar passen zodat ze niet vallen. Daarop kwam het idee om schuurpapier te gebruiken: passen de verbindingen niet, dan kunnen we ze zo passend maken.",
+        ],
+        "resultaat": [
+            "Door elkaars ideeën kritisch te bekijken, kwamen we tot een oplossing die printbaar was.",
+        ],
+        "reflectie": [
+            "Ik heb geleerd dat een ontwerp niet alleen mooi moet zijn, maar ook uitvoerbaar. Wat het groepslid zei over mijn parameters sluit aan bij het advies van mijn begeleider op mijn leerplek over parametrisch denken. Dat dezelfde feedback twee keer komt, laat zien dat ik hier echt mee moet oefenen.",
+        ],
+    },
+    "2.1": {
+        "titel": "Samenwerken in teams met digitale middelen",
+        "situatie": [
+            "Voor project 1 (Parkhaven) hadden we zo snel mogelijk de gebouwen van het masterplan nodig om simulaties te kunnen maken.",
+        ],
+        "taak": [
+            "Natasha en ik moesten de gebouwen modelleren.",
+        ],
+        "actie": [
+            "We besloten Forma te gebruiken. Voor de efficiëntie deed ik een aantal gebouwen en zij een aantal, zodat het samen één geheel werd. Omdat ik mijn deel eerst klaar had, legde ik Natasha uit hoe ik het precies in Forma had gedaan, zodat de gebouwen met elkaar overeen zouden komen.",
+            "Ik gebruikte de overzichtstekening van het masterplan op schaal als onderlegger en speelde met de afmetingen van de hoogtes. Dat was een gepuzzel, omdat in de gegevens alleen het hoogste punt stond en niet de verdiepingen ertussen. Daarnaast exporteert Forma altijd een IFC-bestand inclusief terrein, en dat hadden we niet nodig. Daarom zette ik het eerst in Revit om het terrein weg te halen en exporteerde het daarna opnieuw als IFC voor Tygron of ArcGIS.",
+        ],
+        "resultaat": [
+            "We hadden alle gebouwen in één model, klaar voor de simulaties.",
+        ],
+        "reflectie": [
+            "Forma is best eenvoudig en je leert snel hoe het werkt. De samenwerking ging prima zolang we maar niet op dezelfde plek werkten. Ik heb vooral geleerd om met Forma te werken, want ik had het eerder niet gebruikt. Ik wil mij verder ontwikkelen in de omgevingstools en de analyses die Forma zelf maakt.",
+        ],
+    },
+    "2.2": {
+        "titel": "Helder communiceren van bevindingen",
+        "situatie": [
+            "Voor project Parkhaven moesten we aan de bedrijven achter het masterplan onze resultaten presenteren, om te kijken welke klimaatadaptatiemaatregelen bij de gebouwen konden.",
+        ],
+        "taak": [
+            "Ik presenteerde de hittestressanalyse ten opzichte van groen. We moesten onze bevindingen helder en doelgroepgericht overbrengen.",
+        ],
+        "actie": [
+            "De presentatie is niet goed verlopen. Een feedbackpunt dat mij bijbleef, kwam van de gastbezoeker: waar willen we naartoe met al deze informatie? Dat ontstond door de samenwerking. We wilden met de resultaten meer doen, maar niet iedereen werkte effectief en dus kregen we tijdstekort. Zo ging een deel van de presentatie over soorten bomen. Ik vroeg mij af wat dat met digitale tools te maken had, want dat was niet wat we hadden afgesproken. Ook werkte de presentatie niet op de laptop, en wisselen van laptop was niet gepland.",
+        ],
+        "resultaat": [
+            "Doordat minder mensen werkten, konden we geen mooi geheel maken van onze bevindingen. Dat had invloed op hoe we ze communiceerden.",
+        ],
+        "reflectie": [
+            "We hadden gesproken met de personen die niet werkten, maar dat hielp niet. Als ik nu zie dat iemand niets doet, meld ik dat direct bij de docenten. Ik had mijn eigen onderdeel ook kunnen afsluiten met een conclusie en een vervolgstap, zodat de vraag waar we naartoe willen beantwoord was.",
+        ],
+    },
+    "2.3": {
+        "titel": "Netwerken en kennisdeling",
+        "situatie": [
+            "Ik ben naar de Prefab Beurs gegaan, waar veel bedrijven hun producten kwamen uitleggen. Ook heb ik meegedaan aan het inspiratie-event voor afstuderen.",
+        ],
+        "taak": [
+            "Ik wilde mijn professionele netwerk opbouwen.",
+        ],
+        "actie": [
+            "Op de Prefab Beurs vroeg ik bedrijven mijn QR-code te scannen, zodat ze hun contactgegevens of productinformatie konden sturen. Ik vertelde ook dat ik de minor Digitaliseren volg en dat ik daar erg in geïnteresseerd ben. Bij het inspiratie-event sprak ik met een aantal bedrijven en vertelde ik wat ik in mijn minor heb geleerd.",
+        ],
+        "resultaat": [
+            "Ik kreeg contactgegevens en volgde de bedrijven op Instagram of LinkedIn. Het netwerk leverde vooral inzicht in wat anderen in de praktijk met digitaliseren doen. Ik kreeg veel kennis en nieuwe interesses in het bouwen van digitale tools.",
+        ],
+        "reflectie": [
+            "Digitaliseren in de gebouwde omgeving is heel anders dan wat ik gewend ben, en juist dat vind ik inspirerend. Het is echt een hot topic bij bedrijven. Dat heeft mij geïnspireerd om dieper in digitaliseren te duiken.",
+        ],
+    },
+    "3.1": {
+        "titel": "Persoonlijke leerdoelen en bijsturen",
+        "situatie": [
+            "Een van mijn persoonlijke leerdoelen was: “Ik kan een basis Python-script schrijven dat een handige tool is voor een bouwopdracht en mij efficiënter laat werken.” Recent merkte ik dat ik hier niets mee had gedaan. Het was het enige leerdoel waar ik niet aan werkte.",
+        ],
+        "taak": [
+            "Ik moest mijn leerdoel weer oppakken. Dat sluit aan bij een ander leerdoel van mij: tijdig bijsturen als ik vastloop, in plaats van te stoppen en af te wachten.",
+        ],
+        "actie": [
+            "Ik ging in gesprek met mijn begeleider en vertelde dat ik Python opzij had gelaten. Hij stuurde mij een aantal video's. Daarna gaf hij mij de opdracht om hetzelfde vakwerk dat ik in Grasshopper had gemaakt opnieuw te maken, nu met de ingebouwde Python in Grasshopper.",
+        ],
+        "resultaat": [
+            "Ik heb het vakwerk in Python gebouwd. Mijn begeleider merkte op dat ik dit heel snel heb gedaan en noemt mijn ontwikkeling veelbelovend.",
+        ],
+        "reflectie": [
+            "Ik heb geleerd dat ik een leerdoel dat blijft liggen sneller moet bespreken. Mijn begeleider adviseert bij Python te letten op structuur en overzichtelijkheid van de code, vooral variabelenamen en opmerkingen. Dat helpt mij later bij het terugkijken.",
+            "Mijn leerdoel is nog niet helemaal behaald, want ik heb een vakwerk gebouwd, maar nog geen tool die mij efficiënter laat werken. Mijn volgende stap is een klein script dat een terugkerende handeling in mijn werk automatiseert.",
+        ],
+    },
+    "3.2": {
+        "titel": "Zelflerende houding",
+        "situatie": [
+            "Voor mijn leerplek had ik als doel Grasshopper en Python te leren.",
+        ],
+        "taak": [
+            "Ik wilde beide zelf eigen maken.",
+        ],
+        "actie": [
+            "Voor Grasshopper begon ik met cursussen op ThinkParametric. Daarna maakte ik een opdracht van mijn begeleider, waarin ik vakwerken maakte en deze koppelde aan Karamba en Technosoft. Voor Python gebruikte ik de ingebouwde Python in Grasshopper om een vakwerk te maken. Bij beide zocht ik eerst zelf uit en stelde ik vragen als ik vastliep.",
+        ],
+        "resultaat": [
+            "Mijn begeleider ziet een positieve houding ten opzichte van leren en uitproberen. Hij zegt dat ik oprecht geïnteresseerd lijk in digitale vaardigheden, advies opvolg en best zelfstandig werk.",
+        ],
+        "reflectie": [
+            "Ik heb echt een zelfstandige houding. Ik hou van zelf uitzoeken en oplossen. Mijn begeleider adviseert om meer vragen te stellen en aan te geven of ik iets nieuws of anders wil zien of uitproberen. Dat ben ik met hem eens. Daarom ga ik mijn vragen opschrijven en ze niet meer direct zelf opzoeken, maar gewoon stellen.",
+        ],
+    },
+    "3.3": {
+        "titel": "Zelfstandig nieuwe tools eigen maken",
+        "situatie": [
+            "Voor project 2 ontdekte ik een template die gekoppeld is aan de kleiprinter. Op mijn leerplek leerde ik daarnaast zelfstandig nieuwe tools.",
+        ],
+        "taak": [
+            "Ik wilde deze tools toepassen in mijn projecten en op mijn leerplek.",
+        ],
+        "actie": [
+            "Dankzij mijn Grasshopper-kennis kon ik de printer-template makkelijk gebruiken. Voor de template heb je een vorm nodig die je koppelt, en het maken en aanpassen van die vorm in Rhino duurde mij langer. Karamba leerde ik via een cursus op ThinkParametric. Daarna bouwde ik zelfstandig mijn vakwerken op en paste toe wat ik van Karamba had geleerd. Ook Python leerde ik en paste ik toe in de ingebouwde Python in Grasshopper, waardoor ik een vakwerk met alleen Python kon bouwen.",
+        ],
+        "resultaat": [
+            "Ik kan nu zelfstandig tools oppakken en toepassen. Mijn begeleider noemt mij bereid om dingen zelf verder te ontwikkelen.",
+        ],
+        "reflectie": [
+            "Ik heb Grasshopper geleerd maar Rhino niet echt, waardoor ik soms niet weet hoe ik iets in Rhino moet doen. Ook al kun je veel met Grasshopper, soms moet je Rhino volledig gebruiken. Daarom wil ik mijn Rhino-skills aanscherpen door YouTube-video's te kijken en een oefenopdracht te doen. Voor januari maak ik een kleine Rhino-opdracht.",
+        ],
+    },
+    "4.1": {
+        "titel": "Professioneel handelen",
+        "situatie": [
+            "Volgens de minor betekent professioneel handelen dat je werkt aan een complex vraagstuk waarvan de oplossing nog onbekend is en waarbij samenwerken noodzakelijk is. Dat herken ik in project 2 (digitale fabricage): we wisten niet hoe de kleiprinter werkte en moesten dat samen uitzoeken. Daarnaast loop ik sinds 1 oktober leerplek bij ABT, in het Oosterhoff Digital team.",
+        ],
+        "taak": [
+            "Ik wilde in deze situaties professioneel handelen. Ik licht drie kenmerken uit het model uit: interactief leervermogen, effectief samenwerken en verbeter- of vernieuwingsgericht werken.",
+        ],
+        "actie": [
+            "Interactief leervermogen: toen ik merkte dat ik niets met Python had gedaan, besprak ik dit met mijn begeleider en stelde ik mijn leerdoel bij. Ik volg zijn adviezen op.",
+            "Effectief samenwerken: bij Parkhaven legde ik Natasha uit hoe ik in Forma had gewerkt, zodat onze gebouwen met elkaar overeen zouden komen. Ik bouwde ook mijn netwerk op bij de Prefab Beurs en het inspiratie-event.",
+            "Verbeter- of vernieuwingsgericht: bij de kleiprinter experimenteerde ik met de Termite-template en testprints en paste ik mijn aanpak aan na feedback.",
+        ],
+        "resultaat": [
+            "Mijn begeleider noemt mij een prettige collega die goed in het team past en in een goed tempo ontwikkelt. Hij ziet een positieve houding en dat ik adviezen opvolg en best zelfstandig werk.",
+        ],
+        "reflectie": [
+            "Ik heb geleerd dat professioneel handelen niet alleen techniek is, maar ook feedback vragen, kennis delen en samenwerken. Mijn begeleider adviseert om meer vragen te stellen, dus ik ga mijn vragen opschrijven en ze gewoon stellen.",
+            "Waar ik nu sta: ik heb veel meer kennis over digitale tools, ik begrijp veel meer begrippen uit de digitale wereld en ik heb een nieuwe interesse gevonden.",
+        ],
+    },
+}
+
 # The five STARR parts, in the order shown: key in STARR, letter on the badge, heading.
 STARR_PARTS = [
     ("situatie", "S", "Situatie"),
@@ -311,6 +524,9 @@ for _p in PROJECTS:
 for _number in STARR:
     if _number not in COMP_BY_NUMBER:
         raise SystemExit(f"error: STARR has a reflectie for competentie '{_number}', which does not exist")
+for _code in LEERDOEL_STARR:
+    if _code not in LEERDOELEN:
+        raise SystemExit(f"error: LEERDOEL_STARR has a reflectie for leerdoel '{_code}', which does not exist")
 
 MONTHS = ["januari", "februari", "maart", "april", "mei", "juni",
           "juli", "augustus", "september", "oktober", "november", "december"]
@@ -655,6 +871,16 @@ def leerdoel_accordion_item(code):
               </ul>"""
     else:
         projects_html = '              <p class="leerdoel-accordion__empty">Nog geen projecten gekoppeld aan dit leerdoel.</p>'
+    starr = LEERDOEL_STARR.get(code)
+    if starr:
+        # STARR-reflectie for this leerdoel; ids get the code, as all accordions share one page
+        title = f'\n                <p class="leerdoel-starr__titel">{escape(starr["titel"])}</p>' if starr.get("titel") else ""
+        steps = starr_steps(starr, f"starr-{code.replace('.', '-')}", "h3", "                ", "leerdoel-starr__step")
+        explanation = f"""              <div class="leerdoel-starr">{title}
+{steps}
+              </div>"""
+    else:
+        explanation = f"              <p>{escape(toelichting or TOELICHTING_PLACEHOLDER)}</p>"
     return f"""          <li>
             <details class="leerdoel leerdoel-accordion">
               <summary class="leerdoel-accordion__summary">
@@ -663,11 +889,25 @@ def leerdoel_accordion_item(code):
                 <span class="leerdoel-accordion__icon" aria-hidden="true"></span>
               </summary>
               <div class="leerdoel-accordion__body">
-              <p>{escape(toelichting or TOELICHTING_PLACEHOLDER)}</p>
+{explanation}
 {projects_html}
               </div>
             </details>
           </li>"""
+
+
+def starr_steps(starr, id_prefix, tag, indent, extra_class="starr__step"):
+    """The STARR parts of one reflectie as <section>s with a letter badge; empty parts are left out."""
+    steps = []
+    for key, letter, heading in STARR_PARTS:
+        if not starr.get(key):
+            continue
+        paragraphs = "\n".join(f"{indent}  <p>{escape(par)}</p>" for par in starr[key])
+        steps.append(f"""{indent}<section class="star-step {extra_class}" aria-labelledby="{id_prefix}-{key}-title">
+{indent}  <{tag} class="star-step__title" id="{id_prefix}-{key}-title"><span class="star-step__letter" aria-hidden="true">{letter}</span> {heading}</{tag}>
+{paragraphs}
+{indent}</section>""")
+    return "\n\n".join(steps)
 
 
 def starr_section(c):
@@ -675,15 +915,8 @@ def starr_section(c):
     starr = STARR.get(c["number"])
     if not starr:
         return ""
-    steps = []
-    for key, letter, heading in STARR_PARTS:
-        paragraphs = "\n".join(f"          <p>{escape(par)}</p>" for par in starr.get(key, []))
-        steps.append(f"""        <section class="star-step starr__step" aria-labelledby="starr-{key}-title">
-          <h3 class="star-step__title" id="starr-{key}-title"><span class="star-step__letter" aria-hidden="true">{letter}</span> {heading}</h3>
-{paragraphs}
-        </section>""")
     intro = f'\n        <p class="starr__leerdoelen">{escape(starr["leerdoelen"])}</p>' if starr.get("leerdoelen") else ""
-    steps_html = "\n\n".join(steps)
+    steps_html = starr_steps(starr, "starr", "h3", "        ")
     return f"""
       <section class="starr" aria-labelledby="starr-title">
         <h2 id="starr-title">STARR-reflectie</h2>{intro}
