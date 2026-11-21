@@ -27,7 +27,7 @@ There are three levels of pages, plus one standalone page:
 ```
 index.html                         Home: hero, competentie cards (#competenties), timeline (#tijdlijn), contact (#contact)
 reflectie.html                     Standalone STAR-reflectie on the whole portfolio
-competenties/<slug>.html           Competentie page: its leerdoelen, its STARR-reflectie, then cards for every linked project
+competenties/<slug>.html           Competentie page: "Op deze pagina" menu, its leerdoelen, its STARR-reflectie, then cards for every linked project
 projects/<project-slug>.html       Project page: case study + the leerdoelen it demonstrates
 ```
 
@@ -50,7 +50,7 @@ All content lives in data structures at the top of `build.py`. The order in each
 
 **`REFLECTIE`:** the reflectie page is a **STAR-reflectie**: Situatie, Taak, Actie, Resultaat. Its fields are `title`, `lead` and `sections`. Each section has a `letter` (shown as a badge before the heading), a `heading` and `paragraphs`, a list of plain-text strings with one string per paragraph. Keep the STAR order.
 
-**`STARR`:** a STARR-reflectie per competentie (Situatie, Taak, Actie, Resultaat, Reflectie), keyed by competentie number (`"1"`–`"4"`). Fields: `leerdoelen` (the muted line under the heading, e.g. "Leerdoelen gebruikt: …") and `situatie`, `taak`, `actie`, `resultaat`, `reflectie`, each a list of plain-text paragraphs. `starr_section()` renders it on the competentie page **between the leerdoelen (and diagram) and the projects**, as `h3` steps reusing the `.star-step*` badge styles inside `.starr`. Order and letters come from `STARR_PARTS`. A competentie without an entry shows nothing; an unknown number stops the build with an `error:`. The text is Shena's own (from her portfolio document of 20 november 2026), lightly split into paragraphs.
+**`STARR`:** a STARR-reflectie per competentie (Situatie, Taak, Actie, Resultaat, Reflectie), keyed by competentie number (`"1"`–`"4"`). Fields: `leerdoelen` (the muted line under the heading, e.g. "Leerdoelen gebruikt: …"; `link_leerdoel_codes()` turns every existing leerdoel code in it into a link to `#leerdoel-1-2`, or to the other competentie page for a code of another competentie, and leaves other text such as `PD1` alone) and `situatie`, `taak`, `actie`, `resultaat`, `reflectie`, each a list of plain-text paragraphs. `starr_section()` renders it on the competentie page **between the leerdoelen (and diagram) and the projects**, as `h3` steps reusing the `.star-step*` badge styles inside `.starr`. Order and letters come from `STARR_PARTS`. A competentie without an entry shows nothing; an unknown number stops the build with an `error:`. The text is Shena's own (from her portfolio document of 20 november 2026), lightly split into paragraphs.
 
 **`LEERDOEL_STARR`:** a STARR-reflectie per leerdoel, keyed by leerdoel code (`"1.1"` …), with `titel` and the same five parts as `STARR`. It is rendered inside that leerdoel's accordion body, above the "Aangetoond in" links (`.leerdoel-starr*`); it replaces the `toelichting`, which is still used for leerdoelen without an entry. Ids are prefixed with the code (`starr-1-1-situatie`) so they stay unique on the page. Both STARR levels are rendered by `starr_steps()`, which skips empty parts. An unknown code stops the build with an `error:`. Text from Shena's leerdoel document of 21 november 2026; its `[Vul aan …]` gaps in 1.1 and 4.1 were filled from her first document or left out.
 
@@ -62,7 +62,7 @@ All content lives in data structures at the top of `build.py`. The order in each
 
 The nav menu, in the `page()` function, has these items: Home, Competenties, Reflectie, Contact.
 
-**`COMPETENTIES`:** `number`, `slug`, `name` and `leerdoelen`. Each leerdoel is either a plain string or `{"text": …, "toelichting": …}` (`leerdoel_parts()` handles both). On competentie pages, leerdoelen are a native `<details>` **accordion** (`leerdoel_accordion_item()`, `.leerdoel-accordion*` CSS). Each item's body shows the leerdoel's STARR-reflectie from `LEERDOEL_STARR` (else the `toelichting` or `TOELICHTING_PLACEHOLDER`) and links to every project that lists that leerdoel. On project pages, "Aangetoonde leerdoelen" stays a plain list. Their codes (`"1.1"`, `"1.2"`, …) come from their position in the list, so **reordering or inserting leerdoelen changes the codes** that projects refer to. Optionally, a competentie can have a `diagram` (`image` in `images/`, `alt`, `caption`) shown below its leerdoelen. Competentie 4 uses this for the "professioneel handelen HBO" diagram. Until `image` is set, nothing is shown. Shena removed the placeholder by hand, and `build.py` now matches that.
+**`COMPETENTIES`:** `number`, `slug`, `name` and `leerdoelen`. Each leerdoel is either a plain string or `{"text": …, "toelichting": …}` (`leerdoel_parts()` handles both). On competentie pages, leerdoelen are a native `<details>` **accordion** (`leerdoel_accordion_item()`, `.leerdoel-accordion*` CSS). Each item's body shows the leerdoel's STARR-reflectie from `LEERDOEL_STARR` (else the `toelichting` or `TOELICHTING_PLACEHOLDER`) and links to every project that lists that leerdoel. On project pages, "Aangetoonde leerdoelen" stays a plain list. Their codes (`"1.1"`, `"1.2"`, …) come from their position in the list, so **reordering or inserting leerdoelen changes the codes** that projects refer to. Every competentie page has an **"Op deze pagina" menu** (`competentie_toc()`, `.toc*` CSS, `[data-toc]`), built from the same data: Leerdoelen (one sub-link per leerdoel, labelled with its `LEERDOEL_STARR` `titel` or "Leerdoel 1.1"), STARR-reflectie (one sub-link per STARR part, only when the competentie has one), Projecten, Andere competenties. It links to the section ids `leerdoelen`, `starr`, `projecten`, `andere-competenties` and the accordion ids `leerdoel-1-1` …. Below `64em` it is a box with only the top links, above the content; from `64em` it is a sticky column on the left of `.competentie-layout`. Optionally, a competentie can have a `diagram` (`image` in `images/`, `alt`, `caption`) shown below its leerdoelen. Competentie 4 uses this for the "professioneel handelen HBO" diagram. Until `image` is set, nothing is shown. Shena removed the placeholder by hand, and `build.py` now matches that.
 
 **`TAGS`:** key → display name.
 
@@ -97,7 +97,7 @@ If a competentie has no projects, its page says so. The shared page shell (heade
   - `.project-card` is used for both project cards and competentie cards (`.project-card.theme-card`). The `theme-*` class names are kept from the earlier theme-based layout. The whole card is clickable through `.project-card__link::after`, which keeps it to one link per card for accessibility.
   - `.leerdoel-list` / `.leerdoel` / `.leerdoel__code` / `.leerdoel__text` style the numbered leerdoelen on both the competentie and project pages.
   - Other components: `.theme-header` and `.theme-nav` (competentie page), `.project-detail*` and `.project-nav` (project page), `.breadcrumb`, `.tag-list`/`.tag`, `.button--primary`/`.button--outline`.
-- Styles are mobile-first, with one breakpoint at `48em`.
+- Styles are mobile-first, with one breakpoint at `48em`. The only exception is the competentie page's sticky "Op deze pagina" column, which needs `64em`.
 
 ## JavaScript
 
@@ -107,6 +107,7 @@ If a competentie has no projects, its page says so. The shared page shell (heade
 - runs the light/dark toggle (`[data-theme-toggle]`, `aria-pressed="true"` means light). It sets `data-theme` on `<html>` and stores the choice in `localStorage` under `theme`. A small inline script in `<head>` (in `page()`) applies a saved choice before first paint, to avoid a flash. Without JS the button stays hidden and the site follows the system setting.
 - fills the footer year (`[data-year]`)
 - adds prev/next buttons to sliders (`[data-slider]`)
+- on competentie pages, opens a leerdoel accordion when an "Op deze pagina" link (or the URL hash) points to it, and highlights the section in view in that menu (`is-active`, `aria-current="location"`)
 - fades in `.reveal` elements on scroll with an IntersectionObserver, skipped when the user prefers reduced motion
 
 The site must keep working without JS.

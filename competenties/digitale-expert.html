@@ -66,11 +66,38 @@
         <h1>De digitale expert: onderzoeker &amp; uitvoerder</h1>
       </header>
 
-      <section class="leerdoelen" aria-labelledby="leerdoelen-title">
+      <div class="competentie-layout">
+      <nav class="toc" aria-labelledby="toc-title" data-toc>
+        <h2 class="toc__title" id="toc-title">Op deze pagina</h2>
+        <ol class="toc__list">
+          <li class="toc__item"><a class="toc__link" href="#leerdoelen">Leerdoelen</a>
+            <ol class="toc__sublist">
+              <li><a class="toc__link toc__link--sub" href="#leerdoel-1-1">1.1 Digitale onderzoeks- of ontwerpvraag formuleren</a></li>
+              <li><a class="toc__link toc__link--sub" href="#leerdoel-1-2">1.2 Data verzamelen en interpreteren</a></li>
+              <li><a class="toc__link toc__link--sub" href="#leerdoel-1-3">1.3 Digitale tools integreren en prototypen</a></li>
+              <li><a class="toc__link toc__link--sub" href="#leerdoel-1-4">1.4 Reflecteren en valideren met stakeholders</a></li>
+            </ol>
+          </li>
+          <li class="toc__item"><a class="toc__link" href="#starr">STARR-reflectie</a>
+            <ol class="toc__sublist">
+              <li><a class="toc__link toc__link--sub" href="#starr-situatie-title">Situatie</a></li>
+              <li><a class="toc__link toc__link--sub" href="#starr-taak-title">Taak</a></li>
+              <li><a class="toc__link toc__link--sub" href="#starr-actie-title">Actie</a></li>
+              <li><a class="toc__link toc__link--sub" href="#starr-resultaat-title">Resultaat</a></li>
+              <li><a class="toc__link toc__link--sub" href="#starr-reflectie-title">Reflectie</a></li>
+            </ol>
+          </li>
+          <li class="toc__item"><a class="toc__link" href="#projecten">Projecten</a></li>
+          <li class="toc__item"><a class="toc__link" href="#andere-competenties">Andere competenties</a></li>
+        </ol>
+      </nav>
+
+      <div class="competentie-layout__content">
+      <section class="leerdoelen" id="leerdoelen" aria-labelledby="leerdoelen-title">
         <h2 id="leerdoelen-title">Leerdoelen</h2>
         <ol class="leerdoel-list">
           <li>
-            <details class="leerdoel leerdoel-accordion">
+            <details class="leerdoel leerdoel-accordion" id="leerdoel-1-1">
               <summary class="leerdoel-accordion__summary">
                 <span class="leerdoel__code">1.1</span>
                 <span class="leerdoel__text">Formuleert relevante digitale onderzoek- of ontwerpvragen binnen de gebouwde omgeving en kiest hiervoor passende methoden.</span>
@@ -112,7 +139,7 @@
             </details>
           </li>
           <li>
-            <details class="leerdoel leerdoel-accordion">
+            <details class="leerdoel leerdoel-accordion" id="leerdoel-1-2">
               <summary class="leerdoel-accordion__summary">
                 <span class="leerdoel__code">1.2</span>
                 <span class="leerdoel__text">Verzamelt, analyseert en interpreteert data kritisch om onderbouwde oplossingen te ontwikkelen.</span>
@@ -156,7 +183,7 @@
             </details>
           </li>
           <li>
-            <details class="leerdoel leerdoel-accordion">
+            <details class="leerdoel leerdoel-accordion" id="leerdoel-1-3">
               <summary class="leerdoel-accordion__summary">
                 <span class="leerdoel__code">1.3</span>
                 <span class="leerdoel__text">Integreert en prototypeert digitale tools/technieken in innovatieve oplossingen voor opgaven in de gebouwde omgeving.</span>
@@ -201,7 +228,7 @@
             </details>
           </li>
           <li>
-            <details class="leerdoel leerdoel-accordion">
+            <details class="leerdoel leerdoel-accordion" id="leerdoel-1-4">
               <summary class="leerdoel-accordion__summary">
                 <span class="leerdoel__code">1.4</span>
                 <span class="leerdoel__text">Reflecteert kritisch op het onderzoek en/of ontwerpproces en valideert de impact van “oplossingen” met stakeholders (opdrachtgever, adviseurs, medestudenten etc.).</span>
@@ -246,9 +273,9 @@
         </ol>
       </section>
 
-      <section class="starr" aria-labelledby="starr-title">
+      <section class="starr" id="starr" aria-labelledby="starr-title">
         <h2 id="starr-title">STARR-reflectie</h2>
-        <p class="starr__leerdoelen">Leerdoelen gebruikt: 1.1, 1.2, 1.3 en 1.4 (persoonlijk leerdoel PD1)</p>
+        <p class="starr__leerdoelen">Leerdoelen gebruikt: <a class="starr__leerdoel-link" href="#leerdoel-1-1" aria-label="Leerdoel 1.1">1.1</a>, <a class="starr__leerdoel-link" href="#leerdoel-1-2" aria-label="Leerdoel 1.2">1.2</a>, <a class="starr__leerdoel-link" href="#leerdoel-1-3" aria-label="Leerdoel 1.3">1.3</a> en <a class="starr__leerdoel-link" href="#leerdoel-1-4" aria-label="Leerdoel 1.4">1.4</a> (persoonlijk leerdoel PD1)</p>
 
         <section class="star-step starr__step" aria-labelledby="starr-situatie-title">
           <h3 class="star-step__title" id="starr-situatie-title"><span class="star-step__letter" aria-hidden="true">S</span> Situatie</h3>
@@ -278,7 +305,7 @@
         </section>
       </section>
 
-      <section class="competentie-projects" aria-labelledby="projects-title">
+      <section class="competentie-projects" id="projecten" aria-labelledby="projects-title">
         <h2 id="projects-title">Projecten</h2>
         <ul class="project-grid">
           <li class="reveal">
@@ -381,7 +408,7 @@
         </ul>
       </section>
 
-      <nav class="theme-nav" aria-labelledby="other-title">
+      <nav class="theme-nav" id="andere-competenties" aria-labelledby="other-title">
         <h2 class="theme-nav__title" id="other-title">Andere competenties</h2>
         <ul class="theme-nav__list">
           <li><a class="button button--outline" href="teamspeler.html">Competentie 2</a></li>
@@ -389,6 +416,8 @@
           <li><a class="button button--outline" href="professioneel-handelen.html">Competentie 4</a></li>
         </ul>
       </nav>
+      </div>
+      </div>
     </div>
   </main>
 

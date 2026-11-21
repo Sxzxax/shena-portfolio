@@ -4,6 +4,7 @@ Edit COMPETENTIES, TAGS and PROJECTS below, then run:  python3 build.py
 Generated pages are overwritten, so don't edit them by hand.
 """
 import os
+import re
 from html import escape
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -882,7 +883,7 @@ def leerdoel_accordion_item(code):
     else:
         explanation = f"              <p>{escape(toelichting or TOELICHTING_PLACEHOLDER)}</p>"
     return f"""          <li>
-            <details class="leerdoel leerdoel-accordion">
+            <details class="leerdoel leerdoel-accordion" id="leerdoel-{code.replace('.', '-')}">
               <summary class="leerdoel-accordion__summary">
                 <span class="leerdoel__code">{code}</span>
                 <span class="leerdoel__text">{escape(text)}</span>
@@ -910,20 +911,66 @@ def starr_steps(starr, id_prefix, tag, indent, extra_class="starr__step"):
     return "\n\n".join(steps)
 
 
+def link_leerdoel_codes(text, c):
+    """Escape text and turn each known leerdoel code ("1.2") into a link to its accordion.
+    Codes of this competentie link within the page; other codes link to their own competentie page."""
+    def link(match):
+        code = match.group(0)
+        if code not in LEERDOELEN:
+            return code
+        target = comp_of(code)
+        page_ = "" if target is c else f"{target['slug']}.html"
+        return f'<a class="starr__leerdoel-link" href="{page_}#leerdoel-{code.replace(".", "-")}" aria-label="Leerdoel {code}">{code}</a>'
+    return re.sub(r"(?<![\d.])\d+\.\d+(?![\d.])", link, escape(text))
+
+
 def starr_section(c):
     """The competentie's STARR-reflectie (from STARR), or nothing if it has none."""
     starr = STARR.get(c["number"])
     if not starr:
         return ""
-    intro = f'\n        <p class="starr__leerdoelen">{escape(starr["leerdoelen"])}</p>' if starr.get("leerdoelen") else ""
+    intro = f'\n        <p class="starr__leerdoelen">{link_leerdoel_codes(starr["leerdoelen"], c)}</p>' if starr.get("leerdoelen") else ""
     steps_html = starr_steps(starr, "starr", "h3", "        ")
     return f"""
-      <section class="starr" aria-labelledby="starr-title">
+      <section class="starr" id="starr" aria-labelledby="starr-title">
         <h2 id="starr-title">STARR-reflectie</h2>{intro}
 
 {steps_html}
       </section>
 """
+
+
+def competentie_toc(c):
+    """The sticky "Op deze pagina" menu on a competentie page, linking to each section below."""
+    def item(href, label, sub=""):
+        return f'          <li class="toc__item"><a class="toc__link" href="#{href}">{escape(label)}</a>{sub}</li>'
+
+    def sublist(links):
+        rows = "\n".join(
+            f'              <li><a class="toc__link toc__link--sub" href="#{href}">{escape(label)}</a></li>'
+            for href, label in links
+        )
+        return f'\n            <ol class="toc__sublist">\n{rows}\n            </ol>\n          '
+
+    leerdoelen = []
+    for i in range(1, len(c["leerdoelen"]) + 1):
+        code = f"{c['number']}.{i}"
+        titel = (LEERDOEL_STARR.get(code) or {}).get("titel")
+        leerdoelen.append((f"leerdoel-{code.replace('.', '-')}", f"{code} {titel}" if titel else f"Leerdoel {code}"))
+    items = [item("leerdoelen", "Leerdoelen", sublist(leerdoelen))]
+    starr = STARR.get(c["number"])
+    if starr:
+        steps = [(f"starr-{key}-title", heading) for key, _, heading in STARR_PARTS if starr.get(key)]
+        items.append(item("starr", "STARR-reflectie", sublist(steps)))
+    items.append(item("projecten", "Projecten"))
+    items.append(item("andere-competenties", "Andere competenties"))
+    rows = "\n".join(items)
+    return f"""      <nav class="toc" aria-labelledby="toc-title" data-toc>
+        <h2 class="toc__title" id="toc-title">Op deze pagina</h2>
+        <ol class="toc__list">
+{rows}
+        </ol>
+      </nav>"""
 
 
 def build_competentie(c):
@@ -957,24 +1004,30 @@ def build_competentie(c):
         <h1>{escape(c['name'])}</h1>
       </header>
 
-      <section class="leerdoelen" aria-labelledby="leerdoelen-title">
+      <div class="competentie-layout">
+{competentie_toc(c)}
+
+      <div class="competentie-layout__content">
+      <section class="leerdoelen" id="leerdoelen" aria-labelledby="leerdoelen-title">
         <h2 id="leerdoelen-title">Leerdoelen</h2>
         <ol class="leerdoel-list">
 {leerdoelen}
         </ol>{diagram_figure(c)}
       </section>
 {starr_section(c)}
-      <section class="competentie-projects" aria-labelledby="projects-title">
+      <section class="competentie-projects" id="projecten" aria-labelledby="projects-title">
         <h2 id="projects-title">Projecten</h2>
 {project_html}
       </section>
 
-      <nav class="theme-nav" aria-labelledby="other-title">
+      <nav class="theme-nav" id="andere-competenties" aria-labelledby="other-title">
         <h2 class="theme-nav__title" id="other-title">Andere competenties</h2>
         <ul class="theme-nav__list">
 {others}
         </ul>
       </nav>
+      </div>
+      </div>
     </div>"""
     write(f"competenties/{c['slug']}.html", page(
         title=f"Competentie {c['number']}: {c['name']} | Shena",
