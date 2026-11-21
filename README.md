@@ -215,7 +215,7 @@ STARR = {
     },
 ```
 
-- `leerdoelen` is the small grey line under the heading.
+- `leerdoelen` is the small grey line under the heading. Each leerdoel code you write in it (like `1.2`) automatically becomes a link that opens that leerdoel on the page. Write codes as plain numbers; codes that don't exist, like `PD1`, stay plain text.
 - Each part is a list of paragraphs, just like on the reflectie page.
 - To hide the reflectie on one competentie page, delete that competentie's whole block.
 

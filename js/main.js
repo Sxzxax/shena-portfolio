@@ -105,7 +105,7 @@ document.querySelectorAll("[data-slider]").forEach((slider) => {
 });
 
 /* ---- "Op deze pagina" menu (competentie pages) ----
-   A link to a leerdoel opens its accordion; the section in view is highlighted.
+   A link to a leerdoel (from the menu, the STARR-reflectie or another page) opens its accordion; the section in view is highlighted.
    Without JS the links still jump to each section. */
 const toc = document.querySelector("[data-toc]");
 
@@ -117,7 +117,9 @@ function openTarget(hash) {
 if (toc) {
   openTarget(location.hash);
   window.addEventListener("hashchange", () => openTarget(location.hash));
-  toc.addEventListener("click", (event) => {
+  // Any in-page link to a leerdoel (the menu, or the codes in the STARR-reflectie);
+  // also when the URL already has that hash, so hashchange doesn't fire
+  document.addEventListener("click", (event) => {
     const link = event.target.closest("a[href^='#']");
     if (link) openTarget(link.getAttribute("href"));
   });

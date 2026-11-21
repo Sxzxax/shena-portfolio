@@ -4,6 +4,7 @@ Edit COMPETENTIES, TAGS and PROJECTS below, then run:  python3 build.py
 Generated pages are overwritten, so don't edit them by hand.
 """
 import os
+import re
 from html import escape
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -910,12 +911,25 @@ def starr_steps(starr, id_prefix, tag, indent, extra_class="starr__step"):
     return "\n\n".join(steps)
 
 
+def link_leerdoel_codes(text, c):
+    """Escape text and turn each known leerdoel code ("1.2") into a link to its accordion.
+    Codes of this competentie link within the page; other codes link to their own competentie page."""
+    def link(match):
+        code = match.group(0)
+        if code not in LEERDOELEN:
+            return code
+        target = comp_of(code)
+        page_ = "" if target is c else f"{target['slug']}.html"
+        return f'<a class="starr__leerdoel-link" href="{page_}#leerdoel-{code.replace(".", "-")}" aria-label="Leerdoel {code}">{code}</a>'
+    return re.sub(r"(?<![\d.])\d+\.\d+(?![\d.])", link, escape(text))
+
+
 def starr_section(c):
     """The competentie's STARR-reflectie (from STARR), or nothing if it has none."""
     starr = STARR.get(c["number"])
     if not starr:
         return ""
-    intro = f'\n        <p class="starr__leerdoelen">{escape(starr["leerdoelen"])}</p>' if starr.get("leerdoelen") else ""
+    intro = f'\n        <p class="starr__leerdoelen">{link_leerdoel_codes(starr["leerdoelen"], c)}</p>' if starr.get("leerdoelen") else ""
     steps_html = starr_steps(starr, "starr", "h3", "        ")
     return f"""
       <section class="starr" id="starr" aria-labelledby="starr-title">
