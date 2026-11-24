@@ -33,7 +33,7 @@
         <ul class="nav__list" id="nav-list">
           <li><a class="nav__link" href="../index.html#home">Home</a></li>
           <li><a class="nav__link" href="../index.html#competenties" aria-current="page">Competenties</a></li>
-          <li><a class="nav__link" href="../reflectie.html">Reflectie</a></li>
+          <li class="nav__item nav__item--disabled"><span class="nav__link nav__link--disabled" role="link" aria-disabled="true" tabindex="0" aria-describedby="nav-tooltip-reflectie">Reflectie</span><span class="nav__tooltip" id="nav-tooltip-reflectie" role="tooltip">Binnenkort beschikbaar</span></li>
           <li><a class="nav__link" href="../index.html#contact">Contact</a></li>
         </ul>
       </nav>
@@ -119,50 +119,12 @@
             <h2 id="details-title">Werk in detail</h2>
             <section class="project-step" aria-labelledby="detail-1-title">
               <h3 id="detail-1-title">Onderzoek kleiprinter</h3>
-              <dl class="project-step__points">
-                <div>
-                  <dt>Wat deed ik</dt>
-                  <dd>Samen met N. Morales en K. Afshar uitzoeken hoe de kleiprinter werkt.</dd>
-                </div>
-                <div>
-                  <dt>Hoe</dt>
-                  <dd>Video&#x27;s op de website van WASP 2040, en uitleg van de andere groep over onder andere de druk.</dd>
-                </div>
-                <div>
-                  <dt>Ontdekking</dt>
-                  <dd>Een groepslid vond Termite, een Grasshopper-plug-in waarmee je direct kunt printen.</dd>
-                </div>
-                <div>
-                  <dt>Mijn bijdrage</dt>
-                  <dd>Ik vond een template die overzichtelijk maakt hoe de plug-in werkt.</dd>
-                </div>
-              </dl>
+              <p>Met N. Morales en K. Afshar zocht ik uit hoe de kleiprinter werkt, via video&#x27;s van WASP 2040 en uitleg van de andere groep. Een groepslid vond de plug-in Termite en ik vond een template die laat zien hoe die werkt.</p>
             </section>
 
             <section class="project-step" aria-labelledby="detail-2-title">
               <h3 id="detail-2-title">De template</h3>
-              <dl class="project-step__points">
-                <div>
-                  <dt>Wat deed ik</dt>
-                  <dd>De template onderzocht met een video en getest voordat we gingen printen. Daarna legde ik het uit aan N. Morales en K. Afshar.</dd>
-                </div>
-                <div>
-                  <dt>Wat we nodig hadden</dt>
-                  <dd>Een component die de lagen maakt en een component die het printpad sorteert.</dd>
-                </div>
-                <div>
-                  <dt>Probleem</dt>
-                  <dd>In een test maakte de printer eerst het ene blok helemaal af en ging daarna naar beneden voor het volgende. Dat tweede blok vervormde, omdat het nog nat was.</dd>
-                </div>
-                <div>
-                  <dt>Oplossing</dt>
-                  <dd>Het printpad sorteren, zodat de printer laag voor laag per blok print.</dd>
-                </div>
-                <div>
-                  <dt>Geleerd</dt>
-                  <dd>Welke onderdelen van de template nodig zijn voor onze blokken.</dd>
-                </div>
-              </dl>
+              <p>Ik testte de template en legde hem uit aan de groep. In een test vervormde het tweede blok, dus sorteerden we het printpad zodat de printer laag voor laag per blok print.</p>
               <div class="project-media">
                 <figure class="project-media__item">
                   <img src="../images/kleiprinter-template-script.png" alt="De Termite-template in Grasshopper: kolommen met componenten en een paars gemarkeerde groep." loading="lazy">
@@ -180,20 +142,7 @@
 
             <section class="project-step" aria-labelledby="detail-3-title">
               <h3 id="detail-3-title">Bestanden voorbereiden</h3>
-              <dl class="project-step__points">
-                <div>
-                  <dt>Wat deed ik</dt>
-                  <dd>Het gekozen ontwerp in Rhino met de groep overtekenen met polylines. Daarna verzamelde ik alles in mijn bestand, maakte een extrude en exporteerde de G-code.</dd>
-                </div>
-                <div>
-                  <dt>Probleem</dt>
-                  <dd>Een testprint liet zien dat de verbindingen lastig zouden passen.</dd>
-                </div>
-                <div>
-                  <dt>Oplossing</dt>
-                  <dd>De blokken 2 cm groter gemaakt en de opening van de pen-gatverbinding 4 mm groter. Het andere deel van de verbinding bleef gelijk.</dd>
-                </div>
-              </dl>
+              <p>We tekenden het gekozen ontwerp in Rhino over met polylines; ik voegde alles samen, maakte een extrude en exporteerde de G-code. Na een testprint maakten we de blokken 2 cm en de opening van de pen-gatverbinding 4 mm groter.</p>
               <div class="project-media">
                 <figure class="project-media__item">
                   <img src="../images/kleiprinter-verdeling-blokken.png" alt="Bovenaanzicht van de boog van blokken in Rhino, verdeeld in drie gekleurde kaders: Shena links, N. Morales in het midden en K. Afshar rechts." loading="lazy">
@@ -215,24 +164,7 @@
 
             <section class="project-step" aria-labelledby="detail-4-title">
               <h3 id="detail-4-title">Testprints</h3>
-              <dl class="project-step__points">
-                <div>
-                  <dt>Print 1 en 2</dt>
-                  <dd>De print was niet goed door de instellingen. J. van de andere groep merkte dat op. Ik paste de instellingen aan: de nozzle-instelling, de printsnelheid (langzamer printen geeft mooiere lagen), het aantal lagen en een andere contour group. Het resultaat was beter, maar nog niet helemaal goed.</dd>
-                </div>
-                <div>
-                  <dt>Beste testprint</dt>
-                  <dd>De lagen kwamen mooi op elkaar. Dit was het resultaat van veel testen en aanpassen. Volgende stap: de daadwerkelijke blokken printen.</dd>
-                </div>
-                <div>
-                  <dt>Blokken van het gekozen ontwerp</dt>
-                  <dd>De blokken zijn geprint. Open vraag: gaan de blokken passen?</dd>
-                </div>
-                <div>
-                  <dt>Uitdaging</dt>
-                  <dd>Je moet continu aanpassen en testen, zelf bedenken wat de mogelijke problemen zijn en daar oplossingen voor vinden.</dd>
-                </div>
-              </dl>
+              <p>De eerste prints mislukten door de instellingen; na aanpassingen aan onder andere de nozzle en de printsnelheid kwamen de lagen mooi op elkaar. Daarna printten we de blokken van het gekozen ontwerp.</p>
               <div class="project-media">
                 <figure class="project-media__item">
                   <img src="../images/kleiprinter-print-1-en-2.jpg" alt="Twee geprinte testblokken van klei op een draaischijf naast een handleiding." loading="lazy">
@@ -255,24 +187,7 @@
 
             <section class="project-step" aria-labelledby="detail-5-title">
               <h3 id="detail-5-title">Trial-and-error</h3>
-              <dl class="project-step__points">
-                <div>
-                  <dt>Probleem 1</dt>
-                  <dd>Een aantal blokken en testen is per ongeluk gebroken. Dit is ook een uitdaging voor de cobot, want de klei is gevoelig.</dd>
-                </div>
-                <div>
-                  <dt>Probleem 2</dt>
-                  <dd>Bij elke nieuwe klei werden de blokken anders geprint (dikker, dunner of lagen dichter op elkaar), ook met dezelfde instellingen.</dd>
-                </div>
-                <div>
-                  <dt>Oplossing</dt>
-                  <dd>We printen alle blokken op één dag.</dd>
-                </div>
-                <div>
-                  <dt>Nog een uitdaging</dt>
-                  <dd>Het krimpen van de klei.</dd>
-                </div>
-              </dl>
+              <p>Sommige blokken braken en elke nieuwe klei printte anders, ook met dezelfde instellingen. Daarom printten we alle blokken op één dag.</p>
               <div class="project-media">
                 <figure class="project-media__item">
                   <img src="../images/kleiprinter-gebroken-blokken.jpg" alt="Gebroken en hele kleiblokken en testprints op een stuk karton." loading="lazy">
@@ -283,33 +198,7 @@
 
             <section class="project-step" aria-labelledby="detail-6-title">
               <h3 id="detail-6-title">Blokken printen</h3>
-              <p>Dit was een groot proces dat veel tijd kostte. Voor mij was het het moeilijkste onderdeel van het project, omdat er veel dingen mis kunnen gaan. Je moet zelf uitzoeken wat er misging, en soms doe je extra werk dat achteraf niet nodig was.</p>
-              <dl class="project-step__points">
-                <div>
-                  <dt>Wat deed ik</dt>
-                  <dd>De printer voorbereiden: druk toepassen, klei met water goed maken, in de container doen, de lucht eruit halen en altijd eerst extruden om oude klei eruit te halen.</dd>
-                </div>
-                <div>
-                  <dt>Probleem 1</dt>
-                  <dd>De slang was zo hard dat we er zeker een uur mee bezig waren om hem eruit te halen.</dd>
-                </div>
-                <div>
-                  <dt>Probleem 2</dt>
-                  <dd>De printer print eerst rommelig. Na een paar pogingen print hij ineens netjes, zonder dat je iets aanpast. Wij wisten dit niet, dachten aan de consistentie van de klei en bereidden alles opnieuw voor.</dd>
-                </div>
-                <div>
-                  <dt>Gevolg</dt>
-                  <dd>De voorbereiding duurde ongeveer 3 uur, het printen van alle blokken 24 minuten.</dd>
-                </div>
-                <div>
-                  <dt>Schoonmaken</dt>
-                  <dd>Viel mee. Het kost tijd, maar is niet ingewikkeld.</dd>
-                </div>
-                <div>
-                  <dt>Resultaat</dt>
-                  <dd>Na veel pogingen is het gelukt. Zo komen de blokken bij elkaar.</dd>
-                </div>
-              </dl>
+              <p>Het voorbereiden van de printer duurde ongeveer 3 uur, onder andere door een harde slang en rommelige eerste prints; het printen zelf 24 minuten. Na veel pogingen is het gelukt en komen de blokken samen.</p>
               <div class="project-media">
                 <figure class="project-media__item project-media__item--video">
                   <video controls preload="none" playsinline poster="../images/poster-kleiprinter-printen.jpg" aria-label="De kleiprinter print de blokken laag voor laag">

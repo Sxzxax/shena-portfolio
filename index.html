@@ -33,7 +33,7 @@
         <ul class="nav__list" id="nav-list">
           <li><a class="nav__link" href="#home">Home</a></li>
           <li><a class="nav__link" href="#competenties">Competenties</a></li>
-          <li><a class="nav__link" href="reflectie.html">Reflectie</a></li>
+          <li class="nav__item nav__item--disabled"><span class="nav__link nav__link--disabled" role="link" aria-disabled="true" tabindex="0" aria-describedby="nav-tooltip-reflectie">Reflectie</span><span class="nav__tooltip" id="nav-tooltip-reflectie" role="tooltip">Binnenkort beschikbaar</span></li>
           <li><a class="nav__link" href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -65,7 +65,10 @@
           </p>
           <div class="hero__actions">
             <a class="button button--primary" href="#competenties">Bekijk mijn werk</a>
-            <a class="button button--outline" href="reflectie.html">Reflectie</a>
+            <span class="has-tooltip">
+              <span class="button button--outline button--disabled" role="link" aria-disabled="true" tabindex="0" aria-describedby="hero-tooltip-reflectie">Reflectie</span>
+              <span class="tooltip" id="hero-tooltip-reflectie" role="tooltip">Binnenkort beschikbaar</span>
+            </span>
           </div>
         </div>
         <figure class="hero__image">

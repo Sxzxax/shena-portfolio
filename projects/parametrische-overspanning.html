@@ -33,7 +33,7 @@
         <ul class="nav__list" id="nav-list">
           <li><a class="nav__link" href="../index.html#home">Home</a></li>
           <li><a class="nav__link" href="../index.html#competenties" aria-current="page">Competenties</a></li>
-          <li><a class="nav__link" href="../reflectie.html">Reflectie</a></li>
+          <li class="nav__item nav__item--disabled"><span class="nav__link nav__link--disabled" role="link" aria-disabled="true" tabindex="0" aria-describedby="nav-tooltip-reflectie">Reflectie</span><span class="nav__tooltip" id="nav-tooltip-reflectie" role="tooltip">Binnenkort beschikbaar</span></li>
           <li><a class="nav__link" href="../index.html#contact">Contact</a></li>
         </ul>
       </nav>
@@ -119,8 +119,7 @@
             <h2 id="details-title">Werk in detail</h2>
             <section class="project-step" aria-labelledby="detail-1-title">
               <h3 id="detail-1-title">Samenwerking</h3>
-              <p>De samenwerking voor project 2 is goed verlopen. Iedereen wist wat zijn of haar taak was en deed actief mee. Drie mensen verdiepten zich in de cobot en drie in klei. Dat bespaarde tijd en zorgde voor kennisoverdracht.</p>
-              <p>Een klein nadeel was dat de groep in twee delen was gesplitst. Dat hebben we opgelost door vaste momenten te plannen om bij elkaar te zitten. Een voorbeeld is de schets hieronder: we konden niet kiezen tussen de concepten, dus zijn we samen gaan zitten en hebben we ideeën geschetst. Zo konden we uiteindelijk wel kiezen.</p>
+              <p>Drie groepsleden verdiepten zich in de cobot en drie in de klei, met vaste momenten om samen te zitten. Toen we niet konden kiezen tussen de concepten, hebben we samen ideeën geschetst.</p>
               <div class="project-media">
                 <figure class="project-media__item">
                   <img src="../images/overspanning-schets-groep.jpg" alt="Schetsen in blauwe pen op gelinieerd papier: een boog van blokken, losse blokken en verbindingen tussen de blokken." loading="lazy">
@@ -131,7 +130,7 @@
 
             <section class="project-step" aria-labelledby="detail-2-title">
               <h3 id="detail-2-title">Referentie</h3>
-              <p>Ik bouwde mijn model na op basis van deze referentie: een boog van veelhoekige blokken.</p>
+              <p>Ik bouwde mijn model na op basis van deze referentie: een boog van veelhoekige blokken. De vorm is simpel, maar heeft toch zijn uitdagingen.</p>
               <div class="project-media">
                 <figure class="project-media__item">
                   <img src="../images/overspanning-referentie.jpg" alt="Foto van een papieren model: een boog opgebouwd uit wit en bruin gevouwen veelhoekige blokken." loading="lazy">
@@ -142,24 +141,7 @@
 
             <section class="project-step" aria-labelledby="detail-3-title">
               <h3 id="detail-3-title">Pogingen</h3>
-              <dl class="project-step__points">
-                <div>
-                  <dt>Poging 1 (loft)</dt>
-                  <dd>Probleem: de loft maakte één doorlopend vlak in plaats van losse vlakken. Oorzaak: ik had de polygons geroteerd zodat ze horizontaal stonden. Oplossing: overstappen op extrude.</dd>
-                </div>
-                <div>
-                  <dt>Poging 2 (extrude)</dt>
-                  <dd>Probleem: de blokken aan de uiteinden stonden niet goed gericht. Ze moesten meer horizontaal liggen. Oplossing: een amplitude-component gebruiken.</dd>
-                </div>
-                <div>
-                  <dt>Poging 3 (amplitude)</dt>
-                  <dd>Probleem: de uiteinden lagen nu horizontaal, maar de andere blokken ook. Dat was niet de bedoeling. Oplossing: feedback van K. Afshar gebruiken: in de referentie is de onderkant kleiner dan de bovenkant.</dd>
-                </div>
-                <div>
-                  <dt>Eindmodel</dt>
-                  <dd>Ik maakte het model twee keer met twee verschillende stralen en koppelde ze aan elkaar. Geleerd: vormen maken in Grasshopper en curves roteren.</dd>
-                </div>
-              </dl>
+              <p>Een loft gaf één doorlopend vlak, dus ik stapte over op extrude en daarna op een amplitude-component om de uiteinden goed te richten. Met feedback van K. Afshar (de onderkant is kleiner dan de bovenkant) en twee stralen kwam ik tot het eindmodel.</p>
               <div class="project-media">
                 <figure class="project-media__item">
                   <img src="../images/overspanning-poging-1-loft.png" alt="Rode boog in Grasshopper die uit één doorlopend vlak bestaat." loading="lazy">
@@ -202,28 +184,7 @@
 
             <section class="project-step" aria-labelledby="detail-5-title">
               <h3 id="detail-5-title">Feedback en keuze</h3>
-              <dl class="project-step__points">
-                <div>
-                  <dt>Feedback</dt>
-                  <dd>Een groepslid en mijn begeleider vonden mijn ontwerp niet helemaal parametrisch.</dd>
-                </div>
-                <div>
-                  <dt>Leerpunt</dt>
-                  <dd>Ik moet meer parametrisch nadenken.</dd>
-                </div>
-                <div>
-                  <dt>Mogelijke verbetering</dt>
-                  <dd>De sliders van de twee stralen koppelen, zodat ze samen veranderen. Als het aantal blokken afneemt, past de lengte zich dan ook aan.</dd>
-                </div>
-                <div>
-                  <dt>Keuze groepsproject</dt>
-                  <dd>Er was twijfel tussen mijn model en dat van een groepslid. We kozen het model van het groepslid, omdat het mijne ingewikkeld was om te printen en voor de cobot.</dd>
-                </div>
-                <div>
-                  <dt>Geleerd</dt>
-                  <dd>Houd bij het ontwerpen rekening met printen en de cobot.</dd>
-                </div>
-              </dl>
+              <p>Een groepslid en mijn begeleider vonden mijn ontwerp niet helemaal parametrisch; de sliders van de twee stralen koppelen zou helpen. De groep koos een ander ontwerp, omdat het mijne lastig te printen was en voor de cobot.</p>
               <div class="project-media">
                 <figure class="project-media__item project-media__item--video">
                   <video controls preload="none" playsinline poster="../images/poster-overspanning-parameters.jpg" aria-label="Schermopname van Grasshopper en Rhino waarin de sliders worden verschoven en de rode boog meeverandert">

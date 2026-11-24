@@ -33,7 +33,7 @@
         <ul class="nav__list" id="nav-list">
           <li><a class="nav__link" href="../index.html#home">Home</a></li>
           <li><a class="nav__link" href="../index.html#competenties" aria-current="page">Competenties</a></li>
-          <li><a class="nav__link" href="../reflectie.html">Reflectie</a></li>
+          <li class="nav__item nav__item--disabled"><span class="nav__link nav__link--disabled" role="link" aria-disabled="true" tabindex="0" aria-describedby="nav-tooltip-reflectie">Reflectie</span><span class="nav__tooltip" id="nav-tooltip-reflectie" role="tooltip">Binnenkort beschikbaar</span></li>
           <li><a class="nav__link" href="../index.html#contact">Contact</a></li>
         </ul>
       </nav>
@@ -116,7 +116,7 @@
             <section class="project-step" aria-labelledby="detail-1-title">
               <h3 id="detail-1-title">Masterplan</h3>
               <p class="project-step__date">6 oktober 2026</p>
-              <p>Uit de gegevens van het masterplan haalden we de maten en hoogtes van de bouwblokken.</p>
+              <p>Uit het masterplan haalden we de maten en hoogtes van de bouwblokken.</p>
               <div class="project-media">
                 <figure class="project-media__item">
                   <img src="../images/parkhaven-masterplan.jpg" alt="Tekeningen uit het masterplan Parkhaven: bovenaan de bouwblokken in aanzicht met hun breedte en hoogte, onderaan een 3D-overzicht van de oranje bouwblokken langs de Euromast." loading="lazy">
@@ -127,24 +127,7 @@
 
             <section class="project-step" aria-labelledby="detail-2-title">
               <h3 id="detail-2-title">Gebouwen in Forma</h3>
-              <dl class="project-step__points">
-                <div>
-                  <dt>Wat deed ik</dt>
-                  <dd>Samen met N. Morales de gebouwen van het masterplan nagebouwd in Forma.</dd>
-                </div>
-                <div>
-                  <dt>Aanpak</dt>
-                  <dd>De situatietekening gebruikt als onderlegger op schaal en de hoogtes van de gebouwen uit de gegevens van het masterplan gehaald.</dd>
-                </div>
-                <div>
-                  <dt>Uitdaging</dt>
-                  <dd>Het was vooral een gepuzzel om alles precies te laten overeenkomen met het masterplan. Vooral de hoogtes waren lastig, omdat in de gegevens alleen het toppunt van het gebouw stond en niet de verdiepingen ertussen. Daarnaast exporteert Forma altijd een IFC-bestand inclusief terrein, en dat hadden we niet nodig. Daarom heb ik het eerst in Revit gezet om het terrein weg te halen, en het daarna pas weer als IFC geëxporteerd voor Tygron of ArcGIS.</dd>
-                </div>
-                <div>
-                  <dt>Wat ging goed</dt>
-                  <dd>Forma was best eenvoudig om mee te werken, dus het was de snelste manier om de gebouwen te ontwerpen.</dd>
-                </div>
-              </dl>
+              <p>N. Morales en ik bouwden de gebouwen na in Forma, met de situatietekening als onderlegger; de hoogtes waren een puzzel, omdat alleen het toppunt bekend was. Forma exporteert het terrein altijd mee, dus dat haalde ik in Revit weg.</p>
               <div class="project-media">
                 <figure class="project-media__item">
                   <img src="../images/forma-taakverdeling.png" alt="Forma-model van Parkhaven met een paars kader om de gebouwen van groepsgenoot N. Morales en een groen kader om mijn eigen bijdrage." loading="lazy">
@@ -159,24 +142,7 @@
 
             <section class="project-step" aria-labelledby="detail-3-title">
               <h3 id="detail-3-title">Tygron</h3>
-              <dl class="project-step__points">
-                <div>
-                  <dt>Plan</dt>
-                  <dd>Hittestress simuleren in Tygron.</dd>
-                </div>
-                <div>
-                  <dt>Probleem</dt>
-                  <dd>We verloren veel tijd aan het importeren van het Forma-ontwerp. Daarna rekende Tygron met data van 2013 (afbeelding 2) en hadden we geen tijd om dat uit te zoeken.</dd>
-                </div>
-                <div>
-                  <dt>Besluit</dt>
-                  <dd>We gingen verder met analyses in ArcGIS.</dd>
-                </div>
-                <div>
-                  <dt>Daarna</dt>
-                  <dd>Na de presentatie hebben N. Morales en ik verder geëxperimenteerd en is het alsnog gelukt (afbeelding 3).</dd>
-                </div>
-              </dl>
+              <p>Tijdens het project lukte de simulatie in Tygron niet: het importeren kostte veel tijd en Tygron rekende met data van 2013. Na de presentatie hebben N. Morales en ik verder geëxperimenteerd en lukte het alsnog.</p>
               <div class="project-media">
                 <figure class="project-media__item">
                   <img src="../images/tygron-import.jpg" alt="3D-weergave in Tygron van Parkhaven met de witte gebouwen uit Forma langs de Maas." loading="lazy">
