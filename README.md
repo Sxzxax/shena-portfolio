@@ -157,7 +157,7 @@ Labels you leave out get example text, so the page never looks empty. Remember t
 
 A project page can show more than the summary: a **"Werk in detail"** section with steps, and a **"Feedback"** section. Both are optional.
 
-`details` is a list of steps. Each step has a `title` and, if you want, a `date`, some `text` (a list of paragraphs), `points` (labelled lines, such as "Wat deed ik" or "Geleerd") and `media` (pictures, videos or video links):
+`details` is a list of steps. Each step has a `title` and, if you want, a `date`, some `text` (a list of paragraphs), `points` (labelled lines, such as "Wat deed ik" or "Geleerd") and `media` (pictures, videos or video links). **Keep it short:** one or two sentences of `text` per step, like on the Van Brienenoordbrug page, and put the details in the captions under the pictures.
 
 ```python
         "details": [
@@ -221,6 +221,11 @@ TIMELINE = {"start": "2026-09", "end": "2027-01"}
 The timeline shows every project with a `date` between `start` and `end`, oldest first. For each project it shows how many leerdoelen you had demonstrated up to that point. Projects outside this period still appear on the competentie pages, just not on the timeline.
 
 ### 5. Your STAR-reflectie: **`REFLECTIE =`**
+
+**For now, "Reflectie" in the menu and the "Reflectie" button on the home page are greyed out** and show "Binnenkort beschikbaar" when you point at them. When your reflectie is ready, change two things in `build.py`, then run the build:
+
+- Search for `disabled_link("Reflectie", "reflectie")` and replace it with `link("reflectie.html", "Reflectie", "reflectie")`.
+- Search for `<span class="has-tooltip">` and replace that whole block (four lines, up to and including its closing `</span>`) with `<a class="button button--outline" href="reflectie.html">Reflectie</a>`.
 
 The reflectie page has four parts: **S**ituatie, **T**aak, **A**ctie and **R**esultaat. Replace the example questions in `paragraphs` with your own text. For more than one paragraph, add more lines, each in quotes and ending with a comma:
 
