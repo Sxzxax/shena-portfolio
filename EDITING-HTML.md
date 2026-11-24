@@ -48,8 +48,8 @@ An HTML page is text wrapped in **tags**. A tag has an opening part and a closin
 Some tags carry extra information called **attributes**, written as `name="value"`:
 
 ```html
-<a href="projects/houten-paviljoen.html">Houten paviljoen</a>
-<img src="images/paviljoen.jpg" alt="Het houten paviljoen op de campus">
+<a href="projects/van-brienenoordbrug.html">Van Brienenoordbrug</a>
+<img src="images/van-brienenoordbrug.jpg" alt="Rood 3D-model van de Van Brienenoordbrug in Rhino">
 ```
 
 - `href` is where a link goes.
@@ -92,7 +92,7 @@ You'll see codes such as `&rarr;` (→), `&larr;` (←) and `&copy;` (©). These
 | `index.html` | Home page: introduction and photo, the four competentie cards, the timeline, contact details |
 | `reflectie.html` | The STAR-reflectie |
 | `competenties/digitale-expert.html` (and the other 3) | One competentie: its leerdoelen and cards for its projects |
-| `projects/houten-paviljoen.html` (and the others) | One project page |
+| `projects/van-brienenoordbrug.html` (and the others) | One project page |
 | `css/` and `js/` | Styling and behaviour. **Don't edit these**, unless you know CSS. |
 
 **Tip:** to find something, open the file and press `Cmd + F`. To search **all** files at once, press `Cmd + Shift + F`.
@@ -133,19 +133,19 @@ At the top of the page you'll also find the **lead** (`project-detail__lead`), a
 
 | Page | Write the picture as |
 |---|---|
-| `index.html`, `reflectie.html` | `src="images/paviljoen.jpg"` |
-| Pages in `projects/` or `competenties/` | `src="../images/paviljoen.jpg"` (`../` means "one folder up") |
+| `index.html`, `reflectie.html` | `src="images/van-brienenoordbrug.jpg"` |
+| Pages in `projects/` or `competenties/` | `src="../images/van-brienenoordbrug.jpg"` (`../` means "one folder up") |
 
 Example: a project page
 
 ```html
-<img src="../images/paviljoen.jpg" alt="Het houten paviljoen op de campus" width="1200" height="675">
+<img src="../images/van-brienenoordbrug.jpg" alt="Rood 3D-model van de Van Brienenoordbrug in Rhino" width="1200" height="675">
 ```
 
 - On **project pages and the home-page photo**, write a real description in `alt="…"`.
 - On **cards** (competentie pages and the timeline), keep `alt=""` empty. The card title already describes the project.
 
-The project picture appears in three places: the project page, the cards on its competentie pages, and the timeline in `index.html`. Search for the old picture name (e.g. `shena-houten-paviljoen`) with `Cmd + Shift + F` to find them all.
+The project picture appears in three places: the project page, the cards on its competentie pages, and the timeline in `index.html`. Search for the old picture name (e.g. `van-brienenoordbrug.jpg`) with `Cmd + Shift + F` to find them all.
 
 ### Change contact details
 
