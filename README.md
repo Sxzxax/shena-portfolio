@@ -153,6 +153,39 @@ Labels you leave out get example text, so the page never looks empty. Remember t
 
 **To remove a project:** delete its whole block. Then also delete its old page from the `projects/` folder. The build reminds you with a `warning:` line.
 
+### 2b. More work per project: **`details`** and **`feedback`**
+
+A project page can show more than the summary: a **"Werk in detail"** section with steps, and a **"Feedback"** section. Both are optional.
+
+`details` is a list of steps. Each step has a `title` and, if you want, a `date`, some `text` (a list of paragraphs), `points` (labelled lines, such as "Wat deed ik" or "Geleerd") and `media` (pictures, videos or video links):
+
+```python
+        "details": [
+            {
+                "title": "Fase 1: kaarten",
+                "date": "17 september 2026",
+                "text": ["Een korte uitleg."],
+                "points": [
+                    ["Wat deed ik", "Bestaande kaarten samengevoegd in ArcGIS Pro."],
+                    ["Geleerd", "Data inladen en een kaart opmaken."],
+                ],
+                "media": [
+                    {"image": "kaart.png", "alt": "Wat er op de kaart staat", "caption": "Tekst onder de afbeelding."},
+                    {"video": "video.mp4", "poster": "video-startbeeld.jpg", "alt": "Wat de video laat zien", "caption": "Tekst onder de video."},
+                    {"url": "https://youtu.be/...", "label": "Bekijk de video op YouTube"},
+                ],
+            },
+        ],
+```
+
+- Pictures go in the `images/` folder, videos (`.mp4`) in the `videos/` folder. Keep videos small: a short screen recording of under 1 minute should be a few MB.
+- `poster` is the picture shown before the video plays (optional, in `images/`).
+- Every picture and video needs an `alt` (what it shows) or a `caption`.
+
+`feedback` is a list of names from **`FEEDBACK =`**, the list just below the projects. Write each piece of feedback there once, with a `title`, `from` (who wrote it), `date` and `paragraphs`. Then add its name to every project it belongs to, e.g. `"feedback": ["begeleider-abt"]`.
+
+`challenge`, `process` and `result` can also be a list of paragraphs instead of one text.
+
 ### 3. Competenties and leerdoelen: **`COMPETENTIES =`**
 
 The four competenties and their leerdoelen are already filled in. The leerdoelen are numbered automatically by their position: the first leerdoel of competentie 1 is `1.1`, the second is `1.2`, and so on.
@@ -270,6 +303,9 @@ After `python3 build.py`, look at the last lines in the terminal.
 | `SyntaxError` (plus a line number) | Something is wrong in how the text is written: often a missing comma, a missing quote, or a `"` inside your text. | Go to that line number, or the line just above it. Look for the problems in the rules table above. |
 | `error: project '…' refers to unknown leerdoel 5.1` | The leerdoel number doesn't exist. | Use an existing number, such as `1.1` to `4.1`. |
 | `error: project '…' refers to unknown tag '…'` | That tag isn't in `TAGS`. | Check the spelling, or add the tag to `TAGS`. |
+| `error: project '…' refers to unknown feedback '…'` | That name isn't in `FEEDBACK`. | Check the spelling, or add the feedback to `FEEDBACK`. |
+| `error: project '…' uses images/… (or videos/…), which does not exist` | A picture or video file is missing or misspelled. | Put the file in the right folder, or fix the file name. |
+| `error: project '…' has a picture or video without alt text or caption` | A picture or video in `details` has no description. | Add an `alt` or a `caption`. |
 | `error: … has date '…'` | The date is written wrong. | Write it as `"2026-10"`: year, hyphen, two-digit month. |
 | `error: STARR has a reflectie for competentie '…'` | That competentie number doesn't exist. | Use `"1"`, `"2"`, `"3"` or `"4"`. |
 | `error: LEERDOEL_STARR has a reflectie for leerdoel '…'` | That leerdoel code doesn't exist. | Use an existing code, such as `"1.1"` to `"4.1"`. |
