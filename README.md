@@ -182,6 +182,8 @@ A project page can show more than the summary: a **"Werk in detail"** section wi
 - `poster` is the picture shown before the video plays (optional, in `images/`).
 - Every picture and video needs an `alt` (what it shows) or a `caption`.
 
+**Names of other people:** write them as the first letter of the first name plus the full surname, e.g. `N. Morales`, also in feedback, captions and alt text. If you don't know the surname, use only the first letter. Check pictures too: a name written in a picture is just as visible.
+
 `feedback` is a list of names from **`FEEDBACK =`**, the list just below the projects. Write each piece of feedback there once, with a `title`, `from` (who wrote it), `date` and `paragraphs`. Then add its name to every project it belongs to, e.g. `"feedback": ["begeleider-abt"]`.
 
 `challenge`, `process` and `result` can also be a list of paragraphs instead of one text.

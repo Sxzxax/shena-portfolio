@@ -223,18 +223,18 @@ PROJECTS = [
         "leerdoelen": ["2.1", "4.1"],
         "tags": [],
         "lead": "De gebouwen van het masterplan Parkhaven, samen met een groepsgenoot nagebouwd in Forma als basis voor de hittestressanalyse, en een eerste simulatie in Tygron.",
-        "role": "Modelleur, samen met Natasha (project 1)",
+        "role": "Modelleur, samen met N. Morales (project 1)",
         "date": "2026-10",
         "tools": "Forma, Revit, Tygron",
         "challenge": "Voor de simulaties in fase 2 hadden we zo snel mogelijk de gebouwen van het masterplan nodig. Forma en Tygron had ik nog nooit gebruikt.",
-        "process": "Natasha en ik verdeelden de gebouwen en bouwden ze na in Forma, met de situatietekening als onderlegger. Omdat mijn deel eerst klaar was, legde ik uit hoe ik het in Forma had gedaan, zodat de gebouwen op elkaar aansloten. Daarna probeerden we de hittestress te simuleren in Tygron.",
+        "process": "N. Morales en ik verdeelden de gebouwen en bouwden ze na in Forma, met de situatietekening als onderlegger. Omdat mijn deel eerst klaar was, legde ik uit hoe ik het in Forma had gedaan, zodat de gebouwen op elkaar aansloten. Daarna probeerden we de hittestress te simuleren in Tygron.",
         "steps": [
             "Gebouwen verdelen en de situatietekening op schaal als onderlegger gebruiken",
-            "Eigen gebouwen modelleren in Forma en de werkwijze uitleggen aan Natasha",
+            "Eigen gebouwen modelleren in Forma en de werkwijze uitleggen aan N. Morales",
             "Terrein in Revit verwijderen en opnieuw exporteren als IFC voor ArcGIS en Tygron",
             "Hittestress simuleren in Tygron",
         ],
-        "result": "Alle gebouwen staan in één model, klaar voor de analyses. Forma was best eenvoudig om mee te werken, dus het was de snelste manier om de gebouwen te ontwerpen. Ik wil me verder verdiepen in de omgevingsanalyses die Forma zelf kan maken. Tygron lukte tijdens het project niet, maar na de presentatie hebben Natasha en ik verder geëxperimenteerd en is het alsnog gelukt.",
+        "result": "Alle gebouwen staan in één model, klaar voor de analyses. Forma was best eenvoudig om mee te werken, dus het was de snelste manier om de gebouwen te ontwerpen. Ik wil me verder verdiepen in de omgevingsanalyses die Forma zelf kan maken. Tygron lukte tijdens het project niet, maar na de presentatie hebben N. Morales en ik verder geëxperimenteerd en is het alsnog gelukt.",
         "image": "forma-masterplan-parkhaven.jpg",
         "image_alt": "3D-model in Forma van een rij woontorens langs de kade van Parkhaven, met een groen kader om de gebouwen die ik zelf heb gemodelleerd en het label Eigen bijdrage.",
         "caption": "Mijn eigen bijdrage aan het Forma-model van het masterplan (6 oktober 2026).",
@@ -250,13 +250,13 @@ PROJECTS = [
             {
                 "title": "Gebouwen in Forma",
                 "points": [
-                    ["Wat deed ik", "Samen met Natasha de gebouwen van het masterplan nagebouwd in Forma."],
+                    ["Wat deed ik", "Samen met N. Morales de gebouwen van het masterplan nagebouwd in Forma."],
                     ["Aanpak", "De situatietekening gebruikt als onderlegger op schaal en de hoogtes van de gebouwen uit de gegevens van het masterplan gehaald."],
                     ["Uitdaging", "Het was vooral een gepuzzel om alles precies te laten overeenkomen met het masterplan. Vooral de hoogtes waren lastig, omdat in de gegevens alleen het toppunt van het gebouw stond en niet de verdiepingen ertussen. Daarnaast exporteert Forma altijd een IFC-bestand inclusief terrein, en dat hadden we niet nodig. Daarom heb ik het eerst in Revit gezet om het terrein weg te halen, en het daarna pas weer als IFC geëxporteerd voor Tygron of ArcGIS."],
                     ["Wat ging goed", "Forma was best eenvoudig om mee te werken, dus het was de snelste manier om de gebouwen te ontwerpen."],
                 ],
                 "media": [
-                    {"image": "forma-taakverdeling.png", "alt": "Forma-model van Parkhaven met een paars kader om de gebouwen van groepsgenoot Natasha en een groen kader om mijn eigen bijdrage.", "caption": "Verdeling van de gebouwen: Natasha (paars) en mijn eigen bijdrage (groen)."},
+                    {"image": "forma-taakverdeling.png", "alt": "Forma-model van Parkhaven met een paars kader om de gebouwen van groepsgenoot N. Morales en een groen kader om mijn eigen bijdrage.", "caption": "Verdeling van de gebouwen: N. Morales (paars) en mijn eigen bijdrage (groen)."},
                     {"image": "forma-gebouwen-terrein.png", "alt": "Grijs terreinvlak met daarop de witte gebouwen van het masterplan, zoals Forma ze exporteert.", "caption": "De gebouwen met het terrein, zoals Forma ze exporteert."},
                 ],
             },
@@ -266,7 +266,7 @@ PROJECTS = [
                     ["Plan", "Hittestress simuleren in Tygron."],
                     ["Probleem", "We verloren veel tijd aan het importeren van het Forma-ontwerp. Daarna rekende Tygron met data van 2013 (afbeelding 2) en hadden we geen tijd om dat uit te zoeken."],
                     ["Besluit", "We gingen verder met analyses in ArcGIS."],
-                    ["Daarna", "Na de presentatie hebben Natasha en ik verder geëxperimenteerd en is het alsnog gelukt (afbeelding 3)."],
+                    ["Daarna", "Na de presentatie hebben N. Morales en ik verder geëxperimenteerd en is het alsnog gelukt (afbeelding 3)."],
                 ],
                 "media": [
                     {"image": "tygron-import.jpg", "alt": "3D-weergave in Tygron van Parkhaven met de witte gebouwen uit Forma langs de Maas.", "caption": "Afbeelding 1: het Forma-ontwerp in Tygron."},
@@ -366,7 +366,7 @@ PROJECTS = [
                 "points": [
                     ["Poging 1 (loft)", "Probleem: de loft maakte één doorlopend vlak in plaats van losse vlakken. Oorzaak: ik had de polygons geroteerd zodat ze horizontaal stonden. Oplossing: overstappen op extrude."],
                     ["Poging 2 (extrude)", "Probleem: de blokken aan de uiteinden stonden niet goed gericht. Ze moesten meer horizontaal liggen. Oplossing: een amplitude-component gebruiken."],
-                    ["Poging 3 (amplitude)", "Probleem: de uiteinden lagen nu horizontaal, maar de andere blokken ook. Dat was niet de bedoeling. Oplossing: feedback van Kebriya gebruiken: in de referentie is de onderkant kleiner dan de bovenkant."],
+                    ["Poging 3 (amplitude)", "Probleem: de uiteinden lagen nu horizontaal, maar de andere blokken ook. Dat was niet de bedoeling. Oplossing: feedback van K. Afshar gebruiken: in de referentie is de onderkant kleiner dan de bovenkant."],
                     ["Eindmodel", "Ik maakte het model twee keer met twee verschillende stralen en koppelde ze aan elkaar. Geleerd: vormen maken in Grasshopper en curves roteren."],
                 ],
                 "media": [
@@ -408,11 +408,11 @@ PROJECTS = [
         "leerdoelen": ["1.2", "1.4", "3.3", "4.1"],
         "tags": ["fabricage", "parametrisch"],
         "lead": "Uitzoeken hoe de kleiprinter werkt, de printbestanden voorbereiden met de Termite-template en de kleiblokken van het gekozen ontwerp printen, voor project 2 (digitale fabricage).",
-        "role": "Printergroep, samen met Natasha en Kebriya (project 2)",
+        "role": "Printergroep, samen met N. Morales en K. Afshar (project 2)",
         "date": "2026-11",
         "tools": "WASP 2040 kleiprinter, Rhino, Grasshopper, Termite",
         "challenge": "Na de keuze voor het ontwerp moesten wij als printergroep de blokken printen. In het begin hadden we geen idee hoe de kleiprinter werkte en de informatie was beperkt.",
-        "process": "Samen met Natasha en Kebriya zocht ik uit hoe de kleiprinter werkt. Ik onderzocht de Termite-template, bereidde de bestanden voor en printte met hen de blokken. Hieronder staat elke stap, met de testprints en video's.",
+        "process": "Samen met N. Morales en K. Afshar zocht ik uit hoe de kleiprinter werkt. Ik onderzocht de Termite-template, bereidde de bestanden voor en printte met hen de blokken. Hieronder staat elke stap, met de testprints en video's.",
         "steps": [
             "Informatie zoeken over de kleiprinter (met twee anderen)",
             "De Termite-template onderzoeken en uitleggen",
@@ -432,7 +432,7 @@ PROJECTS = [
             {
                 "title": "Onderzoek kleiprinter",
                 "points": [
-                    ["Wat deed ik", "Samen met Natasha en Kebriya uitzoeken hoe de kleiprinter werkt."],
+                    ["Wat deed ik", "Samen met N. Morales en K. Afshar uitzoeken hoe de kleiprinter werkt."],
                     ["Hoe", "Video's op de website van WASP 2040, en uitleg van de andere groep over onder andere de druk."],
                     ["Ontdekking", "Een groepslid vond Termite, een Grasshopper-plug-in waarmee je direct kunt printen."],
                     ["Mijn bijdrage", "Ik vond een template die overzichtelijk maakt hoe de plug-in werkt."],
@@ -441,7 +441,7 @@ PROJECTS = [
             {
                 "title": "De template",
                 "points": [
-                    ["Wat deed ik", "De template onderzocht met een video en getest voordat we gingen printen. Daarna legde ik het uit aan Natasha en Kebriya."],
+                    ["Wat deed ik", "De template onderzocht met een video en getest voordat we gingen printen. Daarna legde ik het uit aan N. Morales en K. Afshar."],
                     ["Wat we nodig hadden", "Een component die de lagen maakt en een component die het printpad sorteert."],
                     ["Probleem", "In een test maakte de printer eerst het ene blok helemaal af en ging daarna naar beneden voor het volgende. Dat tweede blok vervormde, omdat het nog nat was."],
                     ["Oplossing", "Het printpad sorteren, zodat de printer laag voor laag per blok print."],
@@ -460,7 +460,7 @@ PROJECTS = [
                     ["Oplossing", "De blokken 2 cm groter gemaakt en de opening van de pen-gatverbinding 4 mm groter. Het andere deel van de verbinding bleef gelijk."],
                 ],
                 "media": [
-                    {"image": "kleiprinter-verdeling-blokken.png", "alt": "Bovenaanzicht van de boog van blokken in Rhino, verdeeld in drie gekleurde kaders: Shena links, Natasha in het midden en Kebriya rechts.", "caption": "Verdeling van het overtekenen: Shena, Natasha en Kebriya."},
+                    {"image": "kleiprinter-verdeling-blokken.png", "alt": "Bovenaanzicht van de boog van blokken in Rhino, verdeeld in drie gekleurde kaders: Shena links, N. Morales in het midden en K. Afshar rechts.", "caption": "Verdeling van het overtekenen: Shena, N. Morales en K. Afshar."},
                     {"image": "kleiprinter-polylines.png", "alt": "De omtrekken van alle blokken als losse polylines op het printbed in Rhino.", "caption": "Alle blokken als polylines op het printbed."},
                     {"video": "kleiprinter-printpad.mp4", "poster": "poster-kleiprinter-printpad.jpg", "alt": "Simulatie van het printpad in de rode printer in Rhino, waarin de blokken laag voor laag ontstaan", "caption": "Simulatie van het printpad (48 seconden, zonder geluid)."},
                 ],
@@ -468,7 +468,7 @@ PROJECTS = [
             {
                 "title": "Testprints",
                 "points": [
-                    ["Print 1 en 2", "De print was niet goed door de instellingen. Jurien van de andere groep merkte dat op. Ik paste de instellingen aan: de nozzle-instelling, de printsnelheid (langzamer printen geeft mooiere lagen), het aantal lagen en een andere contour group. Het resultaat was beter, maar nog niet helemaal goed."],
+                    ["Print 1 en 2", "De print was niet goed door de instellingen. J. van de andere groep merkte dat op. Ik paste de instellingen aan: de nozzle-instelling, de printsnelheid (langzamer printen geeft mooiere lagen), het aantal lagen en een andere contour group. Het resultaat was beter, maar nog niet helemaal goed."],
                     ["Beste testprint", "De lagen kwamen mooi op elkaar. Dit was het resultaat van veel testen en aanpassen. Volgende stap: de daadwerkelijke blokken printen."],
                     ["Blokken van het gekozen ontwerp", "De blokken zijn geprint. Open vraag: gaan de blokken passen?"],
                     ["Uitdaging", "Je moet continu aanpassen en testen, zelf bedenken wat de mogelijke problemen zijn en daar oplossingen voor vinden."],
@@ -587,7 +587,7 @@ PROJECTS = [
 FEEDBACK = {
     "begeleider-abt": {
         "title": "Feedback begeleider leerplek",
-        "from": "Erron Estrado, begeleider bij ABT (Samen Oosterhoff)",
+        "from": "E. Estrado, begeleider bij ABT (Samen Oosterhoff)",
         "date": "17 november 2026",
         "paragraphs": [
             "Sinds 1 oktober ben je bij ABT gestart met je leerplek als deel van de Oosterhoff Digital team. Tijdens de speeddate sessie gaf je aan dat je doel was om je digitale skills te ontwikkelen vooral met Grasshopper en Python in het kader van constructief ontwerp. Wat mij betreft gaat je ontwikkeling tot nu toe de goede kant op.",
@@ -609,10 +609,10 @@ FEEDBACK = {
             "Jullie zijn echt in GIS verdiept, dat is een nieuwe tool geweest en daar hebben jullie goede eerste analyses mee gemaakt. Dank daarvoor.",
             "Gevoelstemperatuur neemt af door (schaduw van) gebouwen?",
             "Presentatie werkt niet op de laptop, zorg dat je dit van tevoren test.",
-            "Matthijs begint om 09:55, 7 minuten in de presentatie.",
+            "M. begint om 09:55, 7 minuten in de presentatie.",
             "Presentatie overtijd.",
             "\"het was heel kut\", let graag op taalgebruik.",
-            "Neil geeft de vraag: hoe heeft deze analyse invloed gehad op de keuzes die jullie hebben gemaakt.",
+            "N. geeft de vraag: hoe heeft deze analyse invloed gehad op de keuzes die jullie hebben gemaakt.",
             "Hoe heeft de afweging van soorten bomen invloed gehad op de digitale tools die je hebt gebruikt.",
             "Euromast is buitendijks gebied... dus gaat een wadi dan wel effect hebben als de rivier de grond aanvult. Let op dat er tijdens hittestress ook minder water is.. dus als daar je verkoelingsstrategie op is gebaseerd.... Oftewel, ondanks alle slimme digitale technieken is het nog belangrijker de systemen zelf ook goed te begrijpen.",
             "5 losse analyses en daarmee wat minder 1 verhaal. Er lijken daardoor dubbelingen of overlappen te zijn tussen de 5 verhalen, maar het blijven losse stukjes.",
@@ -620,7 +620,7 @@ FEEDBACK = {
     },
     "natasha": {
         "title": "Feedback groepsgenoot",
-        "from": "Natasha Morales, groepsgenoot bij project 1 en project 2",
+        "from": "N. Morales, groepsgenoot bij project 1 en project 2",
         "date": "18 november 2026",
         "paragraphs": [
             "Ik vond de samenwerking bij project 1 en project 2 erg prettig. Hieronder geef ik je mijn feedback. Je communiceert duidelijk en legt je bevindingen helder uit, zodat anderen, zoals ik, je goed kunnen volgen. Als je een taak krijgt, voer je die altijd zo zorgvuldig mogelijk uit. Je onderzoek is ook echt grondig, zoals bij de Termite-template, waarbij je precies uitzocht hoe je ermee moest werken. Als ik iets niet begrijp, kan ik altijd bij je terecht en help je me graag. Daardoor weet ik dat ik in een groepsopdracht op je kan rekenen. Ik vind het ook echt top dat je het wilt bespreken met de groep als de samenwerking niet goed gaat.",
@@ -629,7 +629,7 @@ FEEDBACK = {
     },
     "kebriya": {
         "title": "Feedback groepsgenoot",
-        "from": "Kebriya Afshar, groepsgenoot bij project 2 (Klei Master)",
+        "from": "K. Afshar, groepsgenoot bij project 2 (Klei Master)",
         "date": "24 november 2026",
         "paragraphs": [
             "Tijdens het project Klei Master heb ik de samenwerking met jou als erg prettig ervaren. Je communiceerde duidelijk en goed met de groep en zorgde ervoor dat iedereen op de hoogte bleef van de voortgang en de gemaakte afspraken.",
@@ -686,7 +686,7 @@ STARR = {
     "1": {
         "leerdoelen": "Leerdoelen gebruikt: 1.1, 1.2, 1.3 en 1.4 (persoonlijk leerdoel PD1)",
         "situatie": [
-            "Mijn persoonlijke leerdoel was om zelfstandig een parametrisch model op te zetten in Rhino/Grasshopper voor een draagconstructie. Ik begon klein: ik had één keer met een template van Arjen gewerkt en alleen parameters aangepast. In de eerste weken lukte het me niet om de pergola af te maken, en bij de workshop over item, list en tree maakte ik alleen de boog van de brug. Daarna begon ik bij ABT, in het Oosterhoff Digital team.",
+            "Mijn persoonlijke leerdoel was om zelfstandig een parametrisch model op te zetten in Rhino/Grasshopper voor een draagconstructie. Ik begon klein: ik had één keer met een template van A. gewerkt en alleen parameters aangepast. In de eerste weken lukte het me niet om de pergola af te maken, en bij de workshop over item, list en tree maakte ik alleen de boog van de brug. Daarna begon ik bij ABT, in het Oosterhoff Digital team.",
         ],
         "taak": [
             "Ik wilde zonder template een vakwerk bouwen dat meebeweegt met parameters en dat ik kan doorrekenen. Mijn vraag was of ik dat zelf kon, en mijn methode was: eerst de basis leren, dan zelf bouwen en daarna koppelen aan Karamba3D om varianten te vergelijken.",
@@ -709,11 +709,11 @@ STARR = {
             "Bij project 1 (Parkhaven) onderzochten we met een groep welke klimaatadaptatiemaatregelen bij de gebouwen van het masterplan konden. Mijn taak was de hittestressanalyse in ArcGIS Pro. Mijn persoonlijke leerdoel was goed samenwerken met digitale tools, zodat we tot één samenhangende oplossing komen. Mijn startsituatie was dat iedereen aan zijn eigen onderdeel werkt en we pas op het laatst samenvoegen.",
         ],
         "taak": [
-            "Voor de analyse hadden we de gebouwen van het masterplan nodig. Daarom ontwierpen Natasha en ik die in Forma. Als groep spraken we meteen af om steeds af te stemmen.",
+            "Voor de analyse hadden we de gebouwen van het masterplan nodig. Daarom ontwierpen N. Morales en ik die in Forma. Als groep spraken we meteen af om steeds af te stemmen.",
         ],
         "actie": [
             "Eerst maakte ik in ArcGIS Pro kaarten van het studiegebied, waaronder hittestress. Later paste ik de analysetools zelf toe, tekende ik maatregelen met groen en berekende ik de heat index. Zo zette ik de effecten van bomen, groene daken, een groene kade en alle maatregelen naast elkaar. Met legenda's en een duidelijke afkadering maakte ik de kaarten begrijpelijk voor anderen.",
-            "Voor de gebouwen gebruikten Natasha en ik Forma, dat nieuw voor mij was. Omdat ik mijn deel eerst klaar had, legde ik haar uit hoe ik het had gedaan, zodat de gebouwen op elkaar aansloten. Ik gebruikte de overzichtstekening van het masterplan op schaal als onderlegger. Omdat Forma het terrein meeneemt in de IFC, haalde ik dat eerst in Revit weg.",
+            "Voor de gebouwen gebruikten N. Morales en ik Forma, dat nieuw voor mij was. Omdat ik mijn deel eerst klaar had, legde ik haar uit hoe ik het had gedaan, zodat de gebouwen op elkaar aansloten. Ik gebruikte de overzichtstekening van het masterplan op schaal als onderlegger. Omdat Forma het terrein meeneemt in de IFC, haalde ik dat eerst in Revit weg.",
         ],
         "resultaat": [
             "Het Forma-model lukte: alle gebouwen in één model, klaar voor de analyse. De belangrijkste uitkomst was dat de omgeving met alle maatregelen samen 2 graden koeler wordt.",
@@ -754,7 +754,7 @@ STARR = {
             "Ik wilde actief feedback vragen, die verwerken en kennis delen met mijn team.",
         ],
         "actie": [
-            "Vroeg in de minor kreeg ik handgeschreven feedback van een medestudent op mijn leerdoelen. Een paar weken later leverde ik een reflectie in over de speeddatesessie en kreeg ik feedback van de docent: ik ben goed op weg met reflecteren, maar moet meer nadenken over waar ik wil eindigen en hoe ik kan groeien. Op mijn leerplek kreeg ik feedback van mijn begeleider. Toen Python bleef liggen, bracht ik dat zelf ter sprake. Bij Parkhaven legde ik Natasha uit hoe ik in Forma werkte, zodat onze gebouwen op elkaar aansloten.",
+            "Vroeg in de minor kreeg ik handgeschreven feedback van een medestudent op mijn leerdoelen. Een paar weken later leverde ik een reflectie in over de speeddatesessie en kreeg ik feedback van de docent: ik ben goed op weg met reflecteren, maar moet meer nadenken over waar ik wil eindigen en hoe ik kan groeien. Op mijn leerplek kreeg ik feedback van mijn begeleider. Toen Python bleef liggen, bracht ik dat zelf ter sprake. Bij Parkhaven legde ik N. Morales uit hoe ik in Forma werkte, zodat onze gebouwen op elkaar aansloten.",
         ],
         "resultaat": [
             "Mijn begeleider noemt mij een prettige collega die goed in het team past, in een goed tempo ontwikkelt, een positieve houding heeft ten opzichte van leren en adviezen opvolgt.",
@@ -780,7 +780,7 @@ LEERDOEL_STARR = {
             "Ik moest een onderzoeksvraag formuleren en een passende methode kiezen.",
         ],
         "actie": [
-            "Ik koos voor een hittestressanalyse in ArcGIS Pro. Hiervoor hadden we eerst de gebouwen nodig. Natasha en ik modelleerden ze in Forma, ik haalde het terrein weg in Revit en exporteerde het opnieuw als IFC. Daarna vergeleek ik de effecten van bomen, groene daken, een groene kade en alle maatregelen samen.",
+            "Ik koos voor een hittestressanalyse in ArcGIS Pro. Hiervoor hadden we eerst de gebouwen nodig. N. Morales en ik modelleerden ze in Forma, ik haalde het terrein weg in Revit en exporteerde het opnieuw als IFC. Daarna vergeleek ik de effecten van bomen, groene daken, een groene kade en alle maatregelen samen.",
         ],
         "resultaat": [
             "De omgeving wordt met alle maatregelen samen 2 graden koeler.",
@@ -799,7 +799,7 @@ LEERDOEL_STARR = {
         ],
         "actie": [
             "Ik vroeg eerst aan AI wat belangrijk is om te weten voordat je gaat printen en welke websites handig zijn. Die informatie heb ik kritisch gecontroleerd door de video's van het bedrijf achter de WASP 2040 te bekijken en door testprints te maken.",
-            "Na kennisuitwisseling stelde een groepslid voor om Termite te gebruiken, een Grasshopper-plug-in waarmee je de printer kunt aansturen. Ik dook in de informatie over Termite, vond de template, keek een video en paste toe wat ik leerde. De eerste print ging niet goed door de instellingen. Jurien van de andere groep gaf mij hier feedback op. Ik keek de video opnieuw en de tweede print ging beter. Zo bestond het proces uit testen, bespreken wat er misging, oplossingen bedenken, toepassen en opnieuw testen.",
+            "Na kennisuitwisseling stelde een groepslid voor om Termite te gebruiken, een Grasshopper-plug-in waarmee je de printer kunt aansturen. Ik dook in de informatie over Termite, vond de template, keek een video en paste toe wat ik leerde. De eerste print ging niet goed door de instellingen. J. van de andere groep gaf mij hier feedback op. Ik keek de video opnieuw en de tweede print ging beter. Zo bestond het proces uit testen, bespreken wat er misging, oplossingen bedenken, toepassen en opnieuw testen.",
         ],
         "resultaat": [
             "In het begin hadden we geen idee hoe de printer werkte. Nu hebben we genoeg basiskennis om het aan een ander uit te kunnen leggen.",
@@ -817,7 +817,7 @@ LEERDOEL_STARR = {
             "Ik moest parametrische vakwerken ontwerpen en deze koppelen aan Karamba3D en Technosoft Raamwerken.",
         ],
         "actie": [
-            "Ik keek eerst een video over Grasshopper, maar die legde bijna dezelfde dingen uit als Arjen over lists, items en trees. Ik snapte er nog niks van. Daarom volgde ik de cursus op ThinkParametric. Die vertelde ook dezelfde dingen, maar opeens kon ik wel begrijpen wat er bedoeld werd. Daarna maakte ik een vakwerk en koppelde dat aan Karamba3D. Vervolgens maakte ik meerdere vakwerken en koppelde die aan Revit.",
+            "Ik keek eerst een video over Grasshopper, maar die legde bijna dezelfde dingen uit als A. over lists, items en trees. Ik snapte er nog niks van. Daarom volgde ik de cursus op ThinkParametric. Die vertelde ook dezelfde dingen, maar opeens kon ik wel begrijpen wat er bedoeld werd. Daarna maakte ik een vakwerk en koppelde dat aan Karamba3D. Vervolgens maakte ik meerdere vakwerken en koppelde die aan Revit.",
         ],
         "resultaat": [
             "Ik heb een vakwerk-script gebouwd met meerdere invoerparameters en diagonale patronen, gekoppeld aan Karamba3D en Technosoft Raamwerken. Mijn begeleider noemt dit een belangrijke stap vooruit en ziet dat ik de basis vrij snel onder de knie heb gekregen.",
@@ -830,13 +830,13 @@ LEERDOEL_STARR = {
     "1.4": {
         "titel": "Reflecteren en valideren met stakeholders",
         "situatie": [
-            "Bij het project digitale fabricage twijfelden we in de groep tussen twee ontwerpen, dat van mij en dat van Renier. Beide waren gebogen en de printer kan niet schuin printen.",
+            "Bij het project digitale fabricage twijfelden we in de groep tussen twee ontwerpen, dat van mij en dat van R. Beide waren gebogen en de printer kan niet schuin printen.",
         ],
         "taak": [
             "We moesten een ontwerp kiezen dat we daadwerkelijk konden printen.",
         ],
         "actie": [
-            "We kozen voor het ontwerp van Renier. Mijn ontwerp was ingewikkelder om te printen en voor de cobot. Daarnaast merkte een groepslid op dat mijn parameters niet helemaal correct waren.",
+            "We kozen voor het ontwerp van R. Mijn ontwerp was ingewikkelder om te printen en voor de cobot. Daarnaast merkte een groepslid op dat mijn parameters niet helemaal correct waren.",
             "Toch hadden we nog steeds het probleem hoe we het gingen printen. Iemand kwam met het idee om de blokken hol te laten, zodat je de vorm van boven kunt printen. Daarna kwam iemand met het idee om pennen als verbinding te gebruiken. Ik vroeg hoe dat zou werken als de klei krimpt, want de blokken moeten precies in elkaar passen zodat ze niet vallen. Daarop kwam het idee om schuurpapier te gebruiken: passen de verbindingen niet, dan kunnen we ze zo passend maken.",
         ],
         "resultaat": [
@@ -852,10 +852,10 @@ LEERDOEL_STARR = {
             "Voor project 1 (Parkhaven) hadden we zo snel mogelijk de gebouwen van het masterplan nodig om simulaties te kunnen maken.",
         ],
         "taak": [
-            "Natasha en ik moesten de gebouwen modelleren.",
+            "N. Morales en ik moesten de gebouwen modelleren.",
         ],
         "actie": [
-            "We besloten Forma te gebruiken. Voor de efficiëntie deed ik een aantal gebouwen en zij een aantal, zodat het samen één geheel werd. Omdat ik mijn deel eerst klaar had, legde ik Natasha uit hoe ik het precies in Forma had gedaan, zodat de gebouwen met elkaar overeen zouden komen.",
+            "We besloten Forma te gebruiken. Voor de efficiëntie deed ik een aantal gebouwen en zij een aantal, zodat het samen één geheel werd. Omdat ik mijn deel eerst klaar had, legde ik N. Morales uit hoe ik het precies in Forma had gedaan, zodat de gebouwen met elkaar overeen zouden komen.",
             "Ik gebruikte de overzichtstekening van het masterplan op schaal als onderlegger en speelde met de afmetingen van de hoogtes. Dat was een gepuzzel, omdat in de gegevens alleen het hoogste punt stond en niet de verdiepingen ertussen. Daarnaast exporteert Forma altijd een IFC-bestand inclusief terrein, en dat hadden we niet nodig. Daarom zette ik het eerst in Revit om het terrein weg te halen en exporteerde het daarna opnieuw als IFC voor Tygron of ArcGIS.",
         ],
         "resultaat": [
@@ -966,7 +966,7 @@ LEERDOEL_STARR = {
         ],
         "actie": [
             "Interactief leervermogen: toen ik merkte dat ik niets met Python had gedaan, besprak ik dit met mijn begeleider en stelde ik mijn leerdoel bij. Ik volg zijn adviezen op.",
-            "Effectief samenwerken: bij Parkhaven legde ik Natasha uit hoe ik in Forma had gewerkt, zodat onze gebouwen met elkaar overeen zouden komen. Ik bouwde ook mijn netwerk op bij de Prefab Beurs en het inspiratie-event.",
+            "Effectief samenwerken: bij Parkhaven legde ik N. Morales uit hoe ik in Forma had gewerkt, zodat onze gebouwen met elkaar overeen zouden komen. Ik bouwde ook mijn netwerk op bij de Prefab Beurs en het inspiratie-event.",
             "Verbeter- of vernieuwingsgericht: bij de kleiprinter experimenteerde ik met de Termite-template en testprints en paste ik mijn aanpak aan na feedback.",
         ],
         "resultaat": [
