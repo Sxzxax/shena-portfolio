@@ -107,20 +107,20 @@ Each project is a block between `{` and `},`. This is a complete example, with e
 
 ```python
     {
-        "slug": "houten-paviljoen",
-        "title": "Houten paviljoen",
-        "leerdoelen": ["1.3", "1.4", "2.1"],
-        "tags": ["parametrisch", "fabricage"],
-        "lead": "Een paviljoen van gefreesde houten platen, parametrisch ontworpen en digitaal geproduceerd.",
-        "role": "Ontwerper & maker",
-        "date": "2026-09",
-        "tools": "Rhino, Grasshopper, CNC-frees",
-        "image": "paviljoen.jpg",
-        "image_alt": "Het houten paviljoen op de campus, gezien vanaf de ingang",
-        "caption": "Het paviljoen tijdens de opbouw.",
+        "slug": "van-brienenoordbrug",
+        "title": "Van Brienenoordbrug",
+        "leerdoelen": ["1.3", "3.2"],
+        "tags": ["parametrisch"],
+        "lead": "Een parametrisch model van de Van Brienenoordbrug in Grasshopper.",
+        "role": "Eigen opdracht",
+        "date": "2026-11",
+        "tools": "Rhino, Grasshopper",
+        "image": "van-brienenoordbrug.jpg",
+        "image_alt": "Rood 3D-model van de Van Brienenoordbrug in Rhino",
+        "caption": "Tweede poging, zonder hulp gemaakt.",
         "challenge": "Wat was de opdracht? ...",
         "process": "Hoe heb je het aangepakt? ...",
-        "steps": ["Analyse", "Ontwerp in Grasshopper", "Frezen en bouwen"],
+        "steps": ["Eerste poging met hulp", "Cursus volgen", "Tweede poging zonder hulp"],
         "result": "Wat was het resultaat en wat heb je geleerd? ...",
     },
 ```
@@ -129,10 +129,10 @@ What each label means:
 
 | Label | What to fill in | Required? |
 |---|---|---|
-| `slug` | The page's web address, e.g. `houten-paviljoen` becomes `projects/houten-paviljoen.html`. Use lowercase letters and hyphens only, with no spaces. | Yes |
+| `slug` | The page's web address, e.g. `van-brienenoordbrug` becomes `projects/van-brienenoordbrug.html`. Use lowercase letters and hyphens only, with no spaces. | Yes |
 | `title` | The project name. | Yes |
 | `leerdoelen` | Which leerdoelen this project shows, e.g. `["1.2", "2.2"]`. **The first one decides the main competentie** of the project. See section 3. | Yes |
-| `tags` | Labels such as `["arcgis", "python"]`. Choose from: `parametrisch`, `arcgis`, `fabricage`, `python`. | Yes |
+| `tags` | Labels such as `["arcgis", "python"]`. Choose from: `parametrisch`, `arcgis`, `fabricage`, `python`. Write `[]` if none fits; then no labels are shown. | Yes |
 | `lead` | One or two sentences summarising the project. Shown on the cards and at the top of the project page. | Yes |
 | `role` | Your role, e.g. `Ontwerper`. | Yes |
 | `date` | Year and month, written as `"YYYY-MM"`, e.g. `"2026-10"` for October 2026. | Yes |
@@ -253,7 +253,8 @@ To add a new tag, e.g. Revit, add a line like `"revit": "Revit",`. You can then 
    - Use **`.jpg`** for photos and **`.png`** for diagrams.
    - Use simple file names without spaces, e.g. `paviljoen-gevel.jpg`.
    - Make it about **1600 pixels wide**. Larger images make the site slow. On a Mac, use the Preview app: *Tools → Adjust Size*.
-   - **Landscape** pictures work best for projects; the site crops them to a wide format. A **portrait** photo works best for the home page.
+   - **Landscape** pictures work best for projects; the site crops them to a wide format (16:9 on the project page, a bit taller on the cards). A **portrait** photo works best for the home page.
+   - Several screenshots in one picture? Place them on a white background in a 16:9 frame, so nothing gets cut off.
 3. Put the file name in `build.py`, e.g. `"image": "paviljoen-gevel.jpg",`, and run `python3 build.py`.
 
 Until you add your own picture, the site shows a random stand-in photo. **Replace all of these before you publish.**

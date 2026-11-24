@@ -67,7 +67,7 @@ The nav menu, in the `page()` function, has these items: Home, Competenties, Ref
 **`TAGS`:** key → display name.
 
 **`PROJECTS`:**
-- Required: `slug`, `title`, `leerdoelen` (a list of codes, primary first), `tags` (keys from `TAGS`), `lead`, `role`, `date` (`"YYYY-MM"`, shown as e.g. "oktober 2026" under "Periode"), `tools`.
+- Required: `slug`, `title`, `leerdoelen` (a list of codes, primary first), `tags` (keys from `TAGS`; `[]` hides the tag list), `lead`, `role`, `date` (`"YYYY-MM"`, shown as e.g. "oktober 2026" under "Periode"), `tools`.
 - Optional: `challenge`, `process`, `steps` (a list; `[]` hides the list), `result`, `image` (a file name in `images/` or a full `https://` URL), `image_alt` (Dutch alt text, required when there is an image), `caption`.
 - Without `image`, a project shows a stand-in photo from picsum.photos, seeded with the project slug so the photo stays the same between loads. The hero does the same until `SITE["hero_image"]` is set (the `picsum()` helper). Replace these with real images before publishing. All images have rounded corners (`--radius-lg`).
 - Any optional text left out falls back to placeholder text from `CONTENT_DEFAULTS`.
@@ -121,4 +121,4 @@ The site must keep working without JS.
 
 ## Content status
 
-The six projects in `PROJECTS` are placeholder examples, and so are their leerdoel links. They still need Shena's real work. The competentie 4 diagram is missing. The text on the standalone reflectie page is placeholder prompts; the per-competentie STARR-reflecties are real. All photos are Picsum stand-ins. The contact details in `SITE` are real.
+The six projects in `PROJECTS` are Shena's real work, taken from her evidence document "Parametrische overspanning" (24 november 2026): Hittestress-analyse Parkhaven, Masterplan Parkhaven in Forma, Vakwerk in Grasshopper, Parametrische overspanning, Vakwerk met Python in Grasshopper and Van Brienenoordbrug. The document has almost no running text, so the project texts were written from its images and her STARR-reflecties. Their images in `images/` were cut from that PDF (a peer's name, a Windows username and file path were cropped out). Still to confirm with Shena: the dates of the two vakwerk projects (not in the document), that the overspanning was her kleiprinter design for project 2, and the leerdoel links. Leerdoelen 1.2 and 2.3 have no project yet. The document's feedback pages (begeleider, docenten, groepsgenoten) and YouTube links are not on the site yet. The competentie 4 diagram is missing. The text on the standalone reflectie page is placeholder prompts; the per-competentie STARR-reflecties are real. The hero photo is still a Picsum stand-in. The contact details in `SITE` are real.
