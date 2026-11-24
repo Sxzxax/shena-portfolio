@@ -1142,6 +1142,127 @@ a.leerdoel__code:hover {
   margin-bottom: var(--space-xs);
 }
 
+/* "Werk in detail" steps on a project page: text, labelled points and a media grid */
+
+.project-details > h2 {
+  margin-bottom: var(--space-md);
+}
+
+.project-detail__content .project-step {
+  margin-bottom: 0;
+  padding-block: var(--space-xl);
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.project-step h3 {
+  font-size: var(--font-size-lg);
+}
+
+.project-step__date {
+  margin-top: var(--space-2xs);
+  color: var(--color-accent);
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.05em;
+}
+
+.project-step > p + p,
+.project-step > h3 + p,
+.project-step > .project-step__date + p {
+  margin-top: var(--space-sm);
+}
+
+.project-step__points {
+  display: grid;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.project-step__points dt {
+  color: var(--color-heading);
+  font-weight: var(--font-weight-bold);
+}
+
+.project-step__points dd {
+  margin: 0;
+}
+
+.project-media {
+  display: grid;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.project-media__item {
+  margin: 0;
+}
+
+.project-media__item img,
+.project-media__item video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 56rem;
+  object-fit: contain;
+  background-color: var(--color-bg-subtle);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.project-media__item figcaption {
+  margin-top: var(--space-xs);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.project-media__link {
+  margin: 0;
+}
+
+@media (min-width: 48em) {
+  .project-media {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* A single picture or video uses the full width */
+  .project-media__item:only-child,
+  .project-media__link:only-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Feedback on a project page */
+
+.project-feedback > h2 {
+  margin-bottom: var(--space-md);
+}
+
+.feedback {
+  margin: 0 0 var(--space-lg);
+  padding: var(--space-lg);
+  background-color: var(--color-bg-elevated);
+  border: var(--border-width) solid var(--color-border);
+  border-left: 0.4rem solid var(--color-accent);
+  border-radius: var(--radius-lg);
+}
+
+.feedback__title {
+  font-size: var(--font-size-md);
+}
+
+.feedback__quote {
+  margin: var(--space-sm) 0 0;
+}
+
+.feedback__quote p + p {
+  margin-top: var(--space-sm);
+}
+
+.feedback__from {
+  margin-top: var(--space-md);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
 .project-nav {
   display: flex;
   flex-wrap: wrap;

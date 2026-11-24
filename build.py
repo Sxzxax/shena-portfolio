@@ -88,8 +88,12 @@ TAGS = {
 TIMELINE = {"start": "2026-09", "end": "2027-01"}
 
 # Required per project: slug, title, leerdoelen (codes; the first one's competentie is the primary one),
-#   tags (keys from TAGS), lead, role, date ("YYYY-MM", e.g. "2026-10"), tools.
-# Optional: challenge, process, steps (list), result, image (file in images/ or URL), image_alt, caption.
+#   tags (keys from TAGS, or [] for none), lead, role, date ("YYYY-MM", e.g. "2026-10"), tools.
+# Optional: challenge, process, result (text, or a list of paragraphs), steps (list), image (file in images/ or URL),
+#   image_alt, caption, details (the "Werk in detail" steps, see below), feedback (keys from FEEDBACK).
+# Each step in "details": title, and optionally date, text (list of paragraphs), points (list of [label, text])
+#   and media: pictures {"image", "alt", "caption"}, videos {"video" (file in videos/), "poster", "alt", "caption"}
+#   or links {"url", "label"}.
 # Optional fields that are left out get placeholder text (see CONTENT_DEFAULTS).
 PROJECTS = [
     {
@@ -97,43 +101,182 @@ PROJECTS = [
         "title": "Hittestress-analyse Parkhaven",
         "leerdoelen": ["1.1", "2.2", "3.3"],
         "tags": ["arcgis"],
-        "lead": "Een hittestressanalyse in ArcGIS Pro voor het masterplan Parkhaven, waarin ik het effect van bomen, groene daken en een groene kade op de gevoelstemperatuur vergelijk.",
-        "role": "Hittestressanalyse in een groepsproject (project 1)",
+        "lead": "Kaarten en een hittestressanalyse in ArcGIS Pro voor het masterplan Parkhaven, waarin ik het effect van bomen, groene daken en een groene kade op de gevoelstemperatuur vergelijk.",
+        "role": "Groepsproject (project 1): kaarten, ontwerpkansen en hittestressanalyse",
         "date": "2026-10",
-        "tools": "ArcGIS Pro, Tygron",
-        "challenge": "Met onze groep onderzochten we welke klimaatadaptatiemaatregelen passen bij de gebouwen van het masterplan Parkhaven. Mijn deel was de vraag hoeveel koeler het gebied wordt met meer groen. ArcGIS Pro was nieuw voor mij.",
-        "process": "Eerst legde ik bestaande kaarten van het studiegebied over elkaar: bebouwing en hoogtes, kabels en leidingen in de ondergrond, wateroverlast en hittestress. Daarna maakte ik een kaart van het grondgebruik en tekende ik zelf de maatregelen in als polygonen. Met de analysetools van ArcGIS Pro berekende ik voor elke maatregel de heat index. Tygron kreeg ik eerst niet onder de knie, daarom stapte ik over op ArcGIS Pro.",
+        "tools": "ArcGIS Pro, Claude, Gemini",
+        "challenge": [
+            "Voor het project Parkhaven moesten we als groep in fase 1 de omgeving onderzoeken en ontwerpkansen vinden. In fase 2 maakten we een simulatie voor klimaatadaptatie.",
+            "Mijn deel was onder andere de vraag hoeveel koeler het gebied wordt met meer groen. ArcGIS Pro was nieuw voor mij.",
+        ],
+        "process": "In fase 1 voegde ik bestaande kaarten samen in ArcGIS Pro en haalde ik daar data uit. In fase 2 bracht ik het landgebruik in kaart, tekende ik zelf de maatregelen in en berekende ik met de analysetools de heat index per maatregel. Hieronder staat elke stap, met de kaarten en video's.",
         "steps": [
-            "Bestaande kaarten van het studiegebied over elkaar leggen (september 2026)",
-            "Grondgebruik in kaart brengen en maatregelen tekenen met polygonen",
-            "Heat index berekenen voor bomen, groene daken, een groene kade en alle maatregelen samen (oktober 2026)",
+            "Bestaande kaarten samenvoegen in ArcGIS Pro (fase 1, september 2026)",
+            "Landgebruik in kaart brengen en maatregelen tekenen (fase 2, oktober 2026)",
+            "Heat index berekenen voor bomen, groene daken, een groene kade en alle maatregelen samen",
             "Resultaten presenteren aan de bedrijven achter het masterplan",
         ],
-        "result": "Met alle maatregelen samen wordt de omgeving ongeveer 2 graden koeler. De docenten vonden dat we ons goed in GIS hadden verdiept, maar misten wat we met de analyses wilden doen. Een volgende keer sluit ik mijn deel af met een conclusie en een vervolgstap.",
+        "result": [
+            "Met alle maatregelen samen wordt de omgeving ongeveer 2 graden koeler.",
+            "In dit project heb ik geleerd om zelfstandig met digitale tools te werken. Ik begon met weinig ervaring in ArcGIS Pro en kan nu zelf kaarten samenvoegen, data analyseren en een heat-indexanalyse maken.",
+            "Nieuwe software of tools kunnen veel tijd kosten en je weet vooraf niet of je ze echt nodig hebt. Een volgende keer controleer ik eerder of software en data kloppen voordat ik er veel tijd in stop.",
+        ],
         "image": "hittestress-parkhaven.jpg",
         "image_alt": "Vier heat-indexkaarten van Parkhaven naast elkaar: A. bomen, B. groene daken, C. groene kade en D. alle maatregelen samen, in tinten van lichtgeel (koeler) tot donkerbruin (warmer).",
-        "caption": "Heat index met vier varianten: bomen, groene daken, een groene kade en alle maatregelen samen (oktober 2026).",
+        "caption": "Heat index met vier varianten: bomen, groene daken, een groene kade en alle maatregelen samen (15 oktober 2026).",
+        "details": [
+            {
+                "title": "Taakverdeling",
+                "text": ["Onze belangrijkste taken per fase, en wat ik zelf deed."],
+                "points": [
+                    ["Fase 1, mijn bijdragen", "Welstandsnota, bestemmingsplan en regelgeving gezocht; kaarten gemaakt met ArcGIS Pro (bebouwing en klimaatadaptatie); ontwerpkansen bedacht met behulp van de kaarten en regelgeving."],
+                    ["Fase 1, groepsleden", "AI-visualisatie."],
+                    ["Fase 2, mijn bijdragen", "Gebouwen in Forma ontwerpen; Tygron proberen te gebruiken om te visualiseren (niet gelukt); hittestress analyseren."],
+                    ["Fase 2, groepsleden", "Wateroverlast en groen analyseren of simuleren."],
+                ],
+            },
+            {
+                "title": "Fase 1: kaarten",
+                "date": "17 september 2026",
+                "points": [
+                    ["Wat deed ik", "Bestaande kaarten samengevoegd in ArcGIS Pro en daar data uit gehaald. Ik heb vier kaarten gemaakt: hoogte, ondergrondse kabels, water/wateroverlast en hittestress."],
+                    ["Uitdaging", "Ik werkte voor het eerst met ArcGIS Pro, dus ik moest alles nog ontdekken."],
+                    ["Wat ging goed", "Ik had in korte tijd vier bruikbare kaarten."],
+                    ["Geleerd", "Data inladen, samenvoegen en een kaart opmaken in ArcGIS."],
+                ],
+                "media": [
+                    {"image": "parkhaven-kaarten-fase1.png", "alt": "Vier kaarten van het studiegebied naast elkaar, elk met een legenda: bebouwing (hoogtes), ondergrond (kabels), wateroverlast en hittestress.", "caption": "Bestaande kaarten op elkaar: bebouwing, ondergrond, wateroverlast en hittestress."},
+                ],
+            },
+            {
+                "title": "Niet gebruikte kaarten",
+                "points": [
+                    ["Wat deed ik", "Twee extra kaarten gemaakt: een over dichtheid en de andere over schaduw."],
+                    ["Wat ging minder", "Ze waren onduidelijk of voegden niets toe aan de opdracht, dus ze zijn niet in de eindpresentatie gekomen."],
+                    ["Geleerd", "Dat je niet zomaar kaarten moet inladen, maar van tevoren goed moet weten wat voor data je eigenlijk nodig hebt."],
+                ],
+                "media": [
+                    {"image": "parkhaven-kaart-dichtheid.png", "alt": "Kaart van het studiegebied met de bebouwingsdichtheid in rood en oranje, met legenda en schaalbalk.", "caption": "Kaart over dichtheid."},
+                    {"image": "parkhaven-kaart-schaduw.png", "alt": "Kaart van het studiegebied met schaduw in tinten blauw en groen, met legenda en schaalbalk.", "caption": "Kaart over schaduw."},
+                ],
+            },
+            {
+                "title": "Video fase 1",
+                "text": ["Deze video laat zien hoe ik in fase 1 te werk ging, van data inladen in ArcGIS Pro tot het zoeken van bestaande kaarten. Het is een nagemaakte versie, want het echte proces zat vol foutmeldingen en ik wist toen nog niet waar alles zat. Dat ik mijn stappen nu zonder hulp kan nadoen, laat zien hoeveel ik heb geleerd."],
+                "media": [
+                    {"video": "parkhaven-fase1-arcgis.mp4", "poster": "poster-parkhaven-fase1-arcgis.jpg", "alt": "Schermopname van ArcGIS Pro: data inladen en bestaande kaarten zoeken", "caption": "Schermopname van fase 1 in ArcGIS Pro (33 seconden, zonder geluid)."},
+                ],
+            },
+            {
+                "title": "Fase 2: landgebruik",
+                "date": "14 oktober 2026",
+                "points": [
+                    ["Wat deed ik", "Alle data in één kaart geladen (afbeelding 1), de kaarten overzichtelijk gemaakt (afbeelding 2) en de nieuwe maatregelen getekend: bomen, groene daken en een parkeerplaats vervangen door groen (afbeelding 3)."],
+                    ["Aanpak", "Dezelfde werkwijze als in fase 1, maar nu met meer data."],
+                    ["Uitdaging", "Eerlijk gezegd liep dit proces soepel."],
+                    ["Wat ging goed", "Ik kon sneller en zelfstandiger werken dan in fase 1."],
+                ],
+                "media": [
+                    {"image": "parkhaven-landgebruik-alle-data.png", "alt": "Kaart van het landgebruik in Parkhaven met alle data in één kaart: daken, verharding, groen en water.", "caption": "Afbeelding 1: alle data in één kaart."},
+                    {"image": "parkhaven-landgebruik-overzichtelijk.png", "alt": "Overzichtelijke kaart van het landgebruik: daken in donkerrood, bestrating in roze, gras en bomen in groen, water in lichtblauw.", "caption": "Afbeelding 2: de kaart overzichtelijk gemaakt."},
+                    {"image": "parkhaven-landgebruik-maatregelen.png", "alt": "Dezelfde kaart met de nieuwe maatregelen ingetekend: extra bomen, groene daken en groen op de plek van een parkeerplaats langs de kade.", "caption": "Afbeelding 3: de nieuwe maatregelen ingetekend."},
+                ],
+            },
+            {
+                "title": "Fase 2: heat index (gevoelstemperatuur)",
+                "date": "15 oktober 2026",
+                "points": [
+                    ["Wat deed ik", "Met de analysetools in ArcGIS meerdere heat-indexkaarten gemaakt."],
+                    ["Aanpak", "De kaarten van het landgebruik gepakt en daar met analysetools berekeningen op losgelaten voor de gevoelstemperatuur."],
+                    ["Resultaat", "Duidelijk krijgen welke variant het meest koelt, en hoeveel graden dat scheelt."],
+                    ["Geleerd", "Ik heb eindelijk leren werken met de analysetools in ArcGIS. In fase 1 lukte me dat totaal nog niet."],
+                ],
+                "media": [
+                    {"image": "hittestress-parkhaven.jpg", "alt": "Vier heat-indexkaarten: A. bomen, B. groene daken, C. groene kade en D. alle maatregelen.", "caption": "A: bomen, B: groene daken, C: groene kade, D: alle maatregelen."},
+                    {"image": "parkhaven-heat-index-legenda.png", "alt": "Legenda: een kleurverloop van lichtgeel bij 31 °C naar donkerbruin bij 40 °C.", "caption": "Legenda van de heat index: van 31 °C (lichtgeel) tot 40 °C (donkerbruin)."},
+                ],
+            },
+            {
+                "title": "Video fase 2",
+                "text": ["Deze video laat zien hoe ik de heat index heb gemaakt met de analysetools in ArcGIS Pro. Je ziet vooral het einde van het proces, want de data had ik toen al ingeladen. Het was veel zoeken naar waar alles zit en dat is heel anders dan alleen kaarten inladen. Net als bij fase 1 is dit een nagemaakte versie."],
+                "media": [
+                    {"video": "parkhaven-fase2-heat-index.mp4", "poster": "poster-parkhaven-fase2-heat-index.jpg", "alt": "Schermopname van ArcGIS Pro: de heat index maken met de analysetools", "caption": "Schermopname van de heat index in ArcGIS Pro (53 seconden, zonder geluid)."},
+                    {"url": "https://youtu.be/tAAOGNIfaxA", "label": "Bekijk de video op YouTube"},
+                ],
+            },
+            {
+                "title": "Gebruikte tools en hulpmiddelen",
+                "text": ["Dit zijn alle tools die ik tijdens dit project heb gebruikt. De twee tools die ik vooraf al goed kende en gebruikte, waren Revit en Gemini. De andere vier waren een compleet nieuwe ervaring voor me, en ik heb er veel van geleerd."],
+                "points": [
+                    ["ArcGIS Pro", "Ik kan er inmiddels een stuk beter mee overweg, maar het is een enorm programma waar nog veel meer in te ontdekken valt."],
+                    ["Claude", "Vind ik nu echt een fijne AI-tool vergeleken met andere opties."],
+                    ["Forma", "Hiermee kan ik inmiddels zelfstandig een gebouw ontwerpen."],
+                    ["Tygron", "Moet ik nog veel meer over leren."],
+                ],
+            },
+        ],
+        "feedback": ["docenten-parkhaven"],
     },
     {
         "slug": "forma-masterplan-parkhaven",
         "title": "Masterplan Parkhaven in Forma",
         "leerdoelen": ["2.1", "4.1"],
         "tags": [],
-        "lead": "De gebouwen van het masterplan Parkhaven, samen met een groepsgenoot gemodelleerd in Forma als basis voor de hittestressanalyse.",
-        "role": "Modelleur, samen met een groepsgenoot (project 1)",
+        "lead": "De gebouwen van het masterplan Parkhaven, samen met een groepsgenoot nagebouwd in Forma als basis voor de hittestressanalyse, en een eerste simulatie in Tygron.",
+        "role": "Modelleur, samen met Natasha (project 1)",
         "date": "2026-10",
-        "tools": "Forma, Revit",
-        "challenge": "Voor de simulaties hadden we zo snel mogelijk de gebouwen van het masterplan nodig. Forma had ik nog nooit gebruikt.",
-        "process": "We verdeelden de gebouwen: ik maakte een deel, mijn groepsgenoot een ander deel. Als onderlegger gebruikte ik de overzichtstekening van het masterplan op schaal. De hoogtes waren een puzzel, omdat alleen het hoogste punt bekend was en niet de verdiepingen ertussen. Omdat mijn deel eerst klaar was, legde ik uit hoe ik het in Forma had gedaan, zodat de gebouwen op elkaar aansloten. Forma exporteert het terrein mee in de IFC; dat haalde ik in Revit weg voordat ik het model opnieuw exporteerde.",
+        "tools": "Forma, Revit, Tygron",
+        "challenge": "Voor de simulaties in fase 2 hadden we zo snel mogelijk de gebouwen van het masterplan nodig. Forma en Tygron had ik nog nooit gebruikt.",
+        "process": "Natasha en ik verdeelden de gebouwen en bouwden ze na in Forma, met de situatietekening als onderlegger. Omdat mijn deel eerst klaar was, legde ik uit hoe ik het in Forma had gedaan, zodat de gebouwen op elkaar aansloten. Daarna probeerden we de hittestress te simuleren in Tygron.",
         "steps": [
-            "Gebouwen verdelen en het masterplan op schaal als onderlegger gebruiken",
-            "Eigen gebouwen modelleren in Forma en de werkwijze uitleggen aan mijn groepsgenoot",
+            "Gebouwen verdelen en de situatietekening op schaal als onderlegger gebruiken",
+            "Eigen gebouwen modelleren in Forma en de werkwijze uitleggen aan Natasha",
             "Terrein in Revit verwijderen en opnieuw exporteren als IFC voor ArcGIS en Tygron",
+            "Hittestress simuleren in Tygron",
         ],
-        "result": "Alle gebouwen staan in één model, klaar voor de analyses. Ik heb geleerd met Forma te werken en wil me verder verdiepen in de omgevingsanalyses die Forma zelf kan maken.",
+        "result": "Alle gebouwen staan in één model, klaar voor de analyses. Forma was best eenvoudig om mee te werken, dus het was de snelste manier om de gebouwen te ontwerpen. Ik wil me verder verdiepen in de omgevingsanalyses die Forma zelf kan maken. Tygron lukte tijdens het project niet, maar na de presentatie hebben Natasha en ik verder geëxperimenteerd en is het alsnog gelukt.",
         "image": "forma-masterplan-parkhaven.jpg",
         "image_alt": "3D-model in Forma van een rij woontorens langs de kade van Parkhaven, met een groen kader om de gebouwen die ik zelf heb gemodelleerd en het label Eigen bijdrage.",
-        "caption": "Mijn eigen bijdrage aan het Forma-model van het masterplan (oktober 2026).",
+        "caption": "Mijn eigen bijdrage aan het Forma-model van het masterplan (6 oktober 2026).",
+        "details": [
+            {
+                "title": "Masterplan",
+                "date": "6 oktober 2026",
+                "text": ["Uit de gegevens van het masterplan haalden we de maten en hoogtes van de bouwblokken."],
+                "media": [
+                    {"image": "parkhaven-masterplan.jpg", "alt": "Tekeningen uit het masterplan Parkhaven: bovenaan de bouwblokken in aanzicht met hun breedte en hoogte, onderaan een 3D-overzicht van de oranje bouwblokken langs de Euromast.", "caption": "Masterplan: verscheidenheid in maten van de bouwblokken."},
+                ],
+            },
+            {
+                "title": "Gebouwen in Forma",
+                "points": [
+                    ["Wat deed ik", "Samen met Natasha de gebouwen van het masterplan nagebouwd in Forma."],
+                    ["Aanpak", "De situatietekening gebruikt als onderlegger op schaal en de hoogtes van de gebouwen uit de gegevens van het masterplan gehaald."],
+                    ["Uitdaging", "Het was vooral een gepuzzel om alles precies te laten overeenkomen met het masterplan. Vooral de hoogtes waren lastig, omdat in de gegevens alleen het toppunt van het gebouw stond en niet de verdiepingen ertussen. Daarnaast exporteert Forma altijd een IFC-bestand inclusief terrein, en dat hadden we niet nodig. Daarom heb ik het eerst in Revit gezet om het terrein weg te halen, en het daarna pas weer als IFC geëxporteerd voor Tygron of ArcGIS."],
+                    ["Wat ging goed", "Forma was best eenvoudig om mee te werken, dus het was de snelste manier om de gebouwen te ontwerpen."],
+                ],
+                "media": [
+                    {"image": "forma-taakverdeling.png", "alt": "Forma-model van Parkhaven met een paars kader om de gebouwen van groepsgenoot Natasha en een groen kader om mijn eigen bijdrage.", "caption": "Verdeling van de gebouwen: Natasha (paars) en mijn eigen bijdrage (groen)."},
+                    {"image": "forma-gebouwen-terrein.png", "alt": "Grijs terreinvlak met daarop de witte gebouwen van het masterplan, zoals Forma ze exporteert.", "caption": "De gebouwen met het terrein, zoals Forma ze exporteert."},
+                ],
+            },
+            {
+                "title": "Tygron",
+                "points": [
+                    ["Plan", "Hittestress simuleren in Tygron."],
+                    ["Probleem", "We verloren veel tijd aan het importeren van het Forma-ontwerp. Daarna rekende Tygron met data van 2013 (afbeelding 2) en hadden we geen tijd om dat uit te zoeken."],
+                    ["Besluit", "We gingen verder met analyses in ArcGIS."],
+                    ["Daarna", "Na de presentatie hebben Natasha en ik verder geëxperimenteerd en is het alsnog gelukt (afbeelding 3)."],
+                ],
+                "media": [
+                    {"image": "tygron-import.jpg", "alt": "3D-weergave in Tygron van Parkhaven met de witte gebouwen uit Forma langs de Maas.", "caption": "Afbeelding 1: het Forma-ontwerp in Tygron."},
+                    {"image": "tygron-data-2013.jpg", "alt": "Tygron-weergave van Parkhaven met een blauwe laag over het hele gebied.", "caption": "Afbeelding 2: Tygron rekende met data van 2013."},
+                    {"image": "tygron-gelukt.jpg", "alt": "Tygron-weergave van Parkhaven met een hittestresskaart in kleuren en een grafiek van de temperatuur eronder.", "caption": "Afbeelding 3: na de presentatie lukte de simulatie alsnog."},
+                    {"video": "parkhaven-tygron.mp4", "poster": "poster-parkhaven-tygron.jpg", "alt": "Schermopname van de hittestresssimulatie in Tygron", "caption": "De hittestresssimulatie in Tygron (13 seconden, zonder geluid)."},
+                ],
+            },
+        ],
+        "feedback": ["docenten-parkhaven", "natasha"],
     },
     {
         "slug": "vakwerk-grasshopper",
@@ -156,28 +299,221 @@ PROJECTS = [
         "image": "vakwerk-grasshopper.jpg",
         "image_alt": "Vier rode vakwerkliggers in Grasshopper met belastingpijlen erboven: een vakwerk met schuine diagonalen, een met verticalen en diagonalen, een met kruisende diagonalen en een driehoeksvakwerk.",
         "caption": "Vier vakwerktypes uit hetzelfde script, belast en doorgerekend met Karamba3D.",
+        "details": [
+            {
+                "title": "Grasshopper-script",
+                "text": ["Links staan de vier vakwerken (Vakwerk 1 tot en met 4), elk in een eigen groep. Ze komen samen in de keuzecomponent en gaan daarna naar het oranje deel, waar Karamba3D het gekozen vakwerk doorrekent."],
+                "media": [
+                    {"image": "vakwerk-grasshopper-script.jpg", "alt": "Grasshopper-script met vier grijze groepen componenten (Vakwerk 1 tot en met 4) die via een keuzecomponent verbonden zijn met een oranje groep voor de berekening in Karamba3D.", "caption": "Het Grasshopper-script met de vier vakwerken en de berekening in Karamba3D."},
+                ],
+            },
+            {
+                "title": "Video",
+                "media": [
+                    {"url": "https://youtu.be/tAAOGNIfaxA", "label": "Bekijk de video van het vakwerk op YouTube"},
+                ],
+            },
+        ],
+        "feedback": ["begeleider-abt"],
     },
     {
         "slug": "parametrische-overspanning",
         "title": "Parametrische overspanning",
-        "leerdoelen": ["1.3", "1.4"],
+        "leerdoelen": ["1.3", "1.4", "2.1"],
         "tags": ["parametrisch", "fabricage"],
-        "lead": "Een boog van veelhoekige blokken, parametrisch ontworpen in Grasshopper als ontwerp voor het project digitale fabricage met de kleiprinter.",
-        "role": "Ontwerper in een groepsproject (project 2)",
+        "lead": "Mijn eigen ontwerp voor een overspanning van kleiblokken, parametrisch gemaakt in Grasshopper voor project 2 (digitale fabricage).",
+        "role": "Ontwerper in de printergroep (project 2)",
         "date": "2026-11",
         "tools": "Rhino, Grasshopper",
-        "challenge": "Voor het project digitale fabricage ontwierp ik een overspanning die uit losse blokken bestaat en met de kleiprinter gemaakt kan worden. Een papieren model van een boog van veelhoekige blokken was mijn referentie.",
-        "process": "In Grasshopper bouwde ik een script met parameters voor onder andere de overspanning, de boogvorm, het aantal blokken, de dikte en de straal. Door de parameters te veranderen ontstonden verschillende varianten, van een slanke boog tot een boog van grote, losse blokken. Daarna maakte ik renders van het ontwerp.",
-        "steps": [
-            "Een papieren model van een boog van blokken als referentie kiezen",
-            "Een Grasshopper-script bouwen met parameters voor overspanning, vorm, aantal, dikte en straal",
-            "Varianten maken door de parameters aan te passen",
-            "Het ontwerp renderen en met de groep vergelijken",
+        "challenge": [
+            "Onze opdracht was om een overspanning te ontwerpen met blokken van klei. Deze blokken worden geprint met kleiprinters en daarna samengesteld door de cobot. Onze groep van zes was opgesplitst: drie mensen werkten aan de cobot en drie aan de printer. Ik zat in de printergroep.",
+            "Iedereen maakte eerst een eigen concept. Ik bouwde een eigen model na op basis van een referentie, met mijn Grasshopper-vaardigheden van de leerplek. Ik wilde mezelf uitdagen: de vorm is simpel, maar heeft toch zijn uitdagingen.",
         ],
-        "result": "De groep koos uiteindelijk voor een ander ontwerp, omdat mijn boog lastiger te printen was. Een groepsgenoot merkte ook op dat mijn parameters niet helemaal correct waren. Ik heb geleerd dat een ontwerp niet alleen mooi moet zijn, maar ook uitvoerbaar.",
+        "process": "Pas na veel pogingen kwam ik in de buurt van de referentie. Ik wist niet welke components het handigst waren, dus ik heb getest en uitgeprobeerd met verschillende components, want dit kan op meerdere manieren. Hieronder staan de pogingen, het eindmodel en de feedback.",
+        "steps": [
+            "Plan van aanpak maken (met groepsleden)",
+            "Eigen concept ontwerpen in Grasshopper",
+            "Drie pogingen: loft, extrude en amplitude",
+            "Eindmodel bakken en renderen",
+        ],
+        "result": [
+            "Vergeleken met waar ik begon is dit een grote vooruitgang. Ik heb geleerd vormen te maken in Grasshopper en curves te roteren.",
+            "Er was twijfel tussen mijn model en dat van een groepslid. We kozen het model van het groepslid, omdat het mijne ingewikkeld was om te printen en voor de cobot. Ik heb geleerd om bij het ontwerpen rekening te houden met printen en de cobot.",
+        ],
         "image": "parametrische-overspanning.jpg",
         "image_alt": "Twee renders van een witte boog die is opgebouwd uit veelhoekige blokken: links een schuin aanzicht, rechts een vooraanzicht met zwarte lijnen langs de randen.",
-        "caption": "Renders van het ontwerp (4 november 2026).",
+        "caption": "Rendering van het ontwerp (4 november 2026).",
+        "details": [
+            {
+                "title": "Samenwerking",
+                "text": [
+                    "De samenwerking voor project 2 is goed verlopen. Iedereen wist wat zijn of haar taak was en deed actief mee. Drie mensen verdiepten zich in de cobot en drie in klei. Dat bespaarde tijd en zorgde voor kennisoverdracht.",
+                    "Een klein nadeel was dat de groep in twee delen was gesplitst. Dat hebben we opgelost door vaste momenten te plannen om bij elkaar te zitten. Een voorbeeld is de schets hieronder: we konden niet kiezen tussen de concepten, dus zijn we samen gaan zitten en hebben we ideeën geschetst. Zo konden we uiteindelijk wel kiezen.",
+                ],
+                "media": [
+                    {"image": "overspanning-schets-groep.jpg", "alt": "Schetsen in blauwe pen op gelinieerd papier: een boog van blokken, losse blokken en verbindingen tussen de blokken.", "caption": "Samen ideeën geschetst om tussen de concepten te kiezen."},
+                ],
+            },
+            {
+                "title": "Referentie",
+                "text": ["Ik bouwde mijn model na op basis van deze referentie: een boog van veelhoekige blokken."],
+                "media": [
+                    {"image": "overspanning-referentie.jpg", "alt": "Foto van een papieren model: een boog opgebouwd uit wit en bruin gevouwen veelhoekige blokken.", "caption": "Referentie."},
+                ],
+            },
+            {
+                "title": "Pogingen",
+                "points": [
+                    ["Poging 1 (loft)", "Probleem: de loft maakte één doorlopend vlak in plaats van losse vlakken. Oorzaak: ik had de polygons geroteerd zodat ze horizontaal stonden. Oplossing: overstappen op extrude."],
+                    ["Poging 2 (extrude)", "Probleem: de blokken aan de uiteinden stonden niet goed gericht. Ze moesten meer horizontaal liggen. Oplossing: een amplitude-component gebruiken."],
+                    ["Poging 3 (amplitude)", "Probleem: de uiteinden lagen nu horizontaal, maar de andere blokken ook. Dat was niet de bedoeling. Oplossing: feedback van Kebriya gebruiken: in de referentie is de onderkant kleiner dan de bovenkant."],
+                    ["Eindmodel", "Ik maakte het model twee keer met twee verschillende stralen en koppelde ze aan elkaar. Geleerd: vormen maken in Grasshopper en curves roteren."],
+                ],
+                "media": [
+                    {"image": "overspanning-poging-1-loft.png", "alt": "Rode boog in Grasshopper die uit één doorlopend vlak bestaat.", "caption": "Poging 1: loft."},
+                    {"image": "overspanning-poging-2-extrude.png", "alt": "Rode boog van losse blokken waarvan de blokken aan de uiteinden rechtop staan.", "caption": "Poging 2: extrude."},
+                    {"image": "overspanning-poging-3-amplitude.png", "alt": "Rode boog van grote veelhoekige blokken die allemaal horizontaal liggen.", "caption": "Poging 3: amplitude."},
+                    {"image": "overspanning-eindmodel.png", "alt": "Rode boog van veelhoekige blokken die bovenaan smaller zijn, het eindmodel.", "caption": "Eindmodel."},
+                ],
+            },
+            {
+                "title": "Eindmodel en Grasshopper-script",
+                "date": "4 november 2026",
+                "text": ["Dit is mijn uiteindelijke model, gebakt en gerenderd. Hierbij zie je ook het Grasshopper-script dat ik heb gebruikt, met sliders voor onder andere de overspanning, de boogfactor, het aantal blokken, de dikte en de stralen."],
+                "media": [
+                    {"image": "overspanning-render-1.png", "alt": "Render van de witte boog van veelhoekige blokken, schuin van voren.", "caption": "Render, schuin aanzicht."},
+                    {"image": "overspanning-render-2.png", "alt": "Render van de witte boog van voren, met zwarte lijnen langs de randen van de blokken.", "caption": "Render, vooraanzicht."},
+                    {"image": "overspanning-grasshopper-script.png", "alt": "Grasshopper-script met links sliders voor de parameters en rechts een reeks verbonden componenten.", "caption": "Het Grasshopper-script."},
+                ],
+            },
+            {
+                "title": "Feedback en keuze",
+                "points": [
+                    ["Feedback", "Een groepslid en mijn begeleider vonden mijn ontwerp niet helemaal parametrisch."],
+                    ["Leerpunt", "Ik moet meer parametrisch nadenken."],
+                    ["Mogelijke verbetering", "De sliders van de twee stralen koppelen, zodat ze samen veranderen. Als het aantal blokken afneemt, past de lengte zich dan ook aan."],
+                    ["Keuze groepsproject", "Er was twijfel tussen mijn model en dat van een groepslid. We kozen het model van het groepslid, omdat het mijne ingewikkeld was om te printen en voor de cobot."],
+                    ["Geleerd", "Houd bij het ontwerpen rekening met printen en de cobot."],
+                ],
+                "media": [
+                    {"video": "overspanning-parameters.mp4", "poster": "poster-overspanning-parameters.jpg", "alt": "Schermopname van Grasshopper en Rhino waarin de sliders worden verschoven en de rode boog meeverandert", "caption": "De parameters van het model aanpassen (17 seconden, zonder geluid)."},
+                ],
+            },
+        ],
+        "feedback": ["kebriya", "natasha"],
+    },
+    {
+        "slug": "kleiprinter-blokken-printen",
+        "title": "Blokken printen met de kleiprinter",
+        "leerdoelen": ["1.2", "1.4", "3.3", "4.1"],
+        "tags": ["fabricage", "parametrisch"],
+        "lead": "Uitzoeken hoe de kleiprinter werkt, de printbestanden voorbereiden met de Termite-template en de kleiblokken van het gekozen ontwerp printen, voor project 2 (digitale fabricage).",
+        "role": "Printergroep, samen met Natasha en Kebriya (project 2)",
+        "date": "2026-11",
+        "tools": "WASP 2040 kleiprinter, Rhino, Grasshopper, Termite",
+        "challenge": "Na de keuze voor het ontwerp moesten wij als printergroep de blokken printen. In het begin hadden we geen idee hoe de kleiprinter werkte en de informatie was beperkt.",
+        "process": "Samen met Natasha en Kebriya zocht ik uit hoe de kleiprinter werkt. Ik onderzocht de Termite-template, bereidde de bestanden voor en printte met hen de blokken. Hieronder staat elke stap, met de testprints en video's.",
+        "steps": [
+            "Informatie zoeken over de kleiprinter (met twee anderen)",
+            "De Termite-template onderzoeken en uitleggen",
+            "Bestanden voorbereiden en de G-code exporteren",
+            "Testprints maken en de instellingen aanpassen",
+            "Blokken printen (met twee anderen)",
+        ],
+        "result": [
+            "Na veel pogingen is het gelukt: alle blokken zijn geprint en zo komen ze bij elkaar.",
+            "In dit project heb ik vooral gewerkt aan mijn vaardigheden met Grasshopper en met de kleiprinter. Bij Grasshopper heb ik geleerd om meer parametrisch na te denken over mijn ontwerpen en om te werken met extrude en planes. Bij de kleiprinter heb ik geleerd hoe het werkt, hoe je de printer schoonmaakt, hoe je print en hoe je de klei voorbereidt. We kunnen dit nu ook aan anderen uitleggen.",
+            "Wat ik anders zou doen: minder afwachtend zijn. We begonnen later met printen, omdat we eerst alles goed wilden weten. Toen we wilden beginnen, bleek wat we hadden geleerd niet genoeg. Veel hebben we toen geleerd van de andere groep, die eerder met printen was begonnen.",
+        ],
+        "image": "kleiprinter-overspanning-resultaat.jpg",
+        "image_alt": "De geprinte kleiblokken samengesteld tot een boog op een tafel.",
+        "caption": "Het resultaat: de geprinte blokken samen als overspanning.",
+        "details": [
+            {
+                "title": "Onderzoek kleiprinter",
+                "points": [
+                    ["Wat deed ik", "Samen met Natasha en Kebriya uitzoeken hoe de kleiprinter werkt."],
+                    ["Hoe", "Video's op de website van WASP 2040, en uitleg van de andere groep over onder andere de druk."],
+                    ["Ontdekking", "Een groepslid vond Termite, een Grasshopper-plug-in waarmee je direct kunt printen."],
+                    ["Mijn bijdrage", "Ik vond een template die overzichtelijk maakt hoe de plug-in werkt."],
+                ],
+            },
+            {
+                "title": "De template",
+                "points": [
+                    ["Wat deed ik", "De template onderzocht met een video en getest voordat we gingen printen. Daarna legde ik het uit aan Natasha en Kebriya."],
+                    ["Wat we nodig hadden", "Een component die de lagen maakt en een component die het printpad sorteert."],
+                    ["Probleem", "In een test maakte de printer eerst het ene blok helemaal af en ging daarna naar beneden voor het volgende. Dat tweede blok vervormde, omdat het nog nat was."],
+                    ["Oplossing", "Het printpad sorteren, zodat de printer laag voor laag per blok print."],
+                    ["Geleerd", "Welke onderdelen van de template nodig zijn voor onze blokken."],
+                ],
+                "media": [
+                    {"image": "kleiprinter-template-script.png", "alt": "De Termite-template in Grasshopper: kolommen met componenten en een paars gemarkeerde groep.", "caption": "De Termite-template in Grasshopper."},
+                    {"video": "kleiprinter-template.mp4", "poster": "poster-kleiprinter-template.jpg", "alt": "Schermopname van Rhino en Grasshopper waarin de template twee testblokken in lagen opdeelt", "caption": "De template testen (25 seconden, zonder geluid)."},
+                ],
+            },
+            {
+                "title": "Bestanden voorbereiden",
+                "points": [
+                    ["Wat deed ik", "Het gekozen ontwerp in Rhino met de groep overtekenen met polylines. Daarna verzamelde ik alles in mijn bestand, maakte een extrude en exporteerde de G-code."],
+                    ["Probleem", "Een testprint liet zien dat de verbindingen lastig zouden passen."],
+                    ["Oplossing", "De blokken 2 cm groter gemaakt en de opening van de pen-gatverbinding 4 mm groter. Het andere deel van de verbinding bleef gelijk."],
+                ],
+                "media": [
+                    {"image": "kleiprinter-verdeling-blokken.png", "alt": "Bovenaanzicht van de boog van blokken in Rhino, verdeeld in drie gekleurde kaders: Shena links, Natasha in het midden en Kebriya rechts.", "caption": "Verdeling van het overtekenen: Shena, Natasha en Kebriya."},
+                    {"image": "kleiprinter-polylines.png", "alt": "De omtrekken van alle blokken als losse polylines op het printbed in Rhino.", "caption": "Alle blokken als polylines op het printbed."},
+                    {"video": "kleiprinter-printpad.mp4", "poster": "poster-kleiprinter-printpad.jpg", "alt": "Simulatie van het printpad in de rode printer in Rhino, waarin de blokken laag voor laag ontstaan", "caption": "Simulatie van het printpad (48 seconden, zonder geluid)."},
+                ],
+            },
+            {
+                "title": "Testprints",
+                "points": [
+                    ["Print 1 en 2", "De print was niet goed door de instellingen. Jurien van de andere groep merkte dat op. Ik paste de instellingen aan: de nozzle-instelling, de printsnelheid (langzamer printen geeft mooiere lagen), het aantal lagen en een andere contour group. Het resultaat was beter, maar nog niet helemaal goed."],
+                    ["Beste testprint", "De lagen kwamen mooi op elkaar. Dit was het resultaat van veel testen en aanpassen. Volgende stap: de daadwerkelijke blokken printen."],
+                    ["Blokken van het gekozen ontwerp", "De blokken zijn geprint. Open vraag: gaan de blokken passen?"],
+                    ["Uitdaging", "Je moet continu aanpassen en testen, zelf bedenken wat de mogelijke problemen zijn en daar oplossingen voor vinden."],
+                ],
+                "media": [
+                    {"image": "kleiprinter-print-1-en-2.jpg", "alt": "Twee geprinte testblokken van klei op een draaischijf naast een handleiding.", "caption": "Print 1 (rechts) en print 2 (links)."},
+                    {"image": "kleiprinter-testprint.jpg", "alt": "Een geprint kleiblok met een uitsparing op een witte plaat.", "caption": "Testprint."},
+                    {"image": "kleiprinter-beste-testprint.jpg", "alt": "Een geprint kleiblok met gelijkmatige lagen.", "caption": "Beste testprint: de lagen kwamen mooi op elkaar."},
+                    {"image": "kleiprinter-blokken-geprint.jpg", "alt": "Alle geprinte kleiblokken van het gekozen ontwerp dicht naast elkaar op het printbed.", "caption": "De blokken van het gekozen ontwerp."},
+                ],
+            },
+            {
+                "title": "Trial-and-error",
+                "points": [
+                    ["Probleem 1", "Een aantal blokken en testen is per ongeluk gebroken. Dit is ook een uitdaging voor de cobot, want de klei is gevoelig."],
+                    ["Probleem 2", "Bij elke nieuwe klei werden de blokken anders geprint (dikker, dunner of lagen dichter op elkaar), ook met dezelfde instellingen."],
+                    ["Oplossing", "We printen alle blokken op één dag."],
+                    ["Nog een uitdaging", "Het krimpen van de klei."],
+                ],
+                "media": [
+                    {"image": "kleiprinter-gebroken-blokken.jpg", "alt": "Gebroken en hele kleiblokken en testprints op een stuk karton.", "caption": "Gebroken blokken en testen."},
+                ],
+            },
+            {
+                "title": "Blokken printen",
+                "text": ["Dit was een groot proces dat veel tijd kostte. Voor mij was het het moeilijkste onderdeel van het project, omdat er veel dingen mis kunnen gaan. Je moet zelf uitzoeken wat er misging, en soms doe je extra werk dat achteraf niet nodig was."],
+                "points": [
+                    ["Wat deed ik", "De printer voorbereiden: druk toepassen, klei met water goed maken, in de container doen, de lucht eruit halen en altijd eerst extruden om oude klei eruit te halen."],
+                    ["Probleem 1", "De slang was zo hard dat we er zeker een uur mee bezig waren om hem eruit te halen."],
+                    ["Probleem 2", "De printer print eerst rommelig. Na een paar pogingen print hij ineens netjes, zonder dat je iets aanpast. Wij wisten dit niet, dachten aan de consistentie van de klei en bereidden alles opnieuw voor."],
+                    ["Gevolg", "De voorbereiding duurde ongeveer 3 uur, het printen van alle blokken 24 minuten."],
+                    ["Schoonmaken", "Viel mee. Het kost tijd, maar is niet ingewikkeld."],
+                    ["Resultaat", "Na veel pogingen is het gelukt. Zo komen de blokken bij elkaar."],
+                ],
+                "media": [
+                    {"video": "kleiprinter-printen.mp4", "poster": "poster-kleiprinter-printen.jpg", "alt": "De kleiprinter print de blokken laag voor laag", "caption": "De kleiprinter aan het werk (4 seconden, zonder geluid)."},
+                    {"video": "kleiprinter-printen-kort.mp4", "poster": "poster-kleiprinter-printen-kort.jpg", "alt": "Close-up van de nozzle van de kleiprinter tijdens het printen", "caption": "Close-up van de nozzle (4 seconden, zonder geluid)."},
+                    {"image": "kleiprinter-printer.jpg", "alt": "De bovenkant van de kleiprinter met de container en de slang.", "caption": "De printer voorbereiden."},
+                    {"image": "kleiprinter-shena-bij-printer.jpg", "alt": "Shena steekt lachend haar duimen op naast de kleiprinter.", "caption": "Gelukt!"},
+                    {"image": "kleiprinter-blokken-op-rij.jpg", "alt": "De geprinte kleiblokken in een boog naast elkaar op een tafel.", "caption": "Zo komen de blokken bij elkaar."},
+                    {"image": "klei-geprinte-blokken.jpg", "alt": "Alle geprinte kleiblokken los op een witte plaat, met metalen pennen ernaast.", "caption": "De geprinte blokken met de pennen voor de verbindingen."},
+                ],
+            },
+        ],
+        "feedback": ["kebriya", "natasha"],
     },
     {
         "slug": "vakwerk-python",
@@ -200,6 +536,7 @@ PROJECTS = [
         "image": "vakwerk-python.jpg",
         "image_alt": "Links de Python-code in de scripteditor van Grasshopper, met lussen voor punten, verticalen en diagonalen. Rechts het groene vakwerk dat de code in Rhino tekent.",
         "caption": "De Python-code en het vakwerk dat die code in Rhino maakt.",
+        "feedback": ["begeleider-abt"],
     },
     {
         "slug": "van-brienenoordbrug",
@@ -221,8 +558,88 @@ PROJECTS = [
         "image": "van-brienenoordbrug.jpg",
         "image_alt": "Rood, half doorzichtig 3D-model van de Van Brienenoordbrug in Rhino: twee bogen met vakwerk ertussen boven het brugdek, op twee ronde pijlers.",
         "caption": "Tweede poging, zonder hulp gemaakt (23 november 2026).",
+        "details": [
+            {
+                "title": "Referentie",
+                "media": [
+                    {"image": "van-brienenoordbrug-referentie.jpg", "alt": "Luchtfoto van de Van Brienenoordbrug over de Nieuwe Maas: een witte boogbrug met vakwerk tussen de twee bogen.", "caption": "Referentiefoto van de Van Brienenoordbrug."},
+                ],
+            },
+            {
+                "title": "Eerste poging met hulp van anderen",
+                "date": "21 september 2026",
+                "media": [
+                    {"image": "van-brienenoordbrug-eerste-poging.jpg", "alt": "Twee rode boogcurves met controlepunten boven een grijs raster in Rhino.", "caption": "Eerste poging: alleen de curves van de boog."},
+                ],
+            },
+            {
+                "title": "Tweede poging zonder hulp (na de cursus)",
+                "date": "23 november 2026",
+                "media": [
+                    {"image": "van-brienenoordbrug.jpg", "alt": "Rood 3D-model van de complete brug met bogen, vakwerk, brugdek en pijlers.", "caption": "Tweede poging: de complete brug."},
+                ],
+            },
+        ],
     },
 ]
+
+# Feedback that projects link to with their "feedback" list. Text as received (plain text, one string per paragraph).
+FEEDBACK = {
+    "begeleider-abt": {
+        "title": "Feedback begeleider leerplek",
+        "from": "Erron Estrado, begeleider bij ABT (Samen Oosterhoff)",
+        "date": "17 november 2026",
+        "paragraphs": [
+            "Sinds 1 oktober ben je bij ABT gestart met je leerplek als deel van de Oosterhoff Digital team. Tijdens de speeddate sessie gaf je aan dat je doel was om je digitale skills te ontwikkelen vooral met Grasshopper en Python in het kader van constructief ontwerp. Wat mij betreft gaat je ontwikkeling tot nu toe de goede kant op.",
+            "Je bent bijna vanuit het niets begonnen en hebt je nu zo ver ontwikkeld dat je in Grasshopper kleine parametrische scripts kunt maken voor eenvoudige constructies. Het vakwerk-script dat je hebt gebouwd met meerdere invoerparameters en diagonale patronen plus koppeling met Karamba en Technosoft Raamwerken is een belangrijke stap vooruit. Nu begin je ook meer te doen met Python en ik vind deze ontwikkeling eveneens veelbelovend. Je hebt de basis vrij snel onder de knie gekregen.",
+            "Naarmate je verdergaat, zou ik het parametrisch denken meer in gedachten houden. Dat betekent dat je bij het ontwikkelen van Grasshopper-scripts niet alleen moet nadenken over wat werkt met de huidige parameters, maar ook over hoe het zich gedraagt wanneer je parameters wijzigt. Zorg ervoor dat de geometrie als één geheel meebeweegt, dat invoerwaarden worden hergebruikt en niet gedupliceerd, en dat je script zo is opgezet dat het gemakkelijk uitbreidbaar is, d.w.z. dat je er gemakkelijk dingen aan kunt toevoegen zonder grote wijzigingen in de bestaande workflow. Let bij Python op de structuur en overzichtelijkheid van de code, met name wat betreft variabelenamen en opmerkingen. Dit helpt je later bij het terugkijken op en leren van wat je hebt gedaan.",
+            "Tot nu toe heb je tijdens de leerplek een positieve houding getoond ten opzichte van leren en het uitproberen van nieuwe dingen. Je lijkt oprecht geïnteresseerd in digitale vaardigheden en bereid om dingen uit te proberen om jezelf verder te ontwikkelen. Je luistert aandachtig en volgt advies op. Je werkt best zelfstandig. Mijn feedback op dit gebied zou zijn om meer vragen te stellen en ook aan te geven of je iets nieuws of anders wilt zien, doen of uitproberen, zodat we kunnen bekijken hoe we dat kunnen regelen. Het doel van deze periode is gewoon te leren, niet alleen direct techniek maar ook van jouw collega's.",
+            "Over het algemeen vind ik je een prettige collega die goed in het team past. Je maakt in een goed tempo je ontwikkeling door. Ik kijk uit naar de rest van de leerplekperiode en ben ervan overtuigd dat je aan het einde een resultaat zult behalen waar je trots op kunt zijn.",
+        ],
+    },
+    "docenten-parkhaven": {
+        "title": "Feedback docenten (eindpresentatie)",
+        "from": "Docenten, eindpresentatie project Parkhaven",
+        "date": "",
+        "paragraphs": [
+            "Algemene feedback: Jullie hebben als groep vooral gefocust op het maken van analyses ==> er is veel informatie. Maar wat ga je er nu mee doen? Of wat hebben jullie hier precies mee gedaan? Dat ontbreekt nog in de presentatie. Mogelijk veel laten leiden door AI-ondersteuning, maar daardoor mogelijk cruciale vragen vergeten. Bijvoorbeeld: waarom een wadi in buitendijks gebied? Wat is het nut hier dan van als de rivier de grondwaterstand bepaalt.",
+            "Notitie: start 09:48. Eindtijd: 10:02. 40% overtijd.",
+            "Presentatiebeelden zijn soms klein, daardoor moeilijk te zien.",
+            "De presentatie heeft wel een eenduidig ontwerp.",
+            "Jullie zijn echt in GIS verdiept, dat is een nieuwe tool geweest en daar hebben jullie goede eerste analyses mee gemaakt. Dank daarvoor.",
+            "Gevoelstemperatuur neemt af door (schaduw van) gebouwen?",
+            "Presentatie werkt niet op de laptop, zorg dat je dit van tevoren test.",
+            "Matthijs begint om 09:55, 7 minuten in de presentatie.",
+            "Presentatie overtijd.",
+            "\"het was heel kut\", let graag op taalgebruik.",
+            "Neil geeft de vraag: hoe heeft deze analyse invloed gehad op de keuzes die jullie hebben gemaakt.",
+            "Hoe heeft de afweging van soorten bomen invloed gehad op de digitale tools die je hebt gebruikt.",
+            "Euromast is buitendijks gebied... dus gaat een wadi dan wel effect hebben als de rivier de grond aanvult. Let op dat er tijdens hittestress ook minder water is.. dus als daar je verkoelingsstrategie op is gebaseerd.... Oftewel, ondanks alle slimme digitale technieken is het nog belangrijker de systemen zelf ook goed te begrijpen.",
+            "5 losse analyses en daarmee wat minder 1 verhaal. Er lijken daardoor dubbelingen of overlappen te zijn tussen de 5 verhalen, maar het blijven losse stukjes.",
+        ],
+    },
+    "natasha": {
+        "title": "Feedback groepsgenoot",
+        "from": "Natasha Morales, groepsgenoot bij project 1 en project 2",
+        "date": "18 november 2026",
+        "paragraphs": [
+            "Ik vond de samenwerking bij project 1 en project 2 erg prettig. Hieronder geef ik je mijn feedback. Je communiceert duidelijk en legt je bevindingen helder uit, zodat anderen, zoals ik, je goed kunnen volgen. Als je een taak krijgt, voer je die altijd zo zorgvuldig mogelijk uit. Je onderzoek is ook echt grondig, zoals bij de Termite-template, waarbij je precies uitzocht hoe je ermee moest werken. Als ik iets niet begrijp, kan ik altijd bij je terecht en help je me graag. Daardoor weet ik dat ik in een groepsopdracht op je kan rekenen. Ik vind het ook echt top dat je het wilt bespreken met de groep als de samenwerking niet goed gaat.",
+            "Ik heb nog twee tips. De eerste is dat je het meteen moet zeggen als je het ergens niet mee eens bent, in plaats van het naar een later moment te schuiven. Dan kan de groep er direct rekening mee houden. De tweede is dat je niet het initiatief durft te nemen bij presentaties. Zeg gerust: \"Ik wil graag presenteren.\" Je presenteert duidelijk en goed, dus ga gerust wat vaker uit je comfortzone.",
+        ],
+    },
+    "kebriya": {
+        "title": "Feedback groepsgenoot",
+        "from": "Kebriya Afshar, groepsgenoot bij project 2 (Klei Master)",
+        "date": "24 november 2026",
+        "paragraphs": [
+            "Tijdens het project Klei Master heb ik de samenwerking met jou als erg prettig ervaren. Je communiceerde duidelijk en goed met de groep en zorgde ervoor dat iedereen op de hoogte bleef van de voortgang en de gemaakte afspraken.",
+            "Wat ik ook sterk vond, is dat je niet alleen problemen signaleerde, maar ook zelf actief nadacht over mogelijke oplossingen. Je nam initiatief om problemen aan te pakken en probeerde altijd mee te denken over hoe we als groep verder konden komen.",
+            "Daarnaast kwam je je afspraken altijd na en voerde je de afgesproken taken op tijd uit. Je toonde veel verantwoordelijkheidsgevoel en was betrokken bij het gezamenlijke proces.",
+            "Een mogelijk ontwikkelpunt is om soms iets minder perfectionistisch te zijn. Je wilt graag dat het werk zo goed mogelijk wordt uitgevoerd, wat natuurlijk een sterke eigenschap is. Toch kan het soms helpen om te accepteren dat iets goed genoeg is, zodat je je tijd en energie efficiënter kunt verdelen.",
+            "Ik vond het fijn om met je samen te werken. Je goede communicatie, oplossingsgerichte houding en verantwoordelijkheidsgevoel hebben een positieve bijdrage geleverd aan onze samenwerking en het eindresultaat van het project.",
+        ],
+    },
+}
 
 # Content of the standalone reflectie page (reflectie.html), written as a STAR-reflectie.
 # Each step has a letter, a heading and a list of paragraphs (plain text, one string per paragraph).
@@ -604,6 +1021,16 @@ for _p in PROJECTS:
     for _tag in _p["tags"]:
         if _tag not in TAGS:
             raise SystemExit(f"error: project '{_p['slug']}' refers to unknown tag '{_tag}'")
+    for _key in _p.get("feedback", []):
+        if _key not in FEEDBACK:
+            raise SystemExit(f"error: project '{_p['slug']}' refers to unknown feedback '{_key}'")
+    for _step in _p.get("details", []):
+        for _m in _step.get("media", []):
+            for _field, _folder in (("image", "images"), ("video", "videos"), ("poster", "images")):
+                if _m.get(_field) and not os.path.exists(os.path.join(ROOT, _folder, _m[_field])):
+                    raise SystemExit(f"error: project '{_p['slug']}' uses {_folder}/{_m[_field]}, which does not exist")
+            if (_m.get("image") or _m.get("video")) and not _m.get("alt") and not _m.get("caption"):
+                raise SystemExit(f"error: project '{_p['slug']}' has a picture or video without alt text or caption in '{_step['title']}'")
 for _number in STARR:
     if _number not in COMP_BY_NUMBER:
         raise SystemExit(f"error: STARR has a reflectie for competentie '{_number}', which does not exist")
@@ -1126,6 +1553,91 @@ def detail_image(p):
     return f'<img src="{escape(src)}" alt="{escape(alt or "")}" width="1200" height="675">'
 
 
+def paragraphs(value):
+    """A text field as <p>s: one string, or a list of strings (one per paragraph)."""
+    items = [value] if isinstance(value, str) else value
+    return "\n            ".join(f"<p>{escape(t)}</p>" for t in items)
+
+
+def media_item(m):
+    """One picture, video or video link inside a "Werk in detail" step."""
+    caption = f"\n                  <figcaption>{escape(m['caption'])}</figcaption>" if m.get("caption") else ""
+    if m.get("image"):
+        return f"""                <figure class="project-media__item">
+                  <img src="../images/{escape(m['image'])}" alt="{escape(m.get('alt', ''))}" loading="lazy">{caption}
+                </figure>"""
+    if m.get("video"):
+        poster = f' poster="../images/{escape(m["poster"])}"' if m.get("poster") else ""
+        label = f' aria-label="{escape(m["alt"])}"' if m.get("alt") else ""
+        return f"""                <figure class="project-media__item project-media__item--video">
+                  <video controls preload="none" playsinline{poster}{label}>
+                    <source src="../videos/{escape(m['video'])}" type="video/mp4">
+                    <a href="../videos/{escape(m['video'])}">Download de video</a>
+                  </video>{caption}
+                </figure>"""
+    return f"""                <p class="project-media__link"><a href="{escape(m['url'])}" rel="noopener noreferrer" target="_blank">{escape(m.get('label', 'Bekijk de video'))}<span class="visually-hidden"> (opent in een nieuw tabblad)</span></a></p>"""
+
+
+def detail_steps(p):
+    """The optional "Werk in detail" section: steps with text, labelled points and media."""
+    if not p.get("details"):
+        return ""
+    steps = []
+    for i, step in enumerate(p["details"], start=1):
+        sid = f"detail-{i}-title"
+        date = f'\n              <p class="project-step__date">{escape(step["date"])}</p>' if step.get("date") else ""
+        text = "".join(f"\n              <p>{escape(t)}</p>" for t in step.get("text", []))
+        points = ""
+        if step.get("points"):
+            rows = "\n".join(
+                f"""                <div>
+                  <dt>{escape(label)}</dt>
+                  <dd>{escape(value)}</dd>
+                </div>"""
+                for label, value in step["points"]
+            )
+            points = f'\n              <dl class="project-step__points">\n{rows}\n              </dl>'
+        media = ""
+        if step.get("media"):
+            items = "\n".join(media_item(m) for m in step["media"])
+            media = f'\n              <div class="project-media">\n{items}\n              </div>'
+        steps.append(f"""            <section class="project-step" aria-labelledby="{sid}">
+              <h3 id="{sid}">{escape(step['title'])}</h3>{date}{text}{points}{media}
+            </section>""")
+    body = "\n\n".join(steps)
+    return f"""
+          <section class="project-details" aria-labelledby="details-title">
+            <h2 id="details-title">Werk in detail</h2>
+{body}
+          </section>
+"""
+
+
+def feedback_section(p):
+    """Feedback from FEEDBACK that this project links to."""
+    if not p.get("feedback"):
+        return ""
+    items = []
+    for key in p["feedback"]:
+        f = FEEDBACK[key]
+        paras = "\n".join(f"                <p>{escape(t)}</p>" for t in f["paragraphs"])
+        meta = ", ".join(x for x in (f.get("from"), f.get("date")) if x)
+        items.append(f"""            <figure class="feedback">
+              <h3 class="feedback__title">{escape(f['title'])}</h3>
+              <blockquote class="feedback__quote">
+{paras}
+              </blockquote>
+              <figcaption class="feedback__from">{escape(meta)}</figcaption>
+            </figure>""")
+    body = "\n\n".join(items)
+    return f"""
+          <section class="project-feedback" aria-labelledby="feedback-title">
+            <h2 id="feedback-title">Feedback</h2>
+{body}
+          </section>
+"""
+
+
 def build_project(p):
     c = {**CONTENT_DEFAULTS, **p}
     steps = "\n".join(f"              <li>{escape(s)}</li>" for s in c["steps"])
@@ -1192,19 +1704,19 @@ def build_project(p):
         <div class="project-detail__content">
           <section aria-labelledby="opgave-title">
             <h2 id="opgave-title">De opgave</h2>
-            <p>{escape(c['challenge'])}</p>
+            {paragraphs(c['challenge'])}
           </section>
 
           <section aria-labelledby="proces-title">
             <h2 id="proces-title">Het proces</h2>
-            <p>{escape(c['process'])}</p>{steps_html}
+            {paragraphs(c['process'])}{steps_html}
           </section>
-
+{detail_steps(p)}
           <section aria-labelledby="resultaat-title">
             <h2 id="resultaat-title">Het resultaat</h2>
-            <p>{escape(c['result'])}</p>
+            {paragraphs(c['result'])}
           </section>
-
+{feedback_section(p)}
           <section aria-labelledby="leerdoelen-title">
             <h2 id="leerdoelen-title">Aangetoonde leerdoelen</h2>
             <ol class="leerdoel-list">

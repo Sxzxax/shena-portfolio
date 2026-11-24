@@ -66,7 +66,7 @@
         <header class="project-detail__header">
           <p class="section__eyebrow">Project</p>
           <h1>Parametrische overspanning</h1>
-          <p class="project-detail__lead">Een boog van veelhoekige blokken, parametrisch ontworpen in Grasshopper als ontwerp voor het project digitale fabricage met de kleiprinter.</p>
+          <p class="project-detail__lead">Mijn eigen ontwerp voor een overspanning van kleiblokken, parametrisch gemaakt in Grasshopper voor project 2 (digitale fabricage).</p>
                 <ul class="tag-list" aria-label="Tags">
                   <li class="tag">Parametrisch ontwerpen</li>
                   <li class="tag">Digitale fabricage</li>
@@ -75,7 +75,7 @@
           <dl class="project-detail__meta">
             <div>
               <dt>Rol</dt>
-              <dd>Ontwerper in een groepsproject (project 2)</dd>
+              <dd>Ontwerper in de printergroep (project 2)</dd>
             </div>
             <div>
               <dt>Periode</dt>
@@ -87,36 +87,183 @@
             </div>
             <div>
               <dt>Competenties</dt>
-              <dd><a href="../competenties/digitale-expert.html">Competentie 1</a></dd>
+              <dd><a href="../competenties/digitale-expert.html">Competentie 1</a>, <a href="../competenties/teamspeler.html">Competentie 2</a></dd>
             </div>
           </dl>
         </header>
 
         <figure class="project-detail__image">
           <img src="../images/parametrische-overspanning.jpg" alt="Twee renders van een witte boog die is opgebouwd uit veelhoekige blokken: links een schuin aanzicht, rechts een vooraanzicht met zwarte lijnen langs de randen." width="1200" height="675">
-          <figcaption>Renders van het ontwerp (4 november 2026).</figcaption>
+          <figcaption>Rendering van het ontwerp (4 november 2026).</figcaption>
         </figure>
 
         <div class="project-detail__content">
           <section aria-labelledby="opgave-title">
             <h2 id="opgave-title">De opgave</h2>
-            <p>Voor het project digitale fabricage ontwierp ik een overspanning die uit losse blokken bestaat en met de kleiprinter gemaakt kan worden. Een papieren model van een boog van veelhoekige blokken was mijn referentie.</p>
+            <p>Onze opdracht was om een overspanning te ontwerpen met blokken van klei. Deze blokken worden geprint met kleiprinters en daarna samengesteld door de cobot. Onze groep van zes was opgesplitst: drie mensen werkten aan de cobot en drie aan de printer. Ik zat in de printergroep.</p>
+            <p>Iedereen maakte eerst een eigen concept. Ik bouwde een eigen model na op basis van een referentie, met mijn Grasshopper-vaardigheden van de leerplek. Ik wilde mezelf uitdagen: de vorm is simpel, maar heeft toch zijn uitdagingen.</p>
           </section>
 
           <section aria-labelledby="proces-title">
             <h2 id="proces-title">Het proces</h2>
-            <p>In Grasshopper bouwde ik een script met parameters voor onder andere de overspanning, de boogvorm, het aantal blokken, de dikte en de straal. Door de parameters te veranderen ontstonden verschillende varianten, van een slanke boog tot een boog van grote, losse blokken. Daarna maakte ik renders van het ontwerp.</p>
+            <p>Pas na veel pogingen kwam ik in de buurt van de referentie. Ik wist niet welke components het handigst waren, dus ik heb getest en uitgeprobeerd met verschillende components, want dit kan op meerdere manieren. Hieronder staan de pogingen, het eindmodel en de feedback.</p>
             <ul>
-              <li>Een papieren model van een boog van blokken als referentie kiezen</li>
-              <li>Een Grasshopper-script bouwen met parameters voor overspanning, vorm, aantal, dikte en straal</li>
-              <li>Varianten maken door de parameters aan te passen</li>
-              <li>Het ontwerp renderen en met de groep vergelijken</li>
+              <li>Plan van aanpak maken (met groepsleden)</li>
+              <li>Eigen concept ontwerpen in Grasshopper</li>
+              <li>Drie pogingen: loft, extrude en amplitude</li>
+              <li>Eindmodel bakken en renderen</li>
             </ul>
+          </section>
+
+          <section class="project-details" aria-labelledby="details-title">
+            <h2 id="details-title">Werk in detail</h2>
+            <section class="project-step" aria-labelledby="detail-1-title">
+              <h3 id="detail-1-title">Samenwerking</h3>
+              <p>De samenwerking voor project 2 is goed verlopen. Iedereen wist wat zijn of haar taak was en deed actief mee. Drie mensen verdiepten zich in de cobot en drie in klei. Dat bespaarde tijd en zorgde voor kennisoverdracht.</p>
+              <p>Een klein nadeel was dat de groep in twee delen was gesplitst. Dat hebben we opgelost door vaste momenten te plannen om bij elkaar te zitten. Een voorbeeld is de schets hieronder: we konden niet kiezen tussen de concepten, dus zijn we samen gaan zitten en hebben we ideeën geschetst. Zo konden we uiteindelijk wel kiezen.</p>
+              <div class="project-media">
+                <figure class="project-media__item">
+                  <img src="../images/overspanning-schets-groep.jpg" alt="Schetsen in blauwe pen op gelinieerd papier: een boog van blokken, losse blokken en verbindingen tussen de blokken." loading="lazy">
+                  <figcaption>Samen ideeën geschetst om tussen de concepten te kiezen.</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section class="project-step" aria-labelledby="detail-2-title">
+              <h3 id="detail-2-title">Referentie</h3>
+              <p>Ik bouwde mijn model na op basis van deze referentie: een boog van veelhoekige blokken.</p>
+              <div class="project-media">
+                <figure class="project-media__item">
+                  <img src="../images/overspanning-referentie.jpg" alt="Foto van een papieren model: een boog opgebouwd uit wit en bruin gevouwen veelhoekige blokken." loading="lazy">
+                  <figcaption>Referentie.</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section class="project-step" aria-labelledby="detail-3-title">
+              <h3 id="detail-3-title">Pogingen</h3>
+              <dl class="project-step__points">
+                <div>
+                  <dt>Poging 1 (loft)</dt>
+                  <dd>Probleem: de loft maakte één doorlopend vlak in plaats van losse vlakken. Oorzaak: ik had de polygons geroteerd zodat ze horizontaal stonden. Oplossing: overstappen op extrude.</dd>
+                </div>
+                <div>
+                  <dt>Poging 2 (extrude)</dt>
+                  <dd>Probleem: de blokken aan de uiteinden stonden niet goed gericht. Ze moesten meer horizontaal liggen. Oplossing: een amplitude-component gebruiken.</dd>
+                </div>
+                <div>
+                  <dt>Poging 3 (amplitude)</dt>
+                  <dd>Probleem: de uiteinden lagen nu horizontaal, maar de andere blokken ook. Dat was niet de bedoeling. Oplossing: feedback van Kebriya gebruiken: in de referentie is de onderkant kleiner dan de bovenkant.</dd>
+                </div>
+                <div>
+                  <dt>Eindmodel</dt>
+                  <dd>Ik maakte het model twee keer met twee verschillende stralen en koppelde ze aan elkaar. Geleerd: vormen maken in Grasshopper en curves roteren.</dd>
+                </div>
+              </dl>
+              <div class="project-media">
+                <figure class="project-media__item">
+                  <img src="../images/overspanning-poging-1-loft.png" alt="Rode boog in Grasshopper die uit één doorlopend vlak bestaat." loading="lazy">
+                  <figcaption>Poging 1: loft.</figcaption>
+                </figure>
+                <figure class="project-media__item">
+                  <img src="../images/overspanning-poging-2-extrude.png" alt="Rode boog van losse blokken waarvan de blokken aan de uiteinden rechtop staan." loading="lazy">
+                  <figcaption>Poging 2: extrude.</figcaption>
+                </figure>
+                <figure class="project-media__item">
+                  <img src="../images/overspanning-poging-3-amplitude.png" alt="Rode boog van grote veelhoekige blokken die allemaal horizontaal liggen." loading="lazy">
+                  <figcaption>Poging 3: amplitude.</figcaption>
+                </figure>
+                <figure class="project-media__item">
+                  <img src="../images/overspanning-eindmodel.png" alt="Rode boog van veelhoekige blokken die bovenaan smaller zijn, het eindmodel." loading="lazy">
+                  <figcaption>Eindmodel.</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section class="project-step" aria-labelledby="detail-4-title">
+              <h3 id="detail-4-title">Eindmodel en Grasshopper-script</h3>
+              <p class="project-step__date">4 november 2026</p>
+              <p>Dit is mijn uiteindelijke model, gebakt en gerenderd. Hierbij zie je ook het Grasshopper-script dat ik heb gebruikt, met sliders voor onder andere de overspanning, de boogfactor, het aantal blokken, de dikte en de stralen.</p>
+              <div class="project-media">
+                <figure class="project-media__item">
+                  <img src="../images/overspanning-render-1.png" alt="Render van de witte boog van veelhoekige blokken, schuin van voren." loading="lazy">
+                  <figcaption>Render, schuin aanzicht.</figcaption>
+                </figure>
+                <figure class="project-media__item">
+                  <img src="../images/overspanning-render-2.png" alt="Render van de witte boog van voren, met zwarte lijnen langs de randen van de blokken." loading="lazy">
+                  <figcaption>Render, vooraanzicht.</figcaption>
+                </figure>
+                <figure class="project-media__item">
+                  <img src="../images/overspanning-grasshopper-script.png" alt="Grasshopper-script met links sliders voor de parameters en rechts een reeks verbonden componenten." loading="lazy">
+                  <figcaption>Het Grasshopper-script.</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section class="project-step" aria-labelledby="detail-5-title">
+              <h3 id="detail-5-title">Feedback en keuze</h3>
+              <dl class="project-step__points">
+                <div>
+                  <dt>Feedback</dt>
+                  <dd>Een groepslid en mijn begeleider vonden mijn ontwerp niet helemaal parametrisch.</dd>
+                </div>
+                <div>
+                  <dt>Leerpunt</dt>
+                  <dd>Ik moet meer parametrisch nadenken.</dd>
+                </div>
+                <div>
+                  <dt>Mogelijke verbetering</dt>
+                  <dd>De sliders van de twee stralen koppelen, zodat ze samen veranderen. Als het aantal blokken afneemt, past de lengte zich dan ook aan.</dd>
+                </div>
+                <div>
+                  <dt>Keuze groepsproject</dt>
+                  <dd>Er was twijfel tussen mijn model en dat van een groepslid. We kozen het model van het groepslid, omdat het mijne ingewikkeld was om te printen en voor de cobot.</dd>
+                </div>
+                <div>
+                  <dt>Geleerd</dt>
+                  <dd>Houd bij het ontwerpen rekening met printen en de cobot.</dd>
+                </div>
+              </dl>
+              <div class="project-media">
+                <figure class="project-media__item project-media__item--video">
+                  <video controls preload="none" playsinline poster="../images/poster-overspanning-parameters.jpg" aria-label="Schermopname van Grasshopper en Rhino waarin de sliders worden verschoven en de rode boog meeverandert">
+                    <source src="../videos/overspanning-parameters.mp4" type="video/mp4">
+                    <a href="../videos/overspanning-parameters.mp4">Download de video</a>
+                  </video>
+                  <figcaption>De parameters van het model aanpassen (17 seconden, zonder geluid).</figcaption>
+                </figure>
+              </div>
+            </section>
           </section>
 
           <section aria-labelledby="resultaat-title">
             <h2 id="resultaat-title">Het resultaat</h2>
-            <p>De groep koos uiteindelijk voor een ander ontwerp, omdat mijn boog lastiger te printen was. Een groepsgenoot merkte ook op dat mijn parameters niet helemaal correct waren. Ik heb geleerd dat een ontwerp niet alleen mooi moet zijn, maar ook uitvoerbaar.</p>
+            <p>Vergeleken met waar ik begon is dit een grote vooruitgang. Ik heb geleerd vormen te maken in Grasshopper en curves te roteren.</p>
+            <p>Er was twijfel tussen mijn model en dat van een groepslid. We kozen het model van het groepslid, omdat het mijne ingewikkeld was om te printen en voor de cobot. Ik heb geleerd om bij het ontwerpen rekening te houden met printen en de cobot.</p>
+          </section>
+
+          <section class="project-feedback" aria-labelledby="feedback-title">
+            <h2 id="feedback-title">Feedback</h2>
+            <figure class="feedback">
+              <h3 class="feedback__title">Feedback groepsgenoot</h3>
+              <blockquote class="feedback__quote">
+                <p>Tijdens het project Klei Master heb ik de samenwerking met jou als erg prettig ervaren. Je communiceerde duidelijk en goed met de groep en zorgde ervoor dat iedereen op de hoogte bleef van de voortgang en de gemaakte afspraken.</p>
+                <p>Wat ik ook sterk vond, is dat je niet alleen problemen signaleerde, maar ook zelf actief nadacht over mogelijke oplossingen. Je nam initiatief om problemen aan te pakken en probeerde altijd mee te denken over hoe we als groep verder konden komen.</p>
+                <p>Daarnaast kwam je je afspraken altijd na en voerde je de afgesproken taken op tijd uit. Je toonde veel verantwoordelijkheidsgevoel en was betrokken bij het gezamenlijke proces.</p>
+                <p>Een mogelijk ontwikkelpunt is om soms iets minder perfectionistisch te zijn. Je wilt graag dat het werk zo goed mogelijk wordt uitgevoerd, wat natuurlijk een sterke eigenschap is. Toch kan het soms helpen om te accepteren dat iets goed genoeg is, zodat je je tijd en energie efficiënter kunt verdelen.</p>
+                <p>Ik vond het fijn om met je samen te werken. Je goede communicatie, oplossingsgerichte houding en verantwoordelijkheidsgevoel hebben een positieve bijdrage geleverd aan onze samenwerking en het eindresultaat van het project.</p>
+              </blockquote>
+              <figcaption class="feedback__from">Kebriya Afshar, groepsgenoot bij project 2 (Klei Master), 24 november 2026</figcaption>
+            </figure>
+
+            <figure class="feedback">
+              <h3 class="feedback__title">Feedback groepsgenoot</h3>
+              <blockquote class="feedback__quote">
+                <p>Ik vond de samenwerking bij project 1 en project 2 erg prettig. Hieronder geef ik je mijn feedback. Je communiceert duidelijk en legt je bevindingen helder uit, zodat anderen, zoals ik, je goed kunnen volgen. Als je een taak krijgt, voer je die altijd zo zorgvuldig mogelijk uit. Je onderzoek is ook echt grondig, zoals bij de Termite-template, waarbij je precies uitzocht hoe je ermee moest werken. Als ik iets niet begrijp, kan ik altijd bij je terecht en help je me graag. Daardoor weet ik dat ik in een groepsopdracht op je kan rekenen. Ik vind het ook echt top dat je het wilt bespreken met de groep als de samenwerking niet goed gaat.</p>
+                <p>Ik heb nog twee tips. De eerste is dat je het meteen moet zeggen als je het ergens niet mee eens bent, in plaats van het naar een later moment te schuiven. Dan kan de groep er direct rekening mee houden. De tweede is dat je niet het initiatief durft te nemen bij presentaties. Zeg gerust: &quot;Ik wil graag presenteren.&quot; Je presenteert duidelijk en goed, dus ga gerust wat vaker uit je comfortzone.</p>
+              </blockquote>
+              <figcaption class="feedback__from">Natasha Morales, groepsgenoot bij project 1 en project 2, 18 november 2026</figcaption>
+            </figure>
           </section>
 
           <section aria-labelledby="leerdoelen-title">
@@ -130,6 +277,10 @@
               <a class="leerdoel__code" href="../competenties/digitale-expert.html" aria-label="Leerdoel 1.4, competentie 1">1.4</a>
               <p class="leerdoel__text">Reflecteert kritisch op het onderzoek en/of ontwerpproces en valideert de impact van “oplossingen” met stakeholders (opdrachtgever, adviseurs, medestudenten etc.).</p>
             </li>
+            <li class="leerdoel">
+              <a class="leerdoel__code" href="../competenties/teamspeler.html" aria-label="Leerdoel 2.1, competentie 2">2.1</a>
+              <p class="leerdoel__text">Werkt effectief samen in multidisciplinaire teams met behulp van digitale middelen &amp; processen.</p>
+            </li>
             </ol>
           </section>
         </div>
@@ -137,7 +288,7 @@
 
       <nav class="project-nav" aria-label="Projectnavigatie">
         <a class="button button--outline" href="../competenties/digitale-expert.html">&larr; Terug naar competentie 1</a>
-        <a class="button button--primary" href="vakwerk-python.html">Volgende: Vakwerk met Python in Grasshopper &rarr;</a>
+        <a class="button button--primary" href="kleiprinter-blokken-printen.html">Volgende: Blokken printen met de kleiprinter &rarr;</a>
       </nav>
     </div>
   </main>
