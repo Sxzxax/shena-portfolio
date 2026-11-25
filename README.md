@@ -97,6 +97,8 @@ SITE = {
 ```
 
 - In `hero_title`, the words between `*asterisks*` are shown in the accent colour, and `\n` starts a new line. For example, `"Minor Portfolio\n*Digital skills in de gebouwde omgeving*"`.
+- In `hero_text`, `\n` also starts a new line, and `\n\n` leaves an empty line between two parts.
+- **Which competentie pages a project appears on** depends only on its `leerdoelen` (see section 2). To take a project off a competentie page, remove that competentie's leerdoelen from the project; to add it, add one.
 - For your own photo, see **Adding pictures** below. Then replace `None` with the file name in quotes, e.g. `"hero_image": "shena.jpg",`. Also change `hero_image_alt` to describe the photo, e.g. `"Portret van Shena"`.
 - Don't want to show something, such as your phone number? Make it empty: `"phone": "",`
 - `linkedin_label` is the text shown for your LinkedIn link. Leave it out to show the link itself.
