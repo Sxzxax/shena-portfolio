@@ -16,7 +16,8 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = {
     "hero_greeting": "Hoi, ik ben Shena",
     "hero_title": "Minor Portfolio\n*Digital skills in de gebouwde omgeving*",
-    "hero_text": "Ik studeer bouwkunde en werk op het snijvlak van architectuur en techniek: van parametrisch ontwerpen en ruimtelijke analyses tot digitale fabricage en programmeren.",
+    # \n becomes a line break; \n\n leaves an empty line between two parts
+    "hero_text": "2.3 (netwerken): Dit is mijn enige leerdoel dat oranje staat, omdat ik veel gesprekken heb gevoerd maar weinig bewijs heb vastgelegd. Ik wil graag weten wat anderen als bewijs hebben gebruikt.\n\n1.4 (kritisch terugkijken): Ik heb hier weinig bewijs voor en ik weet niet wat een sterk bewijsstuk is voor \"terugkijken\", omdat het om een denkproces gaat en niet om een product. Ik wil graag weten hoe anderen dit laten zien in hun log.",
     "hero_image": None,  # e.g. "shena.jpg" in images/; None shows a stand-in photo
     "hero_image_alt": "Voorbeeldfoto (placeholder)",
     "email": "shenaalexander2005@gmail.com",
@@ -99,7 +100,7 @@ PROJECTS = [
     {
         "slug": "hittestress-parkhaven",
         "title": "Hittestress-analyse Parkhaven",
-        "leerdoelen": ["1.1", "2.2", "3.3"],
+        "leerdoelen": ["2.2", "3.3"],
         "tags": ["arcgis"],
         "lead": "Kaarten en een hittestressanalyse in ArcGIS Pro voor het masterplan Parkhaven, waarin ik het effect van bomen, groene daken en een groene kade op de gevoelstemperatuur vergelijk.",
         "role": "Groepsproject (project 1): kaarten, ontwerpkansen en hittestressanalyse",
@@ -110,12 +111,7 @@ PROJECTS = [
             "Mijn deel was onder andere de vraag hoeveel koeler het gebied wordt met meer groen. ArcGIS Pro was nieuw voor mij.",
         ],
         "process": "In fase 1 voegde ik bestaande kaarten samen in ArcGIS Pro en haalde ik daar data uit. In fase 2 bracht ik het landgebruik in kaart, tekende ik zelf de maatregelen in en berekende ik met de analysetools de heat index per maatregel. Hieronder staat elke stap, met de kaarten en video's.",
-        "steps": [
-            "Bestaande kaarten samenvoegen in ArcGIS Pro (fase 1, september 2026)",
-            "Landgebruik in kaart brengen en maatregelen tekenen (fase 2, oktober 2026)",
-            "Heat index berekenen voor bomen, groene daken, een groene kade en alle maatregelen samen",
-            "Resultaten presenteren aan de bedrijven achter het masterplan",
-        ],
+        "steps": [],
         "result": [
             "Met alle maatregelen samen wordt de omgeving ongeveer 2 graden koeler.",
             "In dit project heb ik geleerd om zelfstandig met digitale tools te werken. Ik begon met weinig ervaring in ArcGIS Pro en kan nu zelf kaarten samenvoegen, data analyseren en een heat-indexanalyse maken.",
@@ -205,7 +201,7 @@ PROJECTS = [
     {
         "slug": "forma-masterplan-parkhaven",
         "title": "Masterplan Parkhaven in Forma",
-        "leerdoelen": ["2.1", "4.1"],
+        "leerdoelen": ["2.1", "3.3"],
         "tags": [],
         "lead": "De gebouwen van het masterplan Parkhaven, samen met een groepsgenoot nagebouwd in Forma als basis voor de hittestressanalyse, en een eerste simulatie in Tygron.",
         "role": "Modelleur, samen met N. Morales (project 1)",
@@ -213,15 +209,10 @@ PROJECTS = [
         "tools": "Forma, Revit, Tygron",
         "challenge": "Voor de simulaties in fase 2 hadden we zo snel mogelijk de gebouwen van het masterplan nodig. Forma en Tygron had ik nog nooit gebruikt.",
         "process": "N. Morales en ik verdeelden de gebouwen en bouwden ze na in Forma, met de situatietekening als onderlegger. Omdat mijn deel eerst klaar was, legde ik uit hoe ik het in Forma had gedaan, zodat de gebouwen op elkaar aansloten. Daarna probeerden we de hittestress te simuleren in Tygron.",
-        "steps": [
-            "Gebouwen verdelen en de situatietekening op schaal als onderlegger gebruiken",
-            "Eigen gebouwen modelleren in Forma en de werkwijze uitleggen aan N. Morales",
-            "Terrein in Revit verwijderen en opnieuw exporteren als IFC voor ArcGIS en Tygron",
-            "Hittestress simuleren in Tygron",
-        ],
+        "steps": [],
         "result": "Alle gebouwen staan in één model, klaar voor de analyses. Forma was best eenvoudig om mee te werken, dus het was de snelste manier om de gebouwen te ontwerpen. Ik wil me verder verdiepen in de omgevingsanalyses die Forma zelf kan maken. Tygron lukte tijdens het project niet, maar na de presentatie hebben N. Morales en ik verder geëxperimenteerd en is het alsnog gelukt.",
-        "image": "forma-masterplan-parkhaven.jpg",
-        "image_alt": "3D-model in Forma van een rij woontorens langs de kade van Parkhaven, met een groen kader om de gebouwen die ik zelf heb gemodelleerd en het label Eigen bijdrage.",
+        "image": "forma-t.png",
+        "image_alt": "Zijaanzicht in Forma van de gebouwen van het masterplan Parkhaven: grijze woontorens van verschillende hoogtes, links drie en rechts vijf gebouwen.",
         "caption": "Mijn eigen bijdrage aan het Forma-model van het masterplan (6 oktober 2026).",
         "details": [
             {
@@ -260,7 +251,7 @@ PROJECTS = [
     {
         "slug": "vakwerk-grasshopper",
         "title": "Vakwerk in Grasshopper",
-        "leerdoelen": ["1.3", "3.2", "3.3"],
+        "leerdoelen": ["1.3", "4.1"],
         "tags": ["parametrisch"],
         "lead": "Een parametrisch script met vier soorten vakwerken, doorgerekend met Karamba3D en geëxporteerd naar Technosoft Raamwerken, gemaakt op mijn leerplek bij ABT.",
         "role": "Leerplek bij ABT, Oosterhoff Digital team",
@@ -268,12 +259,7 @@ PROJECTS = [
         "tools": "Rhino, Grasshopper, Karamba3D, Technosoft Raamwerken",
         "challenge": "Ik wilde zonder template een vakwerk bouwen dat meebeweegt met parameters en dat ik kan doorrekenen. Toen ik op 1 oktober begon bij ABT, kon ik alleen de parameters van een bestaand script aanpassen.",
         "process": "Via de ThinkParametric-cursus leerde ik Grasshopper en Karamba3D beter begrijpen. Daarna bouwde ik zelfstandig een Pratt-vakwerk en koppelde ik dat aan Karamba3D. Ik maakte drie andere vakwerktypes en een keuzecomponent, zodat je de varianten één voor één kunt doorlopen en vergelijken.",
-        "steps": [
-            "Grasshopper en Karamba3D leren via ThinkParametric",
-            "Een Pratt-vakwerk bouwen met invoerparameters en koppelen aan Karamba3D",
-            "Drie andere diagonaalpatronen toevoegen, met een keuzecomponent om te wisselen",
-            "Een vakwerk als XML exporteren en importeren in Technosoft Raamwerken",
-        ],
+        "steps": [],
         "result": "Een script met meerdere invoerparameters en diagonale patronen, gekoppeld aan Karamba3D en Technosoft Raamwerken. Mijn begeleider noemde dit een belangrijke stap vooruit. Zijn verbeterpunt: meer parametrisch denken, zodat de geometrie als één geheel meebeweegt en het script makkelijk uitbreidbaar is.",
         "image": "vakwerk-grasshopper.jpg",
         "image_alt": "Vier rode vakwerkliggers in Grasshopper met belastingpijlen erboven: een vakwerk met schuine diagonalen, een met verticalen en diagonalen, een met kruisende diagonalen en een driehoeksvakwerk.",
@@ -300,7 +286,7 @@ PROJECTS = [
     {
         "slug": "parametrische-overspanning",
         "title": "Parametrische overspanning",
-        "leerdoelen": ["1.3", "1.4", "2.1"],
+        "leerdoelen": ["1.3", "1.4"],
         "tags": ["parametrisch", "fabricage"],
         "lead": "Mijn eigen ontwerp voor een overspanning van kleiblokken, parametrisch gemaakt in Grasshopper voor project 2 (digitale fabricage).",
         "role": "Ontwerper in de printergroep (project 2)",
@@ -311,12 +297,7 @@ PROJECTS = [
             "Iedereen maakte eerst een eigen concept. Ik bouwde een eigen model na op basis van een referentie, met mijn Grasshopper-vaardigheden van de leerplek. Ik wilde mezelf uitdagen: de vorm is simpel, maar heeft toch zijn uitdagingen.",
         ],
         "process": "Pas na veel pogingen kwam ik in de buurt van de referentie. Ik wist niet welke components het handigst waren, dus ik heb getest en uitgeprobeerd met verschillende components, want dit kan op meerdere manieren. Hieronder staan de pogingen, het eindmodel en de feedback.",
-        "steps": [
-            "Plan van aanpak maken (met groepsleden)",
-            "Eigen concept ontwerpen in Grasshopper",
-            "Drie pogingen: loft, extrude en amplitude",
-            "Eindmodel bakken en renderen",
-        ],
+        "steps": [],
         "result": [
             "Vergeleken met waar ik begon is dit een grote vooruitgang. Ik heb geleerd vormen te maken in Grasshopper en curves te roteren.",
             "Er was twijfel tussen mijn model en dat van een groepslid. We kozen het model van het groepslid, omdat het mijne ingewikkeld was om te printen en voor de cobot. Ik heb geleerd om bij het ontwerpen rekening te houden met printen en de cobot.",
@@ -325,15 +306,6 @@ PROJECTS = [
         "image_alt": "Twee renders van een witte boog die is opgebouwd uit veelhoekige blokken: links een schuin aanzicht, rechts een vooraanzicht met zwarte lijnen langs de randen.",
         "caption": "Rendering van het ontwerp (4 november 2026).",
         "details": [
-            {
-                "title": "Samenwerking",
-                "text": [
-                    "Drie groepsleden verdiepten zich in de cobot en drie in de klei, met vaste momenten om samen te zitten. Toen we niet konden kiezen tussen de concepten, hebben we samen ideeën geschetst.",
-                ],
-                "media": [
-                    {"image": "overspanning-schets-groep.jpg", "alt": "Schetsen in blauwe pen op gelinieerd papier: een boog van blokken, losse blokken en verbindingen tussen de blokken.", "caption": "Samen ideeën geschetst om tussen de concepten te kiezen."},
-                ],
-            },
             {
                 "title": "Referentie",
                 "text": [
@@ -377,12 +349,11 @@ PROJECTS = [
                 ],
             },
         ],
-        "feedback": ["kebriya", "natasha"],
     },
     {
         "slug": "kleiprinter-blokken-printen",
         "title": "Blokken printen met de kleiprinter",
-        "leerdoelen": ["1.2", "1.4", "3.3", "4.1"],
+        "leerdoelen": ["4.1"],
         "tags": ["fabricage", "parametrisch"],
         "lead": "Uitzoeken hoe de kleiprinter werkt, de printbestanden voorbereiden met de Termite-template en de kleiblokken van het gekozen ontwerp printen, voor project 2 (digitale fabricage).",
         "role": "Printergroep, samen met N. Morales en K. Afshar (project 2)",
@@ -390,13 +361,7 @@ PROJECTS = [
         "tools": "WASP 2040 kleiprinter, Rhino, Grasshopper, Termite",
         "challenge": "Na de keuze voor het ontwerp moesten wij als printergroep de blokken printen. In het begin hadden we geen idee hoe de kleiprinter werkte en de informatie was beperkt.",
         "process": "Samen met N. Morales en K. Afshar zocht ik uit hoe de kleiprinter werkt. Ik onderzocht de Termite-template, bereidde de bestanden voor en printte met hen de blokken. Hieronder staat elke stap, met de testprints en video's.",
-        "steps": [
-            "Informatie zoeken over de kleiprinter (met twee anderen)",
-            "De Termite-template onderzoeken en uitleggen",
-            "Bestanden voorbereiden en de G-code exporteren",
-            "Testprints maken en de instellingen aanpassen",
-            "Blokken printen (met twee anderen)",
-        ],
+        "steps": [],
         "result": [
             "Na veel pogingen is het gelukt: alle blokken zijn geprint en zo komen ze bij elkaar.",
             "In dit project heb ik vooral gewerkt aan mijn vaardigheden met Grasshopper en met de kleiprinter. Bij Grasshopper heb ik geleerd om meer parametrisch na te denken over mijn ontwerpen en om te werken met extrude en planes. Bij de kleiprinter heb ik geleerd hoe het werkt, hoe je de printer schoonmaakt, hoe je print en hoe je de klei voorbereidt. We kunnen dit nu ook aan anderen uitleggen.",
@@ -474,7 +439,7 @@ PROJECTS = [
     {
         "slug": "vakwerk-python",
         "title": "Vakwerk met Python in Grasshopper",
-        "leerdoelen": ["1.3", "3.1", "3.3"],
+        "leerdoelen": ["3.1", "3.3"],
         "tags": ["python", "parametrisch"],
         "lead": "Hetzelfde vakwerk als in mijn Grasshopper-script, opnieuw opgebouwd met alleen Python-code in de ingebouwde Python van Grasshopper.",
         "role": "Leerplek bij ABT, Oosterhoff Digital team",
@@ -482,12 +447,7 @@ PROJECTS = [
         "tools": "Rhino, Grasshopper, Python",
         "challenge": "Een van mijn leerdoelen was een basis Python-script schrijven, maar ik merkte dat ik er nog niets mee had gedaan. Dat besprak ik met mijn begeleider. Hij gaf mij de opdracht om mijn vakwerk opnieuw te maken, nu met Python.",
         "process": "Het lastigste was hoe de Grasshopper-componenten als code werken. Ik testte verschillende manieren en vroeg Copilot om uitleg, maar niet om het script te schrijven. Het script maakt punten onder en boven op basis van de lengte, hoogte en het aantal vakken, en verbindt die met verticalen en diagonalen.",
-        "steps": [
-            "Video's van mijn begeleider bekijken",
-            "Onder- en bovenpunten berekenen uit lengte, hoogte en aantal",
-            "Verticalen en diagonalen tekenen met lijnen in een lus",
-            "Het resultaat in Rhino vergelijken met het Grasshopper-vakwerk",
-        ],
+        "steps": [],
         "result": "Het vakwerk in Python werkt en mijn begeleider vond dat ik het snel had gemaakt. Zijn advies: let op de structuur van de code, vooral op variabelenamen en opmerkingen. Mijn volgende stap is een klein script dat een terugkerende handeling automatiseert.",
         "image": "vakwerk-python.jpg",
         "image_alt": "Links de Python-code in de scripteditor van Grasshopper, met lussen voor punten, verticalen en diagonalen. Rechts het groene vakwerk dat de code in Rhino tekent.",
@@ -505,11 +465,7 @@ PROJECTS = [
         "tools": "Rhino, Grasshopper",
         "challenge": "Bij de workshop over items, lists en trees modelleerde ik de Van Brienenoordbrug. Met hulp van anderen kwam ik toen niet verder dan de boog. Na de ThinkParametric-cursus wilde ik zien of ik de brug zelfstandig kon maken.",
         "process": "Bij de eerste poging (21 september 2026) maakte ik met hulp de curves van de boog. Na de cursus begon ik opnieuw en bouwde ik zonder hulp de bogen met vakwerk ertussen, het brugdek, de pijlers en de aanbruggen (23 november 2026).",
-        "steps": [
-            "Eerste poging met hulp: alleen de curves van de boog",
-            "Grasshopper leren via de ThinkParametric-cursus",
-            "Tweede poging zonder hulp: bogen, vakwerk, brugdek en pijlers",
-        ],
+        "steps": [],
         "result": "Het verschil tussen de twee pogingen laat zien hoeveel ik in twee maanden heb geleerd: van een paar curves met hulp naar een complete brug die ik zelf heb opgebouwd.",
         "image": "van-brienenoordbrug.jpg",
         "image_alt": "Rood, half doorzichtig 3D-model van de Van Brienenoordbrug in Rhino: twee bogen met vakwerk ertussen boven het brugdek, op twee ronde pijlers.",
@@ -1264,7 +1220,7 @@ def build_index():
             {hero_title()}
           </h1>
           <p class="hero__text">
-            {escape(SITE['hero_text'])}
+            {escape(SITE['hero_text']).replace(chr(10), '<br>' + chr(10) + '            ')}
           </p>
           <div class="hero__actions">
             <a class="button button--primary" href="#competenties">Bekijk mijn werk</a>
